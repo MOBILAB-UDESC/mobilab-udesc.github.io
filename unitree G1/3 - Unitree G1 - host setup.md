@@ -1,8 +1,3 @@
-> Antes de começar, [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!
-
-1. [[Unitree G1 - ligando o robô]]
-2. [[Unitree G1 - conectando no robô com Ethernet]]
-
 ## Initial checks
 
 Check if robot is sending UDP packages:
@@ -149,27 +144,3 @@ pkill -f probe_g1_lowstate
 pkill -f read_g1_lowstate
 ss -lunp | grep python || true
 ```
-
-
-
-# Referências
-
-Unitree G1 Guides
-- https://support.unitree.com/home/en/G1_developer/about_G1
-- https://github.com/unitreerobotics/unitree_guide
-- https://docs.quadruped.de/projects/g1
-
-Unitree G1 Control
-- https://github.com/unitreerobotics/unitree_ros2
-- https://github.com/unitreerobotics/unitree_sdk2_python
-
-Unitree G1 Teleoperation
-- https://support.unitree.com/home/en/Teleoperation/avp_teleoperate
-- https://github.com/unitreerobotics/xr_teleoperate
-
-Unitree G1 Machine Learning
-- https://github.com/unitreerobotics/unitree_lerobot
-- https://github.com/unitreerobotics/unifolm-vla
-- https://huggingface.co/unitreerobotics
-- https://huggingface.co/docs/lerobot/unitree_g1
-- 
