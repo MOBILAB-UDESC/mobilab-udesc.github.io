@@ -1,13 +1,35 @@
-Antes de começar. O G1 tem vários computadores:
+Antes de começar.
 
-| IP Address           | Device            | Username | Password  |     |
-| -------------------- | ----------------- | -------- | --------- | --- |
-| 192.168.123.161      | G1 MCU            | x        | x         |     |
-| 192.168.123.164      | G1 Auxiliary PC 2 | unitree  | 123       |     |
-| 192.168.123.120      | Mid360 Lidar      | x        | x         |     |
+For G1 robot, the network devices are assigned the following IP addresses:
 
+| Device Name          | IP Address      | Subnet Mask   | Username/Password |
+| -------------------- | --------------- | ------------- | ----------------- |
+| Locomotion Computer  | 192.168.123.161 | 255.255.255.0 | not open to user  |
+| Development Computer | 192.168.123.164 | 255.255.255.0 | unitree/123       |
+| Livx Mid-360 Lidar   | 192.168.123.20  | 255.255.255.0 | N/A               |
 O computador que vamos acessar com ssh é o PC 2.
 Porém, em várias operações nós vamos ler dados do G1 MCU.
+
+The carrier board provides the following interfaces:
+![[2 - Unitree G1 - conectando no robô com Ethernet-1779642511461.webp|500x361]]
+
+|No.|Connector Name|Interface Description|Interface specification|
+|---|---|---|---|
+|1|XT30UPB-F|VBAT|58V/5A Battery power output (directly connected to battery power)|
+|2|XT30UPB-F|24V|24V/5A power output|
+|3|XT30UPB-F|12V|12V/5A power output|
+|4|RJ45|1000 BASE-T|GbE (gigabit Ethernet)|
+|5|RJ45|1000 BASE-T|GbE (gigabit Ethernet)|
+|6|Type-C|Type-C|Support USB3.0 host, 5V/1.5A power output|
+|7|Type-C|Type-C|Support USB3.0 host, 5V/1.5A power output|
+|8|Type-C|Type-C|Support USB3.0 host, 5V/1.5A power output|
+|9|Type-C|Alt Mode Type-C|Supports USB3.2 host and DP1.4|
+|10|5577|I/O OUT|12V: 12V/3A power output|
+
+You can directly access the development computer by connecting a Type-C to HDMI adapter to port 9 (adapter not included, requires separate purchase). This allows you to connect a monitor and keyboard to the development computer.
+
+The recommended method for accessing the development computer is connecting an external computer (like a development laptop) via Ethernet using port 4 or 5.
+
 # Conectando no robô com Ethernet
 
 Conecte o cabo Ethernet na interface do G1 e no computador host:
@@ -16,6 +38,7 @@ Conecte o cabo Ethernet na interface do G1 e no computador host:
 SER9 Ethernet port  <--- Ethernet cable --->  G1 PC2 Ethernet port
 192.168.123.x                                 192.168.123.164
 ```
+
 
 The G1 Ethernet IP is fixed at `192.168.123.164`. 
 SSH user is `unitree`, password is `123`.

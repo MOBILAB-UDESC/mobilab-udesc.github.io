@@ -2,7 +2,7 @@
 
 1. [[1 - Unitree G1 - ligando o robô]]
 2. [[2 - Unitree G1 - conectando no robô com Ethernet]]
-3. [[3 - Unitree G1 - host setup]]
+3. [[4 - Unitree G1 - host setup]]
 
 
 
@@ -12,6 +12,7 @@ Unitree G1 Guides
 - https://support.unitree.com/home/en/G1_developer/about_G1
 - https://github.com/unitreerobotics/unitree_guide
 - https://docs.quadruped.de/projects/g1
+- https://docs.westonrobot.com/tutorial/unitree/g1_dev_guide/
 
 Unitree G1 Control
 - https://github.com/unitreerobotics/unitree_ros2
