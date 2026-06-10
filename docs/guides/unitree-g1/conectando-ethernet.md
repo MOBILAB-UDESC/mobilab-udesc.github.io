@@ -1,5 +1,5 @@
 ---
-title: Conectando no Robo com Ethernet
+title: Conectando no Robô com Ethernet
 ---
 
 Antes de começar.
@@ -12,12 +12,12 @@ For G1 robot, the network devices are assigned the following IP addresses:
 | Development Computer | 192.168.123.164 | 255.255.255.0 | unitree/123 |
 | Livx Mid-360 Lidar | 192.168.123.20 | 255.255.255.0 | N/A |
 
-O computador que vamos acessar com ssh e o PC 2.
-Porem, em varias operacoes nos vamos ler dados do G1 MCU.
+O computador que vamos acessar com ssh é o PC 2.
+Porém, em várias operações nós vamos ler dados do G1 MCU.
 
 The carrier board provides the following interfaces:
 
-<img src="/img/2-unitree-g1-conectando-no-robo-com-ethernet-1779642511461.webp" alt="Interfaces da carrier board do Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/carrier-board-interfaces.webp" alt="Interfaces da carrier board do Unitree G1" width="500" />
 
 | No. | Connector Name | Interface Description | Interface specification |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@ You can directly access the development computer by connecting a Type-C to HDMI 
 
 The recommended method for accessing the development computer is connecting an external computer (like a development laptop) via Ethernet using port 4 or 5.
 
-## Conectando no robo com Ethernet
+## Conectando no robô com Ethernet
 
 Conecte o cabo Ethernet na interface do G1 e no computador host:
 

@@ -1,16 +1,16 @@
 ---
 id: index
 title: Unitree G1
-slug: /unitree-g1/
+slug: /guides/unitree-g1/
 ---
 
 > Antes de começar, [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!
 
-1. [Ligando o robo](/unitree-g1/ligando-o-robo)
-2. [Conectando no robo com Ethernet](/unitree-g1/conectando-ethernet)
-3. [Host setup](/unitree-g1/host-setup)
+1. [Ligando o robô](/guides/unitree-g1/ligando-o-robo)
+2. [Conectando no robô com Ethernet](/guides/unitree-g1/conectando-ethernet)
+3. [Host setup](/guides/unitree-g1/host-setup)
 
-## Referencias
+## Referências
 
 Unitree G1 Guides
 

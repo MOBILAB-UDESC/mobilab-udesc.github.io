@@ -1,5 +1,5 @@
 ---
-title: Ativando Wi-Fi no Robo
+title: Ativando Wi-Fi no Robô
 ---
 
 Facilita para fazer ssh direto por wifi e para instalar pacotes.

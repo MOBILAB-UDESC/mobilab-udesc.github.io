@@ -1,11 +1,11 @@
 ---
-title: Controlando o Robo pelo SDK
+title: Controlando o Robô pelo SDK
 ---
 
-Antes de executar qualquer comando remotamente, precisamos colocar o robo no estado correto. Como estamos usando um Unitree G1 EDU+ com controle R3-1, faca:
+Antes de executar qualquer comando remotamente, precisamos colocar o robô no estado correto. Como estamos usando um Unitree G1 EDU+ com controle R3-1, faça:
 
-- L2 + B para colocar o robo em dumping.
-- L2 + UP para colocar o robo em ready.
+- L2 + B para colocar o robô em dumping.
+- L2 + UP para colocar o robô em ready.
 - R2 + A para entrar em motion state.
 - Start para toggle stand/walk.
 

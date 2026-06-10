@@ -1,5 +1,5 @@
 ---
-title: Teleoperacao
+title: Teleoperação
 ---
 
 Target architecture:
@@ -144,7 +144,7 @@ Para usar a RealSense, use a porta USB 9.
 - https://support.unitree.com/home/en/G1_developer
 - https://github.com/unitreerobotics/xr_teleoperate/wiki/Camera_and_Image
 
-<img src="/img/pasted-image-20260606144952.png" alt="Porta USB do Unitree G1 para camera" width="500" />
+<img src="/img/guides/unitree-g1/camera-usb-port.png" alt="Porta USB do Unitree G1 para câmera" width="500" />
 
 ```text
 $ rs-enumerate-devices

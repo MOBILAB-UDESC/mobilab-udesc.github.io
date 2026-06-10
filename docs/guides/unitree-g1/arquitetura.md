@@ -1,10 +1,10 @@
 ---
-title: Conhecendo a Arquitetura do Robo
+title: Conhecendo a Arquitetura do Robô
 ---
 
 The Unitree proprietary software stack runs on the onboard locomotion computer. It is responsible for low-level control of the robot, including motor control, sensor data processing, and communication with the development computer. It exposes a set of APIs for users to interact with the robot using the CycloneDDS middleware. The `unitree_sdk2` allows you to talk with the locomotion computer directly using DDS. Since CycloneDDS and ROS2 are compatible at the DDS level, you can also use the ROS2 package `unitree_ros2` to communicate with the robot. The relationship between the different software components is illustrated in the diagram below:
 
-<img src="/img/5-unitree-g1-arquitetura-1779642811598.webp" alt="Arquitetura de software do Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/software-architecture.webp" alt="Arquitetura de software do Unitree G1" width="500" />
 
 The `unitree_sdk2` C++ library and `unitree_ros2` ROS2 package are used to access the robot "built-in" functionalities. **From the programming perspective, the robotic hands and other peripherals such as the Livox Lidar are treated as third-party add-ons. As a result, you will have to set up the driver for each peripheral separately.**
 
@@ -12,7 +12,7 @@ Another concept you may encounter when working with the SDK or ROS driver is the
 
 With the high-level and low-level control concept in mind, you may have realized that there are possibilities when conflicting commands are sent to the robot. For example, if both Unitree's locomotion controller and your own controller are trying to control the same joint, the result may be unpredictable. This may be better safeguarded by the Unitree software in future releases. For now, you should be mindful of this issue and implement your control behavior carefully.
 
-<img src="/img/5-unitree-g1-arquitetura-1779642973724.webp" alt="Fluxo de controle do Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/control-flow.webp" alt="Fluxo de controle do Unitree G1" width="500" />
 
 Unitree provides a way to disable its locomotion controller by getting the robot into **Debug Mode**. This allows user to take full control of the robot.
 
@@ -20,9 +20,9 @@ Unitree provides a way to disable its locomotion controller by getting the robot
 - Now press L2 + A, G1 will enter the position mode and pose a specific diagnostic position.
 - You can press L2 + B to let G1 to enter the damping state again. You may use this to confirm whether G1 has successfully entered debug mode.
 
-<img src="/img/5-unitree-g1-arquitetura-1779643010598.webp" alt="Controle remoto do Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/remote-controller.webp" alt="Controle remoto do Unitree G1" width="500" />
 
-<img src="/img/5-unitree-g1-arquitetura-1779643015168.webp" alt="Modo de debug do Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/debug-mode.webp" alt="Modo de debug do Unitree G1" width="500" />
 
 ## Run the First Example
 
@@ -30,4 +30,4 @@ With the background information described in the previous sections, you should b
 
 You can run this example on the development computer or on an external computer. The following diagram illustrates the two options:
 
-<img src="/img/5-unitree-g1-arquitetura-1779643233395.webp" alt="Opcoes de execucao de exemplos no Unitree G1" width="500" />
+<img src="/img/guides/unitree-g1/example-execution-options.webp" alt="Opções de execução de exemplos no Unitree G1" width="500" />
