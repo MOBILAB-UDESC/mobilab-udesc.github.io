@@ -2,6 +2,7 @@
 
 const config = {
   title: 'MobiLab Wiki',
+  themes: ['@docusaurus/theme-mermaid'],
   tagline: 'Documentação do MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) da UDESC Joinville.',
   favicon: 'img/mobilab/mobilab-logo.png',
   url: 'https://mobilab-udesc.github.io',
@@ -43,6 +44,9 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      mermaid: {
+        theme: { light: 'default', dark: 'dark' },
+      },
       navbar: {
         title: 'MobiLab UDESC',
         logo: {
