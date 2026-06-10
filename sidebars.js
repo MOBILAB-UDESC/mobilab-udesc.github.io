@@ -33,6 +33,7 @@ const sidebars = {
             'guides/unitree-g1/arquitetura',
             'guides/unitree-g1/controlando-pelo-sdk',
             'guides/unitree-g1/teleoperacao',
+            'guides/unitree-g1/referencias',
           ],
         },
       ],
