@@ -1,101 +1,41 @@
 ---
-title: Teleoperação
+title: Teleoperação do G1
 ---
 
-Target architecture:
 
-```text
-Quest 3 browser
-  |
-  | Wi-Fi
-  v
-Wi-Fi router/AP
-  |
-  | Ethernet LAN, same subnet preferred
-  |
-  +-- Ubuntu host
-  |     enp194s0 = 192.168.123.X
-  |     runs xr_teleoperate / Vuer / SDK2 DDS
-  |
-  +-- Unitree G1 PC2
-        usually 192.168.123.164
-        runs teleimager camera server
+Os scripts de teleoperação estão no [repositório unitree-g1](https://github.com/MOBILAB-UDESC/unitree-g1).
+
+A configuração ao final desse tutorial ficará como exemplificado no diagrama abaixo:
+
+```mermaid
+flowchart TD
+    Q["Quest 3 browser"]
+    R["Roteador Wi-Fi"]
+    H["Host Ubuntu<br/>enp194s0 = 192.168.123.X<br/>xr_teleoperate/Vuer/SDK2 DDS"]
+    P["Unitree G1 PC2<br/>192.168.123.164<br/>teleimager camera server"]
+
+    Q -->|Wi-Fi| R
+    R -->|Ethernet LAN| H
+    R -->|Ethernet LAN| P
 ```
 
-Teleoperation scripts are stored in the main Unitree G1 repository:
+## Configuração do roteador
 
-https://github.com/MOBILAB-UDESC/unitree-g1
+Baseado na documentação do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate):
 
-## Configuring Meta Quest 3
+- [Router device](https://github.com/unitreerobotics/xr_teleoperate/wiki/Router_Device)
+- [Network](https://github.com/unitreerobotics/xr_teleoperate/wiki/Network)
 
-https://github.com/unitreerobotics/xr_teleoperate/wiki/XR_Device
-
-Enable Developer Mode for the Quest 3 in the Meta Horizon mobile app:
-
-```text
-Devices -> your Quest 3 -> Headset settings -> Developer Mode -> ON
-```
-
-## Install adb on the host computer
-
-```sh
-apt-get install adb
-```
-
-List devices:
-
-```text
-sudo adb devices
-List of devices attached
-2G0YC5ZG6P005M  unauthorized
-```
-
-1. Put on the Quest 3 while it is plugged in.
-2. Look for the prompt: Allow USB debugging?
-3. Select Always allow from this computer if available.
-4. Press Allow.
-5. Run `sudo adb devices` again.
-
-Expected:
-
-```text
-2G0YC5ZG6P005M    device
-```
-
-Start ADB port reverse forwarding by executing:
-
-```sh
-sudo adb -s 2G0YC5ZG6P005M reverse tcp:8012 tcp:8012
-```
-
-You can verify the result using:
-
-```shell
-$ sudo adb -s 2G0YC5ZG6P005M reverse --list
-UsbFfs tcp:8012 tcp:8012
-```
-
-Configure local HTTPS using a self-signed certificate, this step functions the same as [2.2.3 create certificate](https://github.com/unitreerobotics/avp_teleoperate):
-
-```shell
-$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out cert.pem
-```
-
-## Configuring router
-
-Based on:
-
-- https://github.com/unitreerobotics/xr_teleoperate/wiki/Router_Device
-- https://github.com/unitreerobotics/xr_teleoperate/wiki/Network
-
-Good expected Wi-Fi condition:
+Condições ideais de Wi-Fi:
 
 - 5GHz
-- 80MHz or 160MHz width
-- signal around -50 dBm or better
-- low channel overlap
+- Largura de 80MHz ou 160MHz
+- Sinal em torno de -50 dBm ou melhor
+- Pouca sobreposição de canais
 
-Add to file `packages/unitree_sdk2_python/unitree_sdk2py/core/channel_config.py`:
+## Configuração no host
+
+Adicione ao arquivo `packages/unitree_sdk2_python/unitree_sdk2py/core/channel_config.py`:
 
 ```python
 ChannelConfigAutoDetermine = '''<?xml version="1.0"?>
@@ -118,26 +58,240 @@ ChannelConfigAutoDetermine = '''<?xml version="1.0"?>
 </CycloneDDS>'''
 ```
 
-This change matters because your PC has multiple network interfaces on the same subnet:
+Esta configuração é necessária porque o PC tem múltiplas interfaces de rede na mesma sub-rede:
 
 - `enp194s0 = 192.168.123.2`
 - `wlp195s0 = 192.168.123.106`
 
-Without explicit DDS config, discovery can pick the wrong interface or route inconsistently.
+Sem a configuração explícita do DDS, a descoberta pode escolher a interface errada ou rotear inconsistentemente.
 
-Setup Plan:
+## Configuração do Meta Quest 3
 
-1. Confirm the router model and that it supports Wi-Fi 6 or better.
-2. Configure router 5GHz as described above.
-3. Connect your PC to the router Wi-Fi.
-4. Connect Quest 3 to the same 5GHz router Wi-Fi.
-5. Keep robot/network devices on the same `192.168.123.x` network.
-6. Apply the guide's `channel_config.py` change in the local vendored SDK.
-7. Reinstall/editable sync if needed: `uv pip install -e packages/unitree_sdk2_python`.
-8. Verify Python SDK still imports: `uv run python -c "import cyclonedds, unitree_sdk2py; print('ok')"`.
-9. Test robot discovery using the known interface: `uv run python scripts/g1_monitor_fsm.py enp194s0`.
+Baseado nas instruções do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate/wiki/XR_Device).
 
-## Add Unitree camera
+Ative o Modo Desenvolvedor no aplicativo Meta Horizon:
+
+```text
+Dispositivos -> seu Quest 3 -> Configurações do headset -> Modo Desenvolvedor -> ATIVADO
+```
+
+### Instalar `adb` no host
+
+```sh
+apt-get install adb
+```
+
+Liste os dispositivos:
+
+```text
+sudo adb devices
+List of devices attached
+2G0YC5ZG6P005M  unauthorized
+```
+
+1. Coloque o Quest 3 enquanto ele está conectado via USB.
+2. Procure pelo alerta: _Allow USB debugging_?
+3. Selecione _Always allow from this computer_ se disponível.
+4. Pressione _Allow_.
+5. Execute `sudo adb devices` novamente.
+
+Saída esperada:
+
+```text
+2G0YC5ZG6P005M    device
+```
+
+Inicie o redirecionamento de porta:
+
+```sh
+sudo adb -s 2G0YC5ZG6P005M reverse tcp:8012 tcp:8012
+```
+
+Verifique o resultado:
+
+```sh
+sudo adb -s 2G0YC5ZG6P005M reverse --list
+```
+
+Saída esperada:
+
+```text
+UsbFfs tcp:8012 tcp:8012
+```
+
+### Configurar o certificado HTTPS
+
+Gere um certificado autoassinado ([baseado na documentação da unitree](https://github.com/unitreerobotics/avp_teleoperate)):
+
+```sh
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out cert.pem
+```
+
+## Configuração do Host
+
+Siga as instruções do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate). Siga as instruções de instalação. Embora estejamos usando `uv`, para o XR teleoperate siga as recomendações do conda:
+
+https://github.com/unitreerobotics/xr_teleoperate#1--installation
+
+## Configuração do PC2 (Unitree)
+
+### Copiar certificados
+
+Use SSH para criar o diretório de configuração no PC2 e copie os arquivos:
+
+```sh
+ssh unitree@192.168.123.164 'mkdir -p ~/.config/xr_teleoperate'
+scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/.config/xr_teleoperate/
+```
+
+Verifique no PC2:
+
+```sh
+ssh unitree@192.168.123.164 'ls -l ~/.config/xr_teleoperate/'
+```
+
+Saída esperada:
+
+```text
+cert.pem
+key.pem
+```
+
+Se o diretório `teleimager` no PC2 também esperar os arquivos diretamente:
+
+```sh
+scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/teleimager/
+```
+
+### Instalar pacotes no PC2
+
+Estas notas resumem a instalação realizada nesta máquina para que possa ser reproduzida em outro sistema Ubuntu estilo Unitree/Jetson.
+
+#### 1. Instalar Miniconda
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O /tmp/miniconda.sh
+bash /tmp/miniconda.sh -b -u -p /home/unitree/miniconda3
+rm /tmp/miniconda.sh
+```
+
+Se o Conda exigir aceitação dos Termos de Serviço do canal:
+
+```bash
+/home/unitree/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+/home/unitree/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+```
+
+Inicialize o Conda para bash:
+
+```bash
+/home/unitree/miniconda3/bin/conda init bash
+source ~/.bashrc
+```
+
+#### 2. Criar ambiente teleimager
+
+```bash
+/home/unitree/miniconda3/bin/conda create -n teleimager python=3.10 -y
+conda activate teleimager
+```
+
+#### 3. Instalar pacotes do sistema
+
+`libusb-1.0-0-dev` já estava instalado. `libturbojpeg-dev` não foi instalado porque o sudo exigia senha interativa.
+
+Execute com acesso sudo:
+
+```bash
+sudo apt update
+sudo apt install -y libusb-1.0-0-dev libturbojpeg-dev
+```
+
+#### 4. Instalar Tele Imager
+
+O repositório já existia em `/home/unitree/teleimager`.
+
+```bash
+cd /home/unitree/teleimager
+/home/unitree/miniconda3/envs/teleimager/bin/python -m pip install -e ".[server]"
+```
+
+#### 5. Correção de dependência
+
+A versão atual do pacote `logging_mp` expõe `getLogger`, mas o Tele Imager `1.5.0` chama `get_logger`. Isso fazia tanto o `teleimager-server` quanto o `teleimager-client` falharem na inicialização.
+
+O `pyproject.toml` local foi atualizado de:
+
+```toml
+"logging_mp",
+```
+
+para:
+
+```toml
+"logging_mp==0.1.6",
+```
+
+Em seguida, a instalação editável foi atualizada:
+
+```bash
+cd /home/unitree/teleimager
+/home/unitree/miniconda3/envs/teleimager/bin/python -m pip install -e ".[server]"
+```
+
+#### 6. Permissões UVC
+
+O usuário já está no grupo `video`, mas a regra udev do UVC não foi instalada porque o sudo exigia senha interativa.
+
+Execute com acesso sudo:
+
+```bash
+cd /home/unitree/teleimager
+bash setup_uvc.sh
+```
+
+Isso instala `/etc/udev/rules.d/10-libuvc.rules`, recarrega as regras udev e tenta recarregar o driver `uvcvideo`.
+
+#### 7. Verificação
+
+Verifique se os comandos estão disponíveis:
+
+```bash
+/home/unitree/miniconda3/envs/teleimager/bin/teleimager-server --help
+/home/unitree/miniconda3/envs/teleimager/bin/teleimager-client --help
+```
+
+Execute a descoberta de câmera:
+
+```bash
+cd /home/unitree/teleimager
+/home/unitree/miniconda3/envs/teleimager/bin/python -m teleimager.image_server --cf
+```
+
+O comando executou com sucesso. Pode exibir este log se o `setup_uvc.sh` não tiver sido executado:
+
+```text
+Failed to reload driver: Command 'sudo modprobe -r uvcvideo' returned non-zero exit status 1.
+```
+
+Este erro é da etapa de recarga do driver (apenas sudo); a descoberta continua funcionando.
+
+#### 9. Uso típico
+
+```bash
+source ~/.bashrc
+conda activate teleimager
+cd /home/unitree/teleimager
+teleimager-server --cf
+```
+
+Após preencher o `cam_config_server.yaml`, inicie o servidor:
+
+```bash
+teleimager-server
+```
+
+## Adicionar Câmera
 
 Para usar a RealSense, use a porta USB 9.
 
@@ -147,7 +301,7 @@ Para usar a RealSense, use a porta USB 9.
 <img src="/img/guides/unitree-g1/camera-usb-port.png" alt="Porta USB do Unitree G1 para câmera" width="500" />
 
 ```text
-$ rs-enumerate-devices
+rs-enumerate-devices
 Device info:
     Name                          : Intel RealSense D435I
     Serial Number                 : 406122071162
@@ -160,209 +314,9 @@ Device info:
     Camera Locked                 : YES
 ```
 
-## Host config
+#### 8. Nota sobre RealSense
 
-Following https://github.com/unitreerobotics/xr_teleoperate
+O modo RealSense requer `pyrealsense2`. As wheels pip disponíveis para `pyrealsense2` em `aarch64` exigiam `GLIBC_2.32`, mas o sistema Ubuntu do G1 tem GLIBC mais antigo. Versões testadas incluíram `2.58.1.10581` e `2.55.1.6486`; ambas falharam com o mesmo requisito de GLIBC.
 
-Install the packages in the Unitree G1 project:
+Para usar `teleimager-server --cf --rs` ou `teleimager-server --rs`, compile/instale `librealsense` e suas bindings Python localmente no sistema em vez de usar a wheel pip.
 
-```sh
-git submodule add https://github.com/unitreerobotics/xr_teleoperate.git packages/xr_teleoperate
-git submodule update --init --recursive
-```
-
-Follow the installations. Although we have been using uv, for the XR teleoperate follow the conda recommendations:
-
-https://github.com/unitreerobotics/xr_teleoperate#1--installation
-
-## Unitree config
-
-### Copy keys
-
-Use ssh to create the config directory on PC2, then scp both files.
-
-From your host:
-
-```sh
-ssh unitree@192.168.123.164 'mkdir -p ~/.config/xr_teleoperate'
-scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/.config/xr_teleoperate/
-```
-
-Then verify on PC2:
-
-```sh
-ssh unitree@192.168.123.164 'ls -l ~/.config/xr_teleoperate/'
-```
-
-Expected:
-
-```text
-cert.pem
-key.pem
-```
-
-If PC2's teleimager directory also expects the files directly there:
-
-```sh
-scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/teleimager/
-```
-
-### Install packages
-
-These notes summarize the installation performed on this machine so it can be reproduced on another Unitree/Jetson-style Ubuntu system.
-
-Environment:
-
-- Machine architecture: `aarch64`
-- Kernel/platform: NVIDIA Tegra / Jetson-style Ubuntu
-- Repository path: `/home/unitree/teleimager`
-- Conda install path: `/home/unitree/miniconda3`
-- Conda environment: `teleimager`
-- Python version: `3.10`
-
-#### 1. Install Miniconda
-
-```bash
-mkdir -p /tmp/opencode
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh -O /tmp/opencode/miniconda.sh
-bash /tmp/opencode/miniconda.sh -b -u -p /home/unitree/miniconda3
-rm /tmp/opencode/miniconda.sh
-```
-
-If Conda requires channel Terms of Service acceptance, run:
-
-```bash
-/home/unitree/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
-/home/unitree/miniconda3/bin/conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
-```
-
-Initialize Conda for bash:
-
-```bash
-/home/unitree/miniconda3/bin/conda init bash
-source ~/.bashrc
-```
-
-#### 2. Create Tele Imager Environment
-
-```bash
-/home/unitree/miniconda3/bin/conda create -n teleimager python=3.10 -y
-conda activate teleimager
-```
-
-#### 3. Install System Packages
-
-`libusb-1.0-0-dev` was already installed on this machine. `libturbojpeg-dev` was not installed because sudo required an interactive password prompt.
-
-Run this locally with sudo access:
-
-```bash
-sudo apt update
-sudo apt install -y libusb-1.0-0-dev libturbojpeg-dev
-```
-
-If needed, refresh the keys for apt:
-
-```bash
-sudo apt install curl gnupg -y
-curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo gpg --dearmor -o /tmp/ros-archive-keyring.gpg
-sudo mv /tmp/ros-archive-keyring.gpg /usr/share/keyrings/ros-archive-keyring.gpg
-curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
-sudo apt update
-```
-
-#### 4. Install Tele Imager
-
-The repository already existed at `/home/unitree/teleimager`.
-
-```bash
-cd /home/unitree/teleimager
-/home/unitree/miniconda3/envs/teleimager/bin/python -m pip install -e ".[server]"
-```
-
-#### 5. Dependency Fix Applied
-
-The current latest `logging_mp` package exposes `getLogger`, but Tele Imager `1.5.0` calls `get_logger`. This caused both `teleimager-server` and `teleimager-client` to fail at startup.
-
-The local `pyproject.toml` was updated from:
-
-```toml
-"logging_mp",
-```
-
-to:
-
-```toml
-"logging_mp==0.1.6",
-```
-
-Then the editable install was refreshed:
-
-```bash
-cd /home/unitree/teleimager
-/home/unitree/miniconda3/envs/teleimager/bin/python -m pip install -e ".[server]"
-```
-
-#### 6. UVC Permissions
-
-The user is already in the `video` group, but the UVC udev rule was not installed because sudo required an interactive password prompt.
-
-Run this locally with sudo access:
-
-```bash
-cd /home/unitree/teleimager
-bash setup_uvc.sh
-```
-
-This installs `/etc/udev/rules.d/10-libuvc.rules`, reloads udev rules, and attempts to reload the `uvcvideo` driver.
-
-#### 7. Verification
-
-Verify command availability:
-
-```bash
-/home/unitree/miniconda3/envs/teleimager/bin/teleimager-server --help
-/home/unitree/miniconda3/envs/teleimager/bin/teleimager-client --help
-```
-
-Run camera discovery:
-
-```bash
-cd /home/unitree/teleimager
-/home/unitree/miniconda3/envs/teleimager/bin/python -m teleimager.image_server --cf
-```
-
-The command ran successfully. It may still log this if `setup_uvc.sh` has not been run:
-
-```text
-Failed to reload driver: Command 'sudo modprobe -r uvcvideo' returned non-zero exit status 1.
-```
-
-That error is from the sudo-only driver reload step; discovery can still continue.
-
-#### 8. RealSense Note
-
-An Intel RealSense D435i was detected in normal discovery at one point. RealSense mode requires `pyrealsense2`.
-
-The available pip wheels for `pyrealsense2` on `aarch64` required `GLIBC_2.32`, but this Ubuntu system has an older GLIBC. Tested versions included `2.58.1.10581` and `2.55.1.6486`; both failed with the same GLIBC requirement.
-
-For `teleimager-server --cf --rs` or `teleimager-server --rs`, build/install `librealsense` and its Python bindings locally against this system instead of using the pip wheel.
-
-#### 9. Typical Usage
-
-```bash
-source ~/.bashrc
-conda activate teleimager
-cd /home/unitree/teleimager
-teleimager-server --cf
-```
-
-After filling `cam_config_server.yaml`, start the server:
-
-```bash
-teleimager-server
-```
-
-## Local teleimager changes
-
-The local notes include edits to `cam_config_server.yaml` and `pyproject.toml` for OpenCV camera mode, disabled wrist camera streaming, and `logging_mp==0.1.6`. Keep those changes in the teleimager repository when reproducing the setup.

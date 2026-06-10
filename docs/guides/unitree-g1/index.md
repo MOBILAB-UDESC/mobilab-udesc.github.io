@@ -8,7 +8,7 @@ slug: /guides/unitree-g1/
 
 ## Guias
 
-1. [Ligando o robô](/guides/unitree-g1/ligando-o-robo)
+1. [Ligando o robô e conhecendo a arquitetura](/guides/unitree-g1/introducao)
 2. [Conectando ao robô com Ethernet](/guides/unitree-g1/conectando-ethernet)
 3. [Ativando WiFi](/guides/unitree-g1/ativando-wifi)
 4. [Host setup](/guides/unitree-g1/host-setup)

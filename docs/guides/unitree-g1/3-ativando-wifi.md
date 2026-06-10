@@ -1,5 +1,5 @@
 ---
-title: Ativando Wi-Fi no Robô
+title: Ativando Wi-Fi no G1
 ---
 
 Ativar o Wi-Fi no G1 permite acesso SSH sem cabo Ethernet e facilita a instalação de pacotes.

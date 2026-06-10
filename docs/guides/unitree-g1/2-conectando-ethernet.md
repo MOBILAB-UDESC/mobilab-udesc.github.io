@@ -1,41 +1,6 @@
 ---
-title: Conectando ao Robô com Ethernet
+title: Conectando com ethernet
 ---
-
-Os dispositivos de rede do G1 usam os seguintes endereços IP:
-
-| Dispositivo | IP | Máscara | Usuário/Senha |
-| --- | --- | --- | --- |
-| Computador de Locomoção | `192.168.123.161` | 255.255.255.0 | não aberto ao usuário |
-| Computador de Desenvolvimento (PC2) | `192.168.123.164` | 255.255.255.0 | unitree/123 |
-| LiDAR Livox Mid-360 | `192.168.123.20` | 255.255.255.0 | N/A |
-| G1 MCU | — | — | acessado via Computador de Locomoção |
-
-O **Computador de Desenvolvimento (PC2)** é o que acessamos via SSH.
-O **G1 MCU** é o microcontrolador de baixo nível das juntas e motores e não possui IP próprio, os dados são lidos através do Computador de Locomoção via protocolo DDS.
-
-O robô oferece as seguintes interfaces:
-
-<img src="/img/guides/unitree-g1/carrier-board-interfaces.webp" alt="Interfaces da carrier board do Unitree G1" width="500" />
-
-| Nº | Conector | Descrição | Especificação |
-| --- | --- | --- | --- |
-| 1 | XT30UPB-F | VBAT | Saída de bateria 58V/5A (conectado diretamente à bateria) |
-| 2 | XT30UPB-F | 24V | Saída 24V/5A |
-| 3 | XT30UPB-F | 12V | Saída 12V/5A |
-| 4 | RJ45 | 1000 BASE-T | GbE (gigabit Ethernet) |
-| 5 | RJ45 | 1000 BASE-T | GbE (gigabit Ethernet) |
-| 6 | Type-C | Type-C | USB 3.0 host, saída 5V/1.5A |
-| 7 | Type-C | Type-C | USB 3.0 host, saída 5V/1.5A |
-| 8 | Type-C | Type-C | USB 3.0 host, saída 5V/1.5A |
-| 9 | Type-C | Alt Mode Type-C | USB 3.2 host e DP1.4 |
-| 10 | 5577 | I/O OUT | 12V: saída 12V/3A |
-
-É possível acessar o computador de desenvolvimento conectando um adaptador Type-C para HDMI na porta 9 para usar um monitor e teclado.
-
-O método recomendado é conectar um computador externo via Ethernet usando as portas 4 ou 5.
-
-## Conectando via Ethernet
 
 Conecte o cabo Ethernet na interface do G1 e no computador host:
 
@@ -174,4 +139,14 @@ No computador host:
 ```sh
 script -a ~/logs/g1_$(date +%Y%m%d_%H%M%S).txt
 ssh g1
+```
+
+### Se precisar atualizar as chaves do apt no PC2 do Unitree
+
+```bash
+sudo apt install curl gnupg -y
+curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo gpg --dearmor -o /tmp/ros-archive-keyring.gpg
+sudo mv /tmp/ros-archive-keyring.gpg /usr/share/keyrings/ros-archive-keyring.gpg
+curl -fsSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo apt update
 ```

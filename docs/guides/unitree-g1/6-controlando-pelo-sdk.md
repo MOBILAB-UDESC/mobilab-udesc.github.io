@@ -1,71 +1,82 @@
 ---
-title: Controlando o Robô pelo SDK
+title: Controlando o G1 pelo SDK
 ---
 
-Antes de executar qualquer comando remotamente, precisamos colocar o robô no estado correto. Como estamos usando um Unitree G1 EDU+ com controle R3-1, faça:
+## Execute o Primeiro Exemplo
 
-- L2 + B para colocar o robô em dumping.
-- L2 + UP para colocar o robô em ready.
-- R2 + A para entrar em motion state.
-- Start para toggle stand/walk.
+Com as informações das seções anteriores, é possível começar a rodar experimentos no robô!
 
----
+Usaremos o exemplo [Quick Development](https://support.unitree.com/home/en/G1_developer/quick_development) fornecido pela Unitree como estudo de caso. Este exemplo demonstra como executar o controle de baixo nível de balanço do tornozelo (`g1_ankle_swing_example`) da biblioteca `unitree_sdk2` no robô G1.
 
-## Safe controller sequence
+Consulte a página oficial para instruções detalhadas. Esta seção fornece informações complementares para ajudar você a relacionar o exemplo com os conceitos discutidos nas seções anteriores.
 
-1. Confirm controller link.
-2. Keep joysticks centered.
-3. Do not press L2 + B again.
-4. Enter ready state.
-5. Enter motion state.
-6. Toggle stand/walk.
-7. Test motion minimally.
+Você pode executar este exemplo no computador de desenvolvimento (PC2) ou em um computador externo (host).
 
-Details:
+### 1. Coloque o G1 no estado correto
 
-- Remote is powered on.
-- Right "DL" indicator is on. The G1 manual says this indicates the remote is connected to the robot's data transmission module.
-- Do not touch the sticks while switching states.
-- Have one person near the robot, ready to support it at the shoulders.
-- Use the safety rope or support frame if available.
-- On R3-1 / newer G1 docs, L2 + B is damping mode. It is the soft emergency stop.
-- Use L2 + B only if the robot becomes unstable or enters an unexpected state.
-- For ready state: hold L2, tap UP, and release both.
-- Expected ready result: the robot should move into a neutral ready posture.
-- For motion state: press R2 + A.
-- Expected motion result: the control program starts, and G1 transitions from ready state to motion state.
-- For stand/walk: press START once.
-- Left stick: tiny forward/back or lateral input.
-- Right stick: tiny yaw input.
-- Release sticks immediately and verify it stops.
+Use o controle R3-1 para colocar o robô no estado de motion:
 
-## Practical state machine
+- `L2 + B` para colocar em damping
+- `L2 + UP` para ready
+- `R2 + A` para motion state
+- `Start` para alternar entre parado e andando
 
-```text
-Zero torque / booted
-        |
-        |  L2 + B  only if needed to enter damping/unlock
-        v
-Damping
-        |
-        |  L2 + UP
-        v
-Ready / neutral posture
-        |
-        |  R2 + A
-        v
-Motion state
-        |
-        |  START
-        v
-Stand <-> walk toggle
+Abra um terminal (A) e inicie o monitor de FSM para acompanhar os estados:
+
+```sh
+uv run python scripts/g1_monitor_fsm.py enp194s0
 ```
 
-## Important mismatch to know
+Teste o movimento minimamente com o controle:
 
-Older G1 manuals mention L1 + A for damping, L1 + UP for ready, and R2 + X or R1 + X for operation control. Your R3-1 mapping is different: damping is L2 + B, ready is L2 + UP, and motion start is R2 + A. Use the controller sticker / R3-1 mapping over the older manual.
+- Joystick esquerdo: leve entrada para frente/trás ou lateral
+- Joystick direito: leve entrada de rotação
+- Solte os joysticks imediatamente e verifique se o robô para
 
-## Run the demo
+O estado confirmado para executar ações nos braços é:
 
-- https://github.com/MOBILAB-UDESC/unitree-g1#2-run-the-host-demo
-- https://support.unitree.com/home/en/developer/Get_remote_control_status
+```text
+fsm_id=(0, 801) fsm_mode=(0, 0)
+```
+
+### 2. Execute o exemplo no host
+
+Com o terminal A mostrando um estado válido para ações nos braços, execute o exemplo no terminal B:
+
+```sh
+uv run python scripts/g1_action_arm_wave.py enp194s0 --execute
+```
+
+Este comando envia `release arm` seguido de `high wave`.
+
+Códigos de retorno esperados:
+
+```text
+release arm: code=0
+high wave: code=0
+```
+
+Se o comando retornar `7404`, volte ao terminal A e verifique o FSM. O robô não está no estado `500`, `501` ou `801` válido.
+
+### Diagnóstico de erros
+
+Códigos de retorno comuns observados durante testes:
+
+| Código | Significado |
+|--------|-------------|
+| `0` | Sucesso |
+| `3203` | API não implementada pelo firmware/serviço do robô |
+| `7004` | Mudança de modo do motion switcher rejeitada |
+| `7400` | `rt/arm_sdk` está ocupado |
+| `7401` | Braço está segurando; envie `release arm` ou repita a ação |
+| `7402` | ID de ação do braço inválido |
+| `7404` | FSM inválido para ação do braço |
+
+### Scripts de referência
+
+Todos os scripts ficam no repositório [MOBILAB-UDESC/unitree-g1](https://github.com/MOBILAB-UDESC/unitree-g1):
+
+- `scripts/g1_monitor_fsm.py` — monitora a máquina de estados do robô
+- `scripts/g1_monitor_lowstate.py` — lê o estado de baixo nível (taxa, mode_machine, motores, IMU)
+- `scripts/g1_monitor_controller.py` — verifica dados do controle R3-1
+- `scripts/g1_action_arm_wave.py` — executa ações programadas nos braços

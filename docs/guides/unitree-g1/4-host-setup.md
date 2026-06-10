@@ -1,5 +1,5 @@
 ---
-title: Configuração do Host
+title: Configuração do computador host
 ---
 
 ## Verificações iniciais
