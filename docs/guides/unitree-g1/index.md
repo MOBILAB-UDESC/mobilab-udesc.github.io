@@ -12,9 +12,8 @@ slug: /guides/unitree-g1/
 2. [Conectando ao robô com Ethernet](/guides/unitree-g1/conectando-ethernet)
 3. [Ativando WiFi](/guides/unitree-g1/ativando-wifi)
 4. [Host setup](/guides/unitree-g1/host-setup)
-5. [Arquitetura](/guides/unitree-g1/arquitetura)
-6. [Controlando pelo SDK](/guides/unitree-g1/controlando-pelo-sdk)
-7. [Teleoperação](/guides/unitree-g1/teleoperacao)
+5. [Controlando pelo SDK](/guides/unitree-g1/controlando-pelo-sdk)
+6. [Teleoperação](/guides/unitree-g1/teleoperacao)
 
 ## Referências
 
