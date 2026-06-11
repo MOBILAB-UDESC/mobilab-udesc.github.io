@@ -85,41 +85,18 @@ The workflow runs on:
 - Pushes to `main`.
 - Manual dispatch from the GitHub Actions tab.
 
-The workflow does:
+## Contributing
 
-1. Checks out this repository.
-2. Installs dependencies with `npm ci`.
-3. Builds the site with `npm run build`.
-4. Uploads `build/` as a GitHub Pages artifact.
-5. Deploys the artifact directly from this repository using GitHub Pages Actions.
+Contributions are welcome. To contribute:
 
-No custom deploy token is required. The workflow uses the repository-provided `GITHUB_TOKEN` with `pages: write` and `id-token: write` permissions.
+1. Fork or clone the repository.
+2. Create a feature branch (`git checkout -b my-feature`).
+3. Make your changes.
+4. Run `npm run build` to verify the site builds without errors.
+5. Commit and push your branch.
+6. Open a pull request describing your changes.
 
-In the repository settings, configure GitHub Pages to use:
-
-```text
-Source: GitHub Actions
-```
-
-## GitHub Pages Target
-
-The Docusaurus config currently builds the site for:
-
-```text
-https://mobilab-udesc.github.io/
-```
-
-with:
-
-```js
-url: 'https://mobilab-udesc.github.io'
-baseUrl: '/'
-```
-
-If the target GitHub Pages repository or organization changes, update both:
-
-- `docusaurus.config.js`
-- `.github/workflows/deploy.yml`
+Always create a pull request, do not push directly to `main`.
 
 ## Content Notes
 
