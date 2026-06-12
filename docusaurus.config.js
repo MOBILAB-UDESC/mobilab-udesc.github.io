@@ -5,7 +5,7 @@ const config = {
   themes: ['@docusaurus/theme-mermaid'],
   tagline: 'Documentação do MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) da UDESC Joinville.',
   favicon: 'img/mobilab/mobilab-logo.png',
-  url: 'https://mobilab-udesc.github.io',
+  url: 'https://mobilab.joinville.udesc.br',
   baseUrl: '/',
   organizationName: 'mobilab-udesc',
   projectName: 'mobilab-udesc.github.io',
