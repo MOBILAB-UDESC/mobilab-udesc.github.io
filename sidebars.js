@@ -24,17 +24,57 @@ const sidebars = {
         {
           type: 'category',
           label: 'Unitree G1',
-          link: {type: 'doc', id: 'guides/unitree-g1/index'},
+          link: {type: 'doc', id: 'guides/G1/index'},
           items: [
-            'guides/unitree-g1/introducao',
-            'guides/unitree-g1/conectando-ethernet',
-            'guides/unitree-g1/ativando-wifi',
-            'guides/unitree-g1/host-setup',
-            'guides/unitree-g1/controlando-pelo-sdk',
-            'guides/unitree-g1/teleoperacao',
-            'guides/unitree-g1/referencias',
+            {
+              type: 'category',
+              label: 'Configuração Inicial',
+              link: {type: 'doc', id: 'guides/G1/configuracao-inicial/index'},
+              items: [
+                'guides/G1/configuracao-inicial/introducao',
+                'guides/G1/configuracao-inicial/conectando-ethernet',
+                'guides/G1/configuracao-inicial/ativando-wifi',
+                'guides/G1/configuracao-inicial/host-setup',
+                'guides/G1/configuracao-inicial/controlando-pelo-sdk',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Teleoperação',
+              link: {type: 'doc', id: 'guides/G1/teleoperacao/index'},
+              items: [
+                {
+                  type: 'category',
+                  label: 'Configuração',
+                  items: [
+                    'guides/G1/teleoperacao/configuracao/configuracao-quest',
+                    'guides/G1/teleoperacao/configuracao/configuracao-host',
+                    'guides/G1/teleoperacao/configuracao/configuracao-pc2',
+                    'guides/G1/teleoperacao/configuracao/checklist',
+                  ],
+                },
+                {
+                  type: 'category',
+                  label: 'Execução',
+                  items: [
+                    'guides/G1/teleoperacao/execucao/via-wifi',
+                    'guides/G1/teleoperacao/execucao/cabeada',
+                  ],
+                },
+              ],
+            },
+            'guides/G1/referencias',
           ],
         },
+        {
+          type: 'category',
+          label: 'Ferramentas',
+          link: {type: 'doc', id: 'guides/Ferramentas/index'},
+          items: [
+            'guides/Ferramentas/extensao-ssh',
+          ],
+        },
+
       ],
     },
   ],

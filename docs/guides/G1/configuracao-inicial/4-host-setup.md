@@ -36,16 +36,32 @@ sudo apt install -y git cmake build-essential net-tools nmap arping ethtool
 Crie o projeto. O SDK Python da Unitree funciona com Python >= 3.8 e requer `cyclonedds==0.10.2` ([referência](https://huggingface.co/docs/lerobot/unitree_g1)):
 
 ```sh
-git clone git@github.com:MOBILAB-UDESC/unitree-g1.git
+# criar o ambiente virtual
+pyenv global 3.10.11
+uv venv
+
+mkdir Developer
+cd Developer
+git clone https://github.com/MOBILAB-UDESC/unitree-g1.git
 cd ~/Developer/unitree-g1
 uv sync
 ```
+
+Baixar o SDK Python da Unitree
+
+```sh
+cd Developer/unitree-g1/packages/
+git clone https://github.com/UnitreeRobotics/unitree_sdk2_python.git
+uv pip install -e unitree_sdk2_python
+```
+
 
 ## Ler dados de estado do robô
 
 Carregue as variáveis de ambiente e execute o monitor de low state:
 
 ```sh
+cd ~/Developer/unitree-g1
 source scripts/g1_config_env.sh
 uv run python scripts/g1_monitor_lowstate.py "enp194s0"
 ```

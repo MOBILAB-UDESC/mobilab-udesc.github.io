@@ -1,150 +1,21 @@
 ---
-title: Teleoperação do G1
+title: Configuração do PC2 (Unitree)
 ---
 
-
-Os scripts de teleoperação estão no [repositório unitree-g1](https://github.com/MOBILAB-UDESC/unitree-g1).
-
-A configuração ao final desse tutorial ficará como exemplificado no diagrama abaixo:
-
-```mermaid
-flowchart TD
-    Q["Quest 3 browser"]
-    R["Roteador Wi-Fi"]
-    H["Host Ubuntu<br/>enp194s0 = 192.168.123.X<br/>xr_teleoperate/Vuer/SDK2 DDS"]
-    P["Unitree G1 PC2<br/>192.168.123.164<br/>teleimager camera server"]
-
-    Q -->|Wi-Fi| R
-    R -->|Ethernet LAN| H
-    R -->|Ethernet LAN| P
-```
-
-## Configuração do roteador
-
-Baseado na documentação do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate):
-
-- [Router device](https://github.com/unitreerobotics/xr_teleoperate/wiki/Router_Device)
-- [Network](https://github.com/unitreerobotics/xr_teleoperate/wiki/Network)
-
-Condições ideais de Wi-Fi:
-
-- 5GHz
-- Largura de 80MHz ou 160MHz
-- Sinal em torno de -50 dBm ou melhor
-- Pouca sobreposição de canais
-
-## Configuração no host
-
-Adicione ao arquivo `packages/unitree_sdk2_python/unitree_sdk2py/core/channel_config.py`:
-
-```python
-ChannelConfigAutoDetermine = '''<?xml version="1.0"?>
-<CycloneDDS>
-  <Domain Id="any">
-    <General>
-      <Interfaces>
-        <NetworkInterface autodetermine="true"/>
-      </Interfaces>
-      <AllowMulticast>spdp</AllowMulticast>
-      <DontRoute>true</DontRoute>
-    </General>
-    <Discovery>
-      <Peers>
-        <Peer Address="192.168.123.161"/>
-        <Peer Address="192.168.123.164"/>
-      </Peers>
-    </Discovery>
-  </Domain>
-</CycloneDDS>'''
-```
-
-Esta configuração é necessária porque o PC tem múltiplas interfaces de rede na mesma sub-rede:
-
-- `enp194s0 = 192.168.123.2`
-- `wlp195s0 = 192.168.123.106`
-
-Sem a configuração explícita do DDS, a descoberta pode escolher a interface errada ou rotear inconsistentemente.
-
-## Configuração do Meta Quest 3
-
-Baseado nas instruções do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate/wiki/XR_Device).
-
-Ative o Modo Desenvolvedor no aplicativo Meta Horizon:
-
-```text
-Dispositivos -> seu Quest 3 -> Configurações do headset -> Modo Desenvolvedor -> ATIVADO
-```
-
-### Instalar `adb` no host
-
-```sh
-apt-get install adb
-```
-
-Liste os dispositivos:
-
-```text
-sudo adb devices
-List of devices attached
-2G0YC5ZG6P005M  unauthorized
-```
-
-1. Coloque o Quest 3 enquanto ele está conectado via USB.
-2. Procure pelo alerta: _Allow USB debugging_?
-3. Selecione _Always allow from this computer_ se disponível.
-4. Pressione _Allow_.
-5. Execute `sudo adb devices` novamente.
-
-Saída esperada:
-
-```text
-2G0YC5ZG6P005M    device
-```
-
-Inicie o redirecionamento de porta:
-
-```sh
-sudo adb -s 2G0YC5ZG6P005M reverse tcp:8012 tcp:8012
-```
-
-Verifique o resultado:
-
-```sh
-sudo adb -s 2G0YC5ZG6P005M reverse --list
-```
-
-Saída esperada:
-
-```text
-UsbFfs tcp:8012 tcp:8012
-```
-
-### Configurar o certificado HTTPS
-
-Gere um certificado autoassinado ([baseado na documentação da unitree](https://github.com/unitreerobotics/avp_teleoperate)):
-
-```sh
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout key.pem -out cert.pem
-```
-
-## Configuração do Host
-
-Siga as instruções do repositório [xr_teleoperate](https://github.com/unitreerobotics/xr_teleoperate). Siga as instruções de instalação. Embora estejamos usando `uv`, para o XR teleoperate siga as recomendações do conda:
-
-https://github.com/unitreerobotics/xr_teleoperate#1--installation
-
-## Configuração do PC2 (Unitree)
+> Para este tutorial é recomendado o uso desta [ferramenta](/guides/Ferramentas/extensao-ssh).
 
 ### Copiar certificados
 
-Use SSH para criar o diretório de configuração no PC2 e copie os arquivos:
+Ainda no **HOST**, use SSH para criar o diretório de configuração no PC2 e copie os arquivos:
 
 ```sh
 ssh unitree@192.168.123.164 'mkdir -p ~/.config/xr_teleoperate'
-scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/.config/xr_teleoperate/
+scp ~/Desktop/Teleoperacao/xr_teleoperate/teleop/televuer/cert.pem \
+    ~/Desktop/Teleoperacao/xr_teleoperate/teleop/televuer/key.pem \
+    unitree@192.168.123.164:~/.config/xr_teleoperate/
 ```
 
-Verifique no PC2:
+Verifique se os certificados foram copiados:
 
 ```sh
 ssh unitree@192.168.123.164 'ls -l ~/.config/xr_teleoperate/'
@@ -155,12 +26,6 @@ Saída esperada:
 ```text
 cert.pem
 key.pem
-```
-
-Se o diretório `teleimager` no PC2 também esperar os arquivos diretamente:
-
-```sh
-scp /home/alfakini/Developer/unitreeG1/cert.pem /home/alfakini/Developer/unitreeG1/key.pem unitree@192.168.123.164:~/teleimager/
 ```
 
 ### Instalar pacotes no PC2
@@ -206,11 +71,21 @@ sudo apt install -y libusb-1.0-0-dev libturbojpeg-dev
 #### 4. Clonar e instalar Tele Imager
 
 ```bash
-cd /home/unitree
+cd unitree
 git clone https://github.com/silencht/teleimager
 cd teleimager
 pip install -e ".[server]"
 ```
+
+##### 4a. Certificado para o Tele Imager
+Pro precaução, abra outro terminal no **HOST** e copie os certificados para o recém clonado repositório do Tele Imager
+
+```sh
+scp ~/Desktop/Developer/unitree-g1/packages/xr_teleoperate/teleop/televuer/cert.pem \
+    ~/Desktop/Developer/unitree-g1/packages/xr_teleoperate/teleop/televuer/key.pem \
+    unitree@192.168.123.164:~/unitree/teleimager/
+```
+
 
 #### 5. Correção de dependência `logging_mp`
 
@@ -235,13 +110,24 @@ cd /home/unitree/teleimager
 pip install -e ".[server]"
 ```
 
+E foi verificado, que para solucionar 100% dos erros é necessário trocar as seguintes linhas dos seguintes arquivos:
+
+    `src/teleimager/image_server.py`
+    - linha 15: logging_mp.basicConfig → logging_mp.basic_config
+    - linha 16: logging_mp.getLogger → logging_mp.get_logger
+
+    `src/teleimager/image_client.py`
+    - linha 33: logging_mp.getLogger → logging_mp.get_logger
+
+
+
 #### 6. Modificações no código TeleImager
 
 As seguintes alterações foram feitas localmente no `teleimager` para suportar a câmera RealSense D435i em modo OpenCV.
 
 ##### 6a. `setup_uvc.sh` — Tolerante a driver UVC ocupado
 
-O script original falhava quando o driver `uvcvideo` estava em uso. Agora ele avisa e continua:
+O script original falhava quando o driver `uvcvideo` estava em uso. Agora ele avisa e continua, apague o *step 4* e cooloque esse:
 
 ```bash
 if sudo $MODPROBE_PATH -r uvcvideo; then
@@ -260,7 +146,7 @@ cd /home/unitree/teleimager
 bash setup_uvc.sh
 ```
 
-##### 6b. `src/teleimager/image_server.py` — Múltiplas correções
+##### 6b. `src/teleimager/image_server.py` — Múltiplas correções, troque os código atuais pelo os que serão passados:
 
 **UVC reload warning:**
 
@@ -492,155 +378,6 @@ Portas usadas:
 | 55555 | ZMQ video stream     |
 | 60001 | WebRTC               |
 
-## Checklist de execução
-
-Esta seção resume os passos e verificações necessários **toda vez** que for rodar a teleoperação, assumindo que a instalação e configuração já foram feitas.
-
-### Topologia esperada
-
-```text
-Host:          enp194s0 = 192.168.123.2  (Ethernet para LAN)
-               wlp195s0 = 192.168.123.106 (Wi-Fi para roteador)
-PC2 (G1):      eth0    = 192.168.123.164 (Ethernet para LAN)
-               wlan0   = 192.168.123.113 (Wi-Fi para roteador)
-Robot G1 DDS:  192.168.123.161           (Ethernet para LAN)
-Quest 3:       Wi-Fi  = 192.168.123.X    (Wi-Fi para roteador)
-```
-
-> Importante: Host e PC2 **não podem** usar Wi-Fi e Ethernet na mesma sub-rede sem rotas explícitas, ou o tráfego DDS/Vuer será roteado pela interface errada.
-
-### 1. Verificações no Host
-
-```bash
-# 1. Interfaces com IP esperado
-ip -4 addr show enp194s0     # deve mostrar 192.168.123.2/24
-ip -4 addr show wlp195s0     # deve mostrar 192.168.123.106/24
-
-# 2. Rota padrão via Wi-Fi (para Quest alcançar o host)
-ip route show default
-
-# 3. Rotas específicas para PC2 e robô via Ethernet
-ip route get 192.168.123.164  # esperado: dev enp194s0 src 192.168.123.2
-ip route get 192.168.123.161  # esperado: dev enp194s0 src 192.168.123.2
-
-# 4. Ping para PC2 e robô
-ping -c 2 192.168.123.164     # PC2 (camera server)
-ping -c 2 192.168.123.161     # G1 controller (DDS peer)
-```
-
-Se os `ip route get` mostrarem `dev wlp195s0`, corrija com:
-
-```bash
-sudo ip route replace 192.168.123.164/32 dev enp194s0 src 192.168.123.2 metric 10
-sudo ip route replace 192.168.123.161/32 dev enp194s0 src 192.168.123.2 metric 10
-```
-
-### 2. Verificações no PC2 (SSH)
-
-```bash
-ssh unitree@192.168.123.164
-
-# 1. Interface com IP esperado
-ip -4 addr show eth0     # deve mostrar 192.168.123.164/24
-
-# 2. Rota para host
-ip route get 192.168.123.2    # esperado: dev eth0 src 192.168.123.164
-
-# 3. Ping para robô
-ping -c 2 192.168.123.161     # deve responder (0.1-0.5ms)
-
-# 4. Certificados instalados
-ls -l ~/.config/xr_teleoperate/   # deve conter cert.pem e key.pem
-
-exit
-```
-
-### 3. Iniciar camera server (PC2)
-
-```bash
-ssh unitree@192.168.123.164
-source ~/.bashrc
-conda activate teleimager
-cd /home/unitree/teleimager
-teleimager-server
-# Deixe este terminal aberto
-```
-
-Saída esperada:
-
-```text
-[teleimager-server] Listening on port 60000
-[teleimager-server] WebRTC server on port 60001
-```
-
-### 4. Configurar rotas (Host)
-
-```bash
-sudo ip route replace 192.168.123.164/32 dev enp194s0 src 192.168.123.2 metric 10
-sudo ip route replace 192.168.123.161/32 dev enp194s0 src 192.168.123.2 metric 10
-```
-
-Verifique:
-
-```bash
-ip route get 192.168.123.164  # dev enp194s0
-ip route get 192.168.123.161  # dev enp194s0
-ping -c 2 192.168.123.164     # OK
-ping -c 2 192.168.123.161     # OK
-```
-
-### 5. Iniciar teleop (Host)
-
-```bash
-cd ~/unitreeG1/packages/xr_teleoperate/teleop
-conda activate tv
-python teleop_hand_and_arm.py --arm=G1_29 --img-server-ip 192.168.123.164 --network-interface enp194s0
-```
-
-Saída esperada:
-
-```text
-Received camera config from server 192.168.123.164:60000
-Enter debug mode: Success
-[G1_29_ArmController] Subscribe dds ok.
-Lock OK!
-Initialize G1_29_ArmController OK!
-Press [r] to start syncing the robot with your movements.
-```
-
-### 6. Conectar Quest 3
-
-No navegador do Quest 3, abra:
-
-```text
-https://192.168.123.106:8012/?ws=wss://192.168.123.106:8012
-```
-
-Se aparecer aviso de certificado: **Avançado → Prosseguir (Inseguro)**.
-
-Clique em **Virtual Reality** e aceite as permissões.
-
-Confirme no terminal:
-
-```text
-websocket is connected. id:...
-Uplink task running. id:...
-```
-
-### 7. Operar
-
-1. Alinhe seus braços com a pose inicial do robô.
-2. No terminal do host, pressione `r` para iniciar a teleoperação.
-3. Para encerrar, pressione `q`.
-
-### 8. Troubleshooting rápido
-
-| Sintoma | Causa provável | Verificação |
-|---------|---------------|-------------|
-| Quest não carrega `https://...:8012` | Quest não alcança host Wi-Fi | `ip route get 192.168.123.146` no host |
-| `Waiting to subscribe dds...` | Rota para `192.168.123.161` errada | `ip route get 192.168.123.161` |
-| `Failed to negotiate WebRTC` | Camera server no PC2 não está rodando | `ssh unitree@192.168.123.164` + `ps aux \| grep teleimager` |
-| Conexão cai ao andar | Isolamento Wi-Fi (AP isolation) no roteador | Verificar configuração do roteador |
 
 ## Câmera RealSense D435i
 
@@ -747,4 +484,3 @@ teleimager-client --host 127.0.0.1
 
 - https://support.unitree.com/home/en/G1_developer
 - https://github.com/unitreerobotics/xr_teleoperate/wiki/Camera_and_Image
-

@@ -12,37 +12,6 @@ Porta Ethernet do host  <--- Cabo Ethernet --->  Porta Ethernet do G1 (PC2)
 O IP Ethernet do G1 é fixo em `192.168.123.164`.
 Usuário SSH: `unitree`, senha: `123`.
 
-## Configuração da rede no host
-
-Verificar a camada física:
-
-```sh
-sudo apt update
-sudo apt install -y ethtool
-sudo ethtool enp194s0 | grep -E "Link detected|Speed|Duplex"
-```
-
-Saída esperada:
-
-```text
-Link detected: yes
-```
-
-Se aparecer:
-
-```text
-Link detected: no
-```
-
-Há algum problema na camada física:
-
-- Verifique se o cabo está conectado na porta Ethernet do G1.
-- Empurre o conector até ouvir um clique.
-- Teste com outro cabo Ethernet.
-- Aguarde 1-2 minutos após ligar o robô.
-- Reinicie o robô (power cycle).
-- Teste a outra porta Ethernet do host, se houver.
-
 ### Configurar a conexão Ethernet
 
 1. Descubra o nome da interface Ethernet no host:
@@ -64,7 +33,36 @@ Há algum problema na camada física:
 
    Neste exemplo, a interface Ethernet é `enp194s0`.
 
-2. Identifique o nome da conexão NetworkManager associada a ela:
+2. Verificar a camada física:
+
+    ```sh
+    sudo apt update
+    sudo apt install -y ethtool
+    sudo ethtool enp194s0 | grep -E "Link detected|Speed|Duplex"
+    ```
+
+    Saída esperada:
+
+    ```text
+    Link detected: yes
+    ```
+
+    Se aparecer:
+
+    ```text
+    Link detected: no
+    ```
+
+    Há algum problema na camada física:
+
+    - Verifique se o cabo está conectado na porta Ethernet do G1.
+    - Empurre o conector até ouvir um clique.
+    - Teste com outro cabo Ethernet.
+    - Aguarde 1-2 minutos após ligar o robô.
+    - Reinicie o robô (power cycle).
+    - Teste a outra porta Ethernet do host, se houver.
+
+3. Identifique o nome da conexão NetworkManager associada a ela:
 
    ```sh
    nmcli con show
@@ -79,7 +77,7 @@ Há algum problema na camada física:
 
    Aqui o nome da conexão é `netplan-enp194s0`.
 
-3. Configure um IP fixo para o host na mesma sub-rede do G1. Vamos usar `192.168.123.2/24` (um IP livre na rede `192.168.123.x`):
+4. Configure um IP fixo para o host na mesma sub-rede do G1. Vamos usar `192.168.123.2/24` (um IP livre na rede `192.168.123.x`):
 
    ```sh
    sudo nmcli con mod "netplan-enp194s0" ipv4.method manual \
@@ -90,7 +88,32 @@ Há algum problema na camada física:
    sudo nmcli con up "netplan-enp194s0"
    ```
 
-4. Verifique se a configuração está correta:
+    Caso não funcione, outra alternativa é configurar um IP fixo sem o netplan:
+
+        ```
+        # Cria nova conexão estática
+        sudo nmcli con add type ethernet ifname enp194s0 con-name "static-enp194s0" \
+        ipv4.method manual \
+        ipv4.addresses 192.168.123.2/24 \
+        connection.autoconnect yes \
+        connection.autoconnect-priority 10
+
+        # Desativa o autoconnect da conexão do netplan
+        sudo nmcli con mod "netplan-enp194s0" connection.autoconnect no
+
+        # Troca a conexão ativa
+        sudo nmcli con down "netplan-enp194s0"
+        sudo nmcli con up "static-enp194s0"
+        ```
+
+    O autoconnect-priority 10 garante que a sua nova conexão tem prioridade sobre a do netplan no boot.
+
+    Por que funciona? A conexão netplan-enp2s0 foi gerada pelo netplan e ele resiste a modificações nela. Criando uma nova com nome diferente, o NM gerencia ela de forma independente e o netplan não interfere.
+
+    Só tome cuidado: se em algum momento rodar sudo netplan apply, o netplan pode reativar a netplan-enp2s0. Mas enquanto não fizer isso, funciona normalmente.
+
+
+5. Verifique se a configuração está correta:
 
    ```sh
    ip -4 addr show dev enp194s0
@@ -102,7 +125,7 @@ Há algum problema na camada física:
    - O segundo confirma a rota para o G1.
    - O terceiro testa a conectividade.
 
-5. Se o ping funcionar, prossiga para o SSH.
+6. Se o ping funcionar, prossiga para o SSH.
 
 ### Conectar via SSH
 

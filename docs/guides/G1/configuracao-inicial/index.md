@@ -1,7 +1,7 @@
 ---
 id: index
-title: Unitree G1
-slug: /guides/unitree-g1/
+title: Configuração Inicial
+slug: /guides/G1/configuracao-inicial/
 ---
 
 > Antes de começar, [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!
@@ -17,4 +17,4 @@ slug: /guides/unitree-g1/
 
 ## Referências
 
-[Documentação e repositórios externos](/guides/unitree-g1/referencias)
+[Documentação e repositórios externos](/guides/G1/referencias)

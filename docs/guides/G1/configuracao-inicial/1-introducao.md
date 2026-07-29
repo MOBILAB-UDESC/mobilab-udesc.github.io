@@ -50,7 +50,7 @@ Manuais antigos do G1 mencionam L1 + A para damping, L1 + UP para ready e R2 + X
 
 É possível desabilitar o controlador de locomoção colocando o robô no **Debug Mode**. Isso permite assumir o controle total do robô.
 
-1. Com o G1 suspenso e em estado de damping, pressione a combinação `L2 + R2` no controle remoto. O G1 entrará em modo debug.
+1. Com o G1 suspenso e em estado de damping (`L2 + B`), pressione e segure a combinação `L2 + R2` no controle remoto por um longo período. O G1 entrará em modo debug.
 2. Pressione `L2 + A` para entrar em modo de posição (position mode) e assumirá uma posição específica de diagnóstico.
 3. Pressione `L2 + B` para retornar ao estado de damping.
 
