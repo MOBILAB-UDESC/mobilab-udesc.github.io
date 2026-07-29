@@ -1,5 +1,5 @@
 ---
-title: Configuração do HOST
+title: Configuração do Host
 ---
 
 Primeiramente coloque o G1 no **Debug Mode**:

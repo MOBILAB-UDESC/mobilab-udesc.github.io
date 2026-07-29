@@ -17,12 +17,12 @@ slug: /guides/G1/teleoperacao/
 ### Teleoperação
 #### Configuração
 1. [Configurando seu Meta Quest 3](/guides/G1/teleoperacao/configuracao/configuracao-quest)
-2. [Configurando o PC **HOST**](/guides/G1/teleoperacao/configuracao/configuracao-host)
+2. [Configurando o PC **Host**](/guides/G1/teleoperacao/configuracao/configuracao-host)
 3. [Configurando o PC2 **Unitree**](/guides/G1/teleoperacao/configuracao/configuracao-pc2)
 4. [Checklist pré execução](/guides/G1/teleoperacao/configuracao/checklist)
 #### Execução
-1. ##############
-2. ##############
+1. [Teleoperação com o Quest via wifi](/guides/G1/teleoperacao/execucao/via-wifi)
+2. [Teleoperação com o Quest cabeado](/guides/G1/teleoperacao/execucao/cabeada)
 
 ## Referências
 

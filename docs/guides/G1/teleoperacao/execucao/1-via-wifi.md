@@ -2,7 +2,7 @@
 title: Quest via wifi
 ---
 
-Esta seção resume os passos e verificações necessários para rodar a teleoperação, assumindo que a instalação, configuração e principalmente (pois iremos partir direto de lá) a **checklist** já foram feitas.
+Esta seção resume os passos e verificações necessários para rodar a teleoperação, assumindo que a instalação, configuração e principalmente (pois iremos partir direto de lá) a [**checklist**](/guides/G1/teleoperacao/configuracao/checklist) já foram feitas.
 
 Seu setup deve estar assim para prosseguir:
 
@@ -49,7 +49,7 @@ Verá isso ser printado no terminal:
 
 ## HOST
 
-Agora no pc HOST é necessário rodar o script de teleoperação que foi instalado durante a [Configuração do HOST](/guides/G1/teleoperacao/configuracao/configuracao-host)
+Agora no pc Host é necessário rodar o script de teleoperação que foi instalado durante a [Configuração do Host](/guides/G1/teleoperacao/configuracao/configuracao-host)
 
 ```sh
 conda activate g1
@@ -101,4 +101,55 @@ Visit: https://vuer.ai?grid=False
 ```
 É muito comum haver erros neste terminal que no final envolvem os certificaods `key.pem` e `cert.pem`. Caso ocorra algum erro ou o robô não responda aos movimentos do seu braço é recomenda verificar se o caminha posto no bash esta correto para os certificados: `gedit ~/.bashrc`
 
+Antes de pressionar a tecla 'r', é necessário que aparecça o seguinte texto no terminal:
+```bash
+websocket is connected. id:96ea0e51-a8e0-43ee-afa4-407b69b57fca
+default socket worker is up, adding clientEvents
+Uplink task running. id:96ea0e51-a8e0-43ee-afa4-407b69b57fca
+```
+É a confirmação de que o Meta Quest está operando, para conseguir ela siga os próximos passos:
+
 ## QUEST
+Equanto os dois scripts anteriores estão rodando, iremos configurar o Meta Quest 3
+
+São necessárias duas etapas, principalmente quando é a primeira vez executando a teleoperação.
+
+Acesse o browser padrão do quest:
+
+<img src="/img/guides/teleoperacao/bowser-quest.png" alt="Acesse a o browser padrão do meta quest." width="1500" />
+
+1. Acesse via **IP**(wlpXXs0) e **porta** (8012 por padrão), essa acesso é necessário para validar o seu dispositivo QUEST como seguro.
+> **Atenção:** Se for a primeira vez acessando o site pode mostrar que ele não é seguro, avance mesmo assim.
+
+<div align="center">
+<video width="860" controls>
+    <source src="/vid/g1/primeiro-passo-quest-conv.mp4/" type="video/mp4"/>
+</video>
+</div>
+
+2. Com o passo tendo sido executado, agora você possuia cesso a página do **vuer** (o qual necessita de internet), segue esse padrão: `https://vuer.ai?ws=wss://IP_DO_SEU_WLPxxS0:8012`
+
+<div align="center">
+<video width="860" controls>
+    <source src="/vid/g1/segundo-passo-quest-conv.mp4/" type="video/mp4"/>
+</video>
+</div>
+
+## Teleoperação completa
+Com todas as configurações anteriores feitas, siga a seguinte ordem para executar uma teleoperação bem sucedida:
+
+1. Rode o script do PC2
+2. Abra o vuer no Quest
+3. Rode o script no Host
+4. Recarregue a página do vuer
+5. `websocket is connected` deve aparecer no terminal do Host
+6. Clique Pass-Through
+7. Pressione 'r' no Host`
+
+<div align="center">
+<video width="860" controls>
+    <source src="/vid/g1/teleoperacao-completa.mp4/" type="video/mp4"/>
+</video>
+</div>
+> Pressionar a tecla 'q' no **Host** encerra a teleoperação.
+
