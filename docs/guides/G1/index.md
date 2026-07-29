@@ -13,6 +13,7 @@ slug: /guides/G1/
 ## Guias
 
 ### Configuração inicial
+
 1. [Ligando o robô e conhecendo a arquitetura](/guides/unitree-g1/introducao)
 2. [Conectando ao robô com Ethernet](/guides/unitree-g1/conectando-ethernet)
 3. [Ativando WiFi](/guides/unitree-g1/ativando-wifi)
@@ -20,12 +21,16 @@ slug: /guides/G1/
 5. [Controlando pelo SDK](/guides/unitree-g1/controlando-pelo-sdk)
 
 ### Teleoperação
+
 #### Configuração
+
 1. [Configurando seu Meta Quest 3](/guides/G1/teleoperacao/configuracao/configuracao-quest)
 2. [Configurando o PC **HOST**](/guides/G1/teleoperacao/configuracao/configuracao-host)
 3. [Configurando o PC2 **Unitree**](/guides/G1/teleoperacao/configuracao/configuracao-pc2)
 4. [Checklist pré execução](/guides/G1/teleoperacao/configuracao/checklist)
+
 #### Execução
+
 1. ##############
 2. ##############
 

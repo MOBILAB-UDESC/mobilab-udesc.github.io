@@ -11,9 +11,7 @@ Primeiramente coloque o G1 no **Debug Mode**:
 
 ## Conectando o Quest ao Host
 
-
 <img src="/img/guides/teleoperacao/g1-pc-quest.png" alt="Conexões cabeadas G1, Host e Quest." width="1500" />
-
 
 ### Instalar `adb` no host
 
@@ -23,7 +21,6 @@ sudo apt-get install adb
 
 Liste os dispositivos:
 
-```text
 sudo adb devices
 
 # (Sairá algo semelhante):
