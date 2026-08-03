@@ -158,7 +158,7 @@ echo 'export XR_TELEOP_KEY="$HOME/Desktop/Teleoperacao/xr_teleoperate/teleop/tel
 source ~/.bashrc
 ```
 
-Adicione ao arquivo `~/Desktop/Teleoperacao/unitree_sdk2_python/core/channel_config.py`:
+Adicione ao arquivo `~/Desktop/Teleoperacao/unitree_sdk2_python/unitree_sdk2py/core/channel_config.py`:
 
 ```python
 ChannelConfigAutoDetermine = '''<?xml version="1.0"?>
