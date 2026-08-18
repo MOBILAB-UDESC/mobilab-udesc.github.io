@@ -63,7 +63,9 @@ python
 | Parâmetro | Descrição | Opções | Default |
 |:---------:|:---------:|:------:|:-------:|
 | --input-mode | Escolhe qual a forma de controlar o robô | `hand` `controller` | `hand` |
-| --e | Selecionar o end-effector (mãos) | `dex1` `dex3` `inspire_ftp` `inspire_dfx` `brainco` | None |
+| --display-mode | Escolhe como ver a perspectiva do robô | `immersive`, `ego`, `pass-through` | `immersive` |
+| --img-server-ip | O endereço IP de quem receberá a stream e as configurações WebRTC | `Qualquer IPv4` | `192.168.123.164` |
+| --ee | Selecionar o end-effector (mãos) | `dex1` `dex3` `inspire_ftp` `inspire_dfx` `brainco` | None |
 | --motion | Habilita o controle das pernas | | |
 
 **Atenção:**  Para utilizar o modo motion o G1 deve estar em `Regular mode` (L2+B -> L2+UP -> R1+X), sem o --motion ele pode estar em `Debug mode`

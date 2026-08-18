@@ -59,6 +59,7 @@ const sidebars = {
                   items: [
                     'guides/G1/teleoperacao/execucao/via-wifi',
                     'guides/G1/teleoperacao/execucao/cabeada',
+                    'guides/G1/teleoperacao/execucao/host-unificado',
                   ],
                 },
               ],
