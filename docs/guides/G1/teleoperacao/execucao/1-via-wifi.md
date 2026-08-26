@@ -125,7 +125,7 @@ Acesse o browser padrão do quest:
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/primeiro-passo-quest-conv.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/primeiro-passo-quest-conv.mp4" type="video/mp4"/>
 </video>
 </div>
 
@@ -133,7 +133,7 @@ Acesse o browser padrão do quest:
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/segundo-passo-quest-conv.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/segundo-passo-quest-conv.mp4" type="video/mp4"/>
 </video>
 </div>
 
@@ -150,8 +150,7 @@ Com todas as configurações anteriores feitas, siga a seguinte ordem para execu
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/teleoperacao-completa.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/teleoperacao-completa.mp4" type="video/mp4"/>
 </video>
 </div>
 > Pressionar a tecla 'q' no **Host** encerra a teleoperação.
-

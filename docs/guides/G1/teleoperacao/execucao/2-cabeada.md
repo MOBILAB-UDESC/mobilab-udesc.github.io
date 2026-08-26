@@ -123,7 +123,7 @@ Acesse via `localhost:8012`, o vuer não irá funcionar pois necessita de intern
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/localhost.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/localhost.mp4" type="video/mp4"/>
 </video>
 </div>
 
@@ -140,7 +140,7 @@ Com todas as configurações anteriores feitas, siga a seguinte ordem para execu
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/teleoperacao-completa.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/teleoperacao-completa.mp4" type="video/mp4"/>
 </video>
 </div>
 > Pressionar a tecla 'q' no **Host** encerra a teleoperação.

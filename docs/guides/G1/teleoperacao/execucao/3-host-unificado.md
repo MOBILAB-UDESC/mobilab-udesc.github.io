@@ -330,7 +330,7 @@ Acesse via `<IP_DO_WLAN_DO_ROBO>:8012`, o outro formato de acesso (via vuer) ape
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/localhost.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/localhost.mp4" type="video/mp4"/>
 </video>
 </div>
 > ignore o localhost, no local dele haverá o ip wlan0 do robô.
@@ -348,7 +348,7 @@ Com todas as configurações anteriores feitas, siga a seguinte ordem para execu
 
 <div align="center">
 <video width="860" controls>
-    <source src="/vid/g1/teleoperacao-completa.mp4/" type="video/mp4"/>
+    <source src="/vid/g1/teleoperacao-completa.mp4" type="video/mp4"/>
 </video>
 </div>
 > Pressionar a tecla 'q' no **Host** encerra a teleoperação.
