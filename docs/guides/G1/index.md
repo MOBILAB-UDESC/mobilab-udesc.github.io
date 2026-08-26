@@ -14,11 +14,11 @@ slug: /guides/G1/
 
 ### Configuração inicial
 
-1. [Ligando o robô e conhecendo a arquitetura](/guides/unitree-g1/introducao)
-2. [Conectando ao robô com Ethernet](/guides/unitree-g1/conectando-ethernet)
-3. [Ativando WiFi](/guides/unitree-g1/ativando-wifi)
-4. [Host setup](/guides/unitree-g1/host-setup)
-5. [Controlando pelo SDK](/guides/unitree-g1/controlando-pelo-sdk)
+1. [Ligando o robô e conhecendo a arquitetura](/guides/G1/configuracao-inicial/introducao)
+2. [Conectando ao robô com Ethernet](/guides/G1/configuracao-inicial/conectando-ethernet)
+3. [Ativando WiFi](/guides/G1/configuracao-inicial/ativando-wifi)
+4. [Host setup](/guides/G1/configuracao-inicial/host-setup)
+5. [Controlando pelo SDK](/guides/G1/configuracao-inicial/controlando-pelo-sdk)
 
 ### Teleoperação
 
@@ -39,4 +39,3 @@ slug: /guides/G1/
 ## Referências
 
 [Documentação e repositórios externos](/guides/G1/referencias)
-

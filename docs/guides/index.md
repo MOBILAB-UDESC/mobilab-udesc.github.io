@@ -8,7 +8,7 @@ Esta seção contém guias técnicos, procedimentos de configuração e document
 
 ## Guias disponíveis
 
-- [Unitree G1](/guides/unitree-g1/): configuração, conexão, arquitetura, SDK e teleoperação.
+- [Unitree G1](/guides/G1): configuração, conexão, arquitetura, SDK e teleoperação.
 
 ## Boas práticas
 

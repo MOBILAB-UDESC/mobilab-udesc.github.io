@@ -34,7 +34,7 @@ O MobiLab mantém uma organização no [GitHub](https://github.com/MOBILAB-UDESC
 
 - [Projetos e aplicações](/mobilab/projetos)
 - [Notícias](/mobilab/noticias)
-- [Guia técnico do Unitree G1](/guides/unitree-g1/)
+- [Guia técnico do Unitree G1](/guides/G1)
 
 ## Canais públicos
 
