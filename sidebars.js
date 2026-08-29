@@ -69,20 +69,27 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'NVIDIA Jetson',
+          link: {type: 'doc', id: 'guides/nvidia/index'},
+          items: [
+            {
+              type: 'category',
+              label: 'Thor',
+              items: [
+                'guides/nvidia/jetson-thor/hardware',
+                'guides/nvidia/jetson-thor/install',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Ferramentas',
           link: {type: 'doc', id: 'guides/Ferramentas/index'},
           items: [
             'guides/Ferramentas/extensao-ssh',
           ],
         },
-        {
-          type: 'category',
-          label: 'NVIDIA Jetson',
-          items: [
-            'guides/NVIDIA-Jetson/Instalacao',
-          ],
-        },
-
       ],
     },
   ],

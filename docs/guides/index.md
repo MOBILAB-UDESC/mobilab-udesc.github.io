@@ -9,7 +9,7 @@ Esta seção contém guias técnicos, procedimentos de configuração e document
 ## Guias disponíveis
 
 - [Unitree G1](/guides/G1): configuração, conexão, arquitetura, SDK e teleoperação.
-- [NVIDIA Jetson](/guides/NVIDIA-Jetson/Instalacao): instalação do sistema e dos componentes do JetPack.
+- [NVIDIA Jetson](/guides/nvidia/): tutoriais e referências das plataformas NVIDIA Jetson.
 
 ## Boas práticas
 
