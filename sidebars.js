@@ -75,6 +75,13 @@ const sidebars = {
             'guides/Ferramentas/extensao-ssh',
           ],
         },
+        {
+          type: 'category',
+          label: 'NVIDIA Jetson',
+          items: [
+            'guides/NVIDIA-Jetson/Instalacao',
+          ],
+        },
 
       ],
     },
