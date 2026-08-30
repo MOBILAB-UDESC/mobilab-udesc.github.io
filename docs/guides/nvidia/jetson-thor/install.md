@@ -31,7 +31,7 @@ Como a instalação pelo pendrive apresentou o erro descrito acima, o procedimen
 
 ### Pré-requisitos
 
-1. A recomendação é usar Ubuntu 14.x. Usamos o Ubuntu 16.x sem problema.
+1. A recomendação é usar Ubuntu 24.x. Usamos o Ubuntu 26.x sem problema.
 2. A máquina host deve usar arquitetura **x86_64**.
 3. Um pendrive de pelo menos **16 GB** para realizar o flash do sistema. Esse pendrive é obrigatório mesmo quando a instalação é feita pelo SDK Manager: o aplicativo solicitará a gravação dos arquivos nele e, em seguida, ele deverá ser conectado à Jetson Thor.
 4. Uma conta NVIDIA Developer para fazer login no SDK Manager.
