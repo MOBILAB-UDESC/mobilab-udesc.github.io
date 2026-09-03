@@ -92,6 +92,12 @@ const sidebars = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'CAD models',
+      link: {type: 'doc', id: 'cad/index'},
+      items: [],
+    },
   ],
 };
 
