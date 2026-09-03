@@ -1,5 +1,6 @@
 ---
 title: Notícias
+description: Notícias, reportagens e referências públicas sobre o MobiLab, robótica e pesquisa na UDESC Joinville.
 ---
 
 Esta página reúne notícias, reportagens, vídeos e canais públicos relacionados ao MobiLab, à infraestrutura robótica da Udesc Joinville e às iniciativas de pesquisa associadas ao laboratório.

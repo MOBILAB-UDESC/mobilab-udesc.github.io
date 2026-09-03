@@ -1,15 +1,96 @@
 // @ts-check
 
+const siteUrl = 'https://mobilab.joinville.udesc.br';
+const siteTitle = 'MobiLab UDESC';
+const siteDescription =
+  'Documentação técnica e guias de operação das plataformas robóticas do MobiLab, Laboratório de Sistemas Autônomos e Robótica Móvel da UDESC Joinville.';
+
 const config = {
-  title: 'MobiLab Wiki',
+  title: siteTitle,
   themes: ['@docusaurus/theme-mermaid'],
-  tagline: 'Documentação do MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) da UDESC Joinville.',
+  tagline: siteDescription,
   favicon: 'img/mobilab/mobilab-logo.png',
-  url: 'https://mobilab.joinville.udesc.br',
+  url: siteUrl,
   baseUrl: '/',
   organizationName: 'mobilab-udesc',
   projectName: 'mobilab-udesc.github.io',
   trailingSlash: false,
+
+  headTags: [
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'description',
+        content: siteDescription,
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'robots',
+        content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'author',
+        content: 'MobiLab UDESC',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        name: 'theme-color',
+        content: '#1c1e21',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:type',
+        content: 'website',
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:site_name',
+        content: siteTitle,
+      },
+    },
+    {
+      tagName: 'meta',
+      attributes: {
+        property: 'og:image:alt',
+        content: 'Logotipo do MobiLab UDESC',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: { type: 'application/ld+json' },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'ResearchOrganization',
+        name: siteTitle,
+        alternateName: 'Laboratório de Sistemas Autônomos e Robótica Móvel',
+        description: siteDescription,
+        url: siteUrl,
+        logo: `${siteUrl}/img/mobilab/mobilab-logo.png`,
+        parentOrganization: {
+          '@type': 'CollegeOrUniversity',
+          name: 'Universidade do Estado de Santa Catarina',
+          alternateName: 'UDESC',
+          url: 'https://www.udesc.br',
+        },
+        sameAs: [
+          'https://github.com/MOBILAB-UDESC',
+          'https://www.linkedin.com/showcase/mobilab-udesc/',
+          'https://www.instagram.com/mobi.udesc/',
+        ],
+      }),
+    },
+  ],
 
   onBrokenLinks: 'throw',
   markdown: {
@@ -35,6 +116,10 @@ const config = {
           editUrl: 'https://github.com/mobilab-udesc/wiki/tree/main/',
         },
         blog: false,
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+        },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -48,6 +133,7 @@ const config = {
       mermaid: {
         theme: { light: 'default', dark: 'dark' },
       },
+      image: 'img/mobilab/mobilab-logo.png',
       navbar: {
         title: 'MobiLab UDESC',
         logo: {

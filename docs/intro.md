@@ -1,6 +1,7 @@
 ---
 id: intro
 title: MobiLab
+description: Documentação técnica e guias de operação das plataformas robóticas do MobiLab UDESC Joinville.
 slug: /
 ---
 
@@ -20,4 +21,3 @@ O MobiLab desenvolve pesquisa aplicada em robótica móvel, sistemas autônomos 
 ## Pesquisa e infraestrutura
 
 As atividades do MobiLab combinam fundamentos de controle, percepção, inteligência artificial, navegação, teleoperação e integração de sistemas. A infraestrutura inclui plataformas humanoides, quadrúpedes e manipuladores robóticos usadas para validação experimental em hardware real.
-

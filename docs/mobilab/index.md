@@ -1,6 +1,7 @@
 ---
 id: index
 title: MobiLab
+description: Conheça o MobiLab UDESC Joinville, suas linhas de pesquisa, infraestrutura robótica e projetos em sistemas autônomos.
 slug: /mobilab/
 ---
 

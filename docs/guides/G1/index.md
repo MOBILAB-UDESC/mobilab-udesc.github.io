@@ -1,6 +1,7 @@
 ---
 id: index
 title: Unitree G1
+description: Guias para configurar, operar e desenvolver com o robô humanoide Unitree G1 no MobiLab UDESC.
 slug: /guides/G1/
 ---
 

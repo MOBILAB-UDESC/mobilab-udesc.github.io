@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mobilab.joinville.udesc.br/sitemap.xml
