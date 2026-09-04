@@ -12,9 +12,9 @@ const sidebars = {
       label: 'Sobre',
       link: {type: 'doc', id: 'mobilab/index'},
       items: [
-        'mobilab/brand/index',
         'mobilab/projetos',
         'mobilab/noticias',
+        'mobilab/brand/index',
       ],
     },
     {
