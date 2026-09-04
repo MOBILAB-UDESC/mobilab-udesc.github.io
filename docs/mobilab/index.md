@@ -7,6 +7,8 @@ slug: /mobilab/
 
 O MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) fica no CCT da Udesc Joinville e é vinculado ao Departamento de Engenharia Elétrica. Sua trajetória começou com o GASR em 2004, foi fortalecida pela cooperação com o Dynamic Legged Systems (DLS) do IIT, e consolidada com a criação do MobiLab em 2023.
 
+O laboratório está localizado na R. Paulo Malschitzki, 200, Bloco I, 2º andar, Zona Industrial Norte, Joinville - SC, 89219-710. O atendimento funciona de segunda a sexta, das 09:00 às 17:00. Visitas presenciais devem ser agendadas previamente.
+
 ## Pesquisa
 
 O MobiLab investiga percepção, navegação, interação e execução de tarefas em ambientes dinâmicos, combinando controle, inteligência artificial e integração de sistemas com validação em hardware real.

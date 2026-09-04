@@ -2,8 +2,9 @@
 
 const siteUrl = 'https://mobilab.joinville.udesc.br';
 const siteTitle = 'MobiLab UDESC';
+const socialImage = `${siteUrl}/img/mobilab/mobilab-logo-white-high.png`;
 const siteDescription =
-  'Documentação técnica e guias de operação das plataformas robóticas do MobiLab, Laboratório de Sistemas Autônomos e Robótica Móvel da UDESC Joinville.';
+  'O MobiLab, Laboratório de Sistemas Autônomos e Robótica Móvel da UDESC Joinville, desenvolve pesquisa aplicada em robótica móvel, sistemas autônomos e interação humano-robô.';
 
 const config = {
   title: siteTitle,
@@ -71,12 +72,53 @@ const config = {
       attributes: { type: 'application/ld+json' },
       innerHTML: JSON.stringify({
         '@context': 'https://schema.org',
-        '@type': 'ResearchOrganization',
-        name: siteTitle,
-        alternateName: 'Laboratório de Sistemas Autônomos e Robótica Móvel',
+        '@type': ['ResearchOrganization', 'LocalBusiness'],
+        name: 'MobiLab - Laboratório de Sistemas Autônomos e Robótica Móvel (UDESC Joinville)',
+        alternateName: [
+          siteTitle,
+          'Mobile Robots and Autonomous Systems Lab (UDESC Joinville)',
+        ],
         description: siteDescription,
+        disambiguatingDescription:
+          'The Mobile Robots and Autonomous Systems Lab at UDESC Joinville conducts applied research in mobile robotics, autonomous systems, and human-robot interaction.',
         url: siteUrl,
-        logo: `${siteUrl}/img/mobilab/mobilab-logo.png`,
+        image: socialImage,
+        logo: socialImage,
+        foundingDate: '2023-01',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: 'R. Paulo Malschitzki, 200 - Bloco I, 2º andar',
+          addressLocality: 'Joinville',
+          addressRegion: 'SC',
+          postalCode: '89219-710',
+          addressCountry: 'BR',
+        },
+        openingHoursSpecification: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: [
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+          ],
+          opens: '09:00',
+          closes: '17:00',
+        },
+        hasMap: 'https://share.google/9krEcFIKE6VJD0NYm',
+        knowsAbout: [
+          'Robótica móvel',
+          'Sistemas autônomos',
+          'Robôs humanoides e quadrúpedes',
+          'Physical AI',
+          'Teleoperação robótica',
+          'Inteligência artificial aplicada à robótica',
+          'Mobile robotics',
+          'Autonomous systems',
+          'Humanoid and quadruped robots',
+          'Robotic teleoperation',
+          'Artificial intelligence applied to robotics',
+        ],
         parentOrganization: {
           '@type': 'CollegeOrUniversity',
           name: 'Universidade do Estado de Santa Catarina',
@@ -84,6 +126,7 @@ const config = {
           url: 'https://www.udesc.br',
         },
         sameAs: [
+          'https://share.google/9krEcFIKE6VJD0NYm',
           'https://github.com/MOBILAB-UDESC',
           'https://www.linkedin.com/showcase/mobilab-udesc/',
           'https://www.instagram.com/mobi.udesc/',
@@ -133,7 +176,7 @@ const config = {
       mermaid: {
         theme: { light: 'default', dark: 'dark' },
       },
-      image: 'img/mobilab/mobilab-logo.png',
+      image: 'img/mobilab/mobilab-logo-white-high.png',
       navbar: {
         title: 'MobiLab UDESC',
         logo: {
