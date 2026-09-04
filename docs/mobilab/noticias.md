@@ -19,6 +19,15 @@ Esta página reúne notícias, reportagens, vídeos e canais públicos relaciona
 - [Conheça robô humanoide que chega à universidade de SC para ajudar em pesquisas](https://ndmais.com.br/tecnologia/robo-humanoide-chega-a-universidade-de-joinville-para-ajudar-em-projetos-de-pesquisa-de-alunos/), ND Mais, 17/12/2024.
 - [VÍDEO: Robô humanoide chinês caminha e aperta mãos durante chegada em Joinville](https://www.nsctotal.com.br/noticias/video-robo-humanoide-chines-caminha-e-aperta-maos-durante-chegada-em-joinville), NSC Total, 20/12/2024.
 - [Primeiro robô humanoide da Udesc chega a Joinville](https://globoplay.globo.com/v/13205357/), Bom Dia Santa Catarina/Globoplay, 23/12/2024.
+- [O que farão os cinco novos robôs em universidade em Joinville](https://www.nsctotal.com.br/colunista/saavedra/o-que-farao-os-cinco-novos-robos-em-universidade-em-joinville), NSC Total, 02/12/2025.
+- [Udesc Joinville recebe cinco novos robôs chineses](https://g1.globo.com/sc/santa-catarina/videos-bom-dia-santa-catarina/video/udesc-joinville-recebe-cinco-novos-robos-chineses-14266492.ghtml), Bom Dia Santa Catarina/G1, 03/12/2025.
+- [Da ciência à ação: robôs desenvolvidos em Joinville ajudam comunidade](https://ndmais.com.br/video/da-ciencia-a-acao-robos-desenvolvidos-em-joinville-ajudam-comunidade/), ND Mais, 29/09/2025.
+
+## Vídeos e redes sociais
+
+- [Da ciência à ação: robôs desenvolvidos em Joinville ajudam comunidade](https://www.youtube.com/watch?v=_i38nM4nqfo), YouTube.
+- [Publicação sobre os robôs do MobiLab](https://www.instagram.com/p/DcuRUZzBpEw/), Instagram.
+- [Vídeo sobre os robôs do MobiLab](https://www.instagram.com/reel/DWCOC52DDr6/), Instagram.
 
 ## Robótica, ensino e extensão na Udesc
 

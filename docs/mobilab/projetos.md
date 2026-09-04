@@ -61,13 +61,3 @@ Projeto com o PERRO Lab e bolsas Mitacs para estudantes na Thompson Rivers Unive
 ## Ensino, pesquisa e extensão
 
 As plataformas formam estudantes em robótica e IA, apoiam projetos de graduação e pós-graduação, e aproximam a comunidade de aplicações concretas. O conhecimento gerado impacta indústria, educação, saúde, serviços públicos e segurança operacional.
-
-## Fontes
-
-- [Primeiro robô humanoide da Udesc chega a Joinville nesta sexta-feira](https://www.udesc.br/noticia/primeiro_robo_humanoide_da_udesc_chega_a_joinville_nesta_sexta-feira), Udesc, 17/12/2024.
-- [Udesc Joinville recebe cinco novos robôs chineses](https://www.udesc.br/noticia/udesc_joinville_recebe_cinco_novos_robos_chineses), Udesc, 02/12/2025.
-- [Bombeiros Voluntários conhecem os robôs da Udesc Joinville](https://www.udesc.br/cct/noticia/bombeiros_voluntarios_conhecem_os_robos_da_udesc_joinville), Udesc CCT, 05/02/2026.
-- [MobiLab no LinkedIn](https://www.linkedin.com/showcase/mobilab-udesc/).
-- [MobiLab no GitHub](https://github.com/MOBILAB-UDESC).
-- [Repositório `arms`](https://github.com/MOBILAB-UDESC/arms).
-- [Repositório `gen3_lite`](https://github.com/MOBILAB-UDESC/gen3_lite).
