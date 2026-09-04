@@ -1,7 +1,8 @@
 ---
 id: index
 title: Configuração Inicial
-slug: /guides/G1/configuracao-inicial/
+description: Etapas iniciais para preparar rede, Wi-Fi, host e SDK do robô humanoide Unitree G1.
+slug: /guides/G1/configuracao-inicial
 ---
 
 > Antes de começar, [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!

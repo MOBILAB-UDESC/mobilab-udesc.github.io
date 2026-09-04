@@ -1,5 +1,6 @@
 ---
 title: SSH via Visual Studio Code
+description: Como usar a extensão Remote - SSH do Visual Studio Code para acessar o PC2 do Unitree G1.
 ---
 
 Para a configuração do PC2, que está dentro do robô G1, é recomendado utilizar a seguinte extensão do Visual Studio Code por conta do grande volume de arquivos a serem alterados.

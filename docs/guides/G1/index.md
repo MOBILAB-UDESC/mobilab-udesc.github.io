@@ -2,7 +2,7 @@
 id: index
 title: Unitree G1
 description: Guias para configurar, operar e desenvolver com o robô humanoide Unitree G1 no MobiLab UDESC.
-slug: /guides/G1/
+slug: /guides/G1
 ---
 
 > Antes de começar, [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!
@@ -29,13 +29,6 @@ slug: /guides/G1/
 2. [Configurando o PC **HOST**](/guides/G1/teleoperacao/configuracao/configuracao-host)
 3. [Configurando o PC2 **Unitree**](/guides/G1/teleoperacao/configuracao/configuracao-pc2)
 4. [Checklist pré execução](/guides/G1/teleoperacao/configuracao/checklist)
-
-#### Execução
-
-1. ##############
-2. ##############
-
-
 
 ## Referências
 

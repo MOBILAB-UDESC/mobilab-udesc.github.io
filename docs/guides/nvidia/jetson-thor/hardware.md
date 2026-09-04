@@ -1,5 +1,6 @@
 ---
 title: Hardware Jetson Thor
+description: Referência dos botões, LEDs, conectores e portas de I/O da placa NVIDIA Jetson AGX Thor.
 ---
 
 Para o mapa completo dos conectores, consulte o [layout oficial do hardware da Jetson AGX Thor](https://docs.nvidia.com/jetson/agx-thor-devkit/user-guide/latest/hardware_layout.html).

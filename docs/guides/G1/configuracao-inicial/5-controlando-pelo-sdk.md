@@ -1,5 +1,6 @@
 ---
 title: Controlando o G1 pelo SDK
+description: Execute um primeiro exemplo de controle do Unitree G1 usando o SDK oficial e o computador host.
 ---
 
 ## Execute o Primeiro Exemplo

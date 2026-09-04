@@ -5,7 +5,6 @@
   "scripts": {
     "start": "docusaurus start",
     "build": "docusaurus build",
-    "check:docusaurus-versions": "node scripts/check-docusaurus-versions.js",
     "serve": "docusaurus serve",
     "clear": "docusaurus clear"
   },

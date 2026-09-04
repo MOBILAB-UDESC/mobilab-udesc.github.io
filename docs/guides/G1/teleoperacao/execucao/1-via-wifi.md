@@ -1,5 +1,6 @@
 ---
 title: Quest via wifi
+description: Execute a teleoperação sem fio do Unitree G1 com Meta Quest 3, host e rede Wi-Fi.
 ---
 
 Esta seção resume os passos e verificações necessários para rodar a teleoperação, assumindo que a instalação, configuração e principalmente (pois iremos partir direto de lá) a [**checklist**](/guides/G1/teleoperacao/configuracao/checklist) já foram feitas.

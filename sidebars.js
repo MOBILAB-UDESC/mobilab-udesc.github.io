@@ -4,12 +4,12 @@ const sidebars = {
   wikiSidebar: [
     {
       type: 'doc',
-      id: 'intro',
+      id: 'index',
       label: 'Home',
     },
     {
       type: 'category',
-      label: 'Sobre',
+      label: 'MobiLab',
       link: {type: 'doc', id: 'mobilab/index'},
       items: [
         'mobilab/projetos',
@@ -86,9 +86,9 @@ const sidebars = {
         {
           type: 'category',
           label: 'Ferramentas',
-          link: {type: 'doc', id: 'guides/Ferramentas/index'},
+          link: {type: 'doc', id: 'guides/ferramentas/index'},
           items: [
-            'guides/Ferramentas/extensao-ssh',
+            'guides/ferramentas/extensao-ssh',
           ],
         },
       ],

@@ -1,5 +1,6 @@
 ---
 title: Conectando com ethernet
+description: Configure a conexão Ethernet entre o computador host e o PC2 do robô Unitree G1.
 ---
 
 Conecte o cabo Ethernet na interface do G1 e no computador host:

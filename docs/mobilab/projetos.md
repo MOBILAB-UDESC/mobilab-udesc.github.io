@@ -1,6 +1,7 @@
 ---
 title: Projetos e Aplicações
-description: Projetos do MobiLab UDESC em robótica móvel, robôs humanoides, busca e salvamento, inspeção autônoma e simulação.
+description: Projetos do MobiLab UDESC em robótica móvel, Physical AI, robôs humanoides, busca e salvamento, inspeção autônoma e simulação.
+slug: /mobilab/projetos
 ---
 
 O MobiLab combina pesquisa acadêmica, formação de estudantes e validação em cenários reais. Os projetos integram autonomia, percepção, controle, manipulação e operação remota para atuação segura em ambientes complexos.

@@ -1,5 +1,6 @@
 ---
 title: Introdução ao Unitree G1
+description: Primeiros passos para ligar, preparar e usar o robô humanoide Unitree G1 no MobiLab UDESC.
 ---
 
 ## Ligando o robô
@@ -129,4 +130,3 @@ O robô oferece as seguintes interfaces:
 É possível acessar o computador de desenvolvimento conectando um adaptador Type-C para HDMI na porta 9 para usar um monitor e teclado.
 
 O método recomendado é conectar um computador externo via Ethernet usando as portas 4 ou 5.
-

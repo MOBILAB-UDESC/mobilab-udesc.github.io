@@ -1,7 +1,8 @@
 ---
 id: index
 title: Teleoperação G1
-slug: /guides/G1/teleoperacao/
+description: Documentação para configurar e executar a teleoperação do Unitree G1 com Meta Quest 3.
+slug: /guides/G1/teleoperacao
 ---
 
 > Antes de começar, é recomendado ter feito a **Configuração inicial**, também [leia o manual oficial](https://support.unitree.com/home/en/G1_developer/about_G1)!

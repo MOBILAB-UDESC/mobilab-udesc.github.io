@@ -1,11 +1,13 @@
 ---
 id: index
-title: MobiLab
-description: Conheça o MobiLab UDESC Joinville, suas linhas de pesquisa, infraestrutura robótica e projetos em sistemas autônomos.
-slug: /mobilab/
+title: MobiLab UDESC Joinville | Robótica, Physical AI e sistemas autônomos
+description: Conheça o MobiLab UDESC Joinville, laboratório de robótica móvel, sistemas autônomos e Physical AI no CCT.
+slug: /mobilab
 ---
 
-O MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) fica no CCT da Udesc Joinville e é vinculado ao Departamento de Engenharia Elétrica. Sua trajetória começou com o GASR em 2004, foi fortalecida pela cooperação com o Dynamic Legged Systems (DLS) do IIT, e consolidada com a criação do MobiLab em 2023.
+# MobiLab UDESC Joinville
+
+O MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) fica no CCT da UDESC Joinville e é vinculado ao Departamento de Engenharia Elétrica. Sua trajetória começou com o GASR em 2004, foi fortalecida pela cooperação com o Dynamic Legged Systems (DLS) do IIT, e consolidada com a criação do MobiLab em 2023.
 
 O laboratório está localizado na R. Paulo Malschitzki, 200, Bloco I, 2º andar, Zona Industrial Norte, Joinville - SC, 89219-710. O atendimento funciona de segunda a sexta, das 09:00 às 17:00. Visitas presenciais devem ser agendadas previamente.
 
@@ -44,4 +46,3 @@ O MobiLab mantém uma organização no [GitHub](https://github.com/MOBILAB-UDESC
 - [GitHub](https://github.com/MOBILAB-UDESC)
 - [LinkedIn](https://www.linkedin.com/showcase/mobilab-udesc/)
 - [Instagram](https://www.instagram.com/mobi.udesc/)
-- [Linktree](https://linktr.ee/mobi.udesc)

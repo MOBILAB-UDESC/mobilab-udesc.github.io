@@ -1,5 +1,6 @@
 ---
 title: Quest cabeado
+description: Execute a teleoperação cabeada do Unitree G1 com Meta Quest 3 e conexão USB.
 ---
 
 Esta seção resume os passos e verificações necessários para rodar a teleoperação, assumindo que a instalação, configuração e [**checklist**](/guides/G1/teleoperacao/configuracao/checklist) já foram feitas.

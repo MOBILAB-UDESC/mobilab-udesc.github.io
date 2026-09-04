@@ -1,5 +1,6 @@
 ---
 title: Ativando Wi-Fi no G1
+description: Configure o Wi-Fi e o acesso SSH do robô humanoide Unitree G1 para operar sem cabo Ethernet.
 ---
 
 Ativar o Wi-Fi no G1 permite acesso SSH sem cabo Ethernet e facilita a instalação de pacotes.

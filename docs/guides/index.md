@@ -2,7 +2,7 @@
 id: index
 title: Documentação
 description: Guias técnicos, procedimentos de configuração e documentação operacional das plataformas robóticas do MobiLab.
-slug: /guides/
+slug: /guides
 ---
 
 Esta seção contém guias técnicos, procedimentos de configuração e documentação operacional das plataformas robóticas do MobiLab.

@@ -1,8 +1,9 @@
 ---
 title: Configuração do PC2 (Unitree)
+description: Configure o PC2 embarcado do Unitree G1 para executar a teleoperação com Meta Quest 3.
 ---
 
-> Para este tutorial é recomendado o uso desta [ferramenta](/guides/Ferramentas/extensao-ssh).
+> Para este tutorial é recomendado o uso desta [ferramenta](/guides/ferramentas/extensao-ssh).
 
 ### Copiar certificados
 

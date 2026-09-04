@@ -1,5 +1,6 @@
 ---
 title: Referências
+description: Manuais e referências oficiais para desenvolver com o robô humanoide Unitree G1 e seu SDK.
 ---
 
 ## Unitree G1 Guides

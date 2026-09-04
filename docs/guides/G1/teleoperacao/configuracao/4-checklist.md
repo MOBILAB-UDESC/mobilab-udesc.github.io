@@ -1,5 +1,6 @@
 ---
 title: Checklist pré execução
+description: Checklist de rede, robô, host e Meta Quest para iniciar a teleoperação do Unitree G1.
 ---
 
 Esta seção resume os passos e verificações necessários **toda vez** que for rodar a teleoperação, assumindo que a instalação e configuração já foram feitas.
@@ -88,8 +89,6 @@ Saída esperada:
 [teleimager-server] Listening on port 60000
 [teleimager-server] WebRTC server on port 60001
 ```
-
-PERGUNTAR PRO ALAN PQ DISSO SE ANTES ERA ALGO CONDICIONAL SE OS IP ROUTE GET MOSTRAREM DEV WLP195S0 vvvvv
 
 ### 4. Configurar rotas (Host)
 

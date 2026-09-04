@@ -1,7 +1,8 @@
 ---
 id: index
 title: NVIDIA Jetson
-slug: /guides/nvidia/
+description: Tutoriais e referências para as plataformas NVIDIA Jetson utilizadas em experimentos do MobiLab UDESC.
+slug: /guides/nvidia
 ---
 
 Esta seção reúne os tutoriais e as referências das plataformas NVIDIA Jetson utilizadas no MobiLab.

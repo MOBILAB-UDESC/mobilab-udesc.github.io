@@ -1,5 +1,6 @@
 ---
 title: Configuração do computador host
+description: Prepare o computador host para comunicação, rede e experimentos com o robô humanoide Unitree G1.
 ---
 
 ## Verificações iniciais

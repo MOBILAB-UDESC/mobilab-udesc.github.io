@@ -1,13 +1,14 @@
 ---
 title: Configuração do Host
+description: Configure o host, o ADB e o redirecionamento de portas para teleoperar o Unitree G1 com Meta Quest 3.
 ---
 
 Primeiramente coloque o G1 no **Debug Mode**:
 
 1. Com o G1 suspenso e em estado de damping (`L2 + B`)
 2. Pressione e segure a combinação `L2 + R2` no controle remoto por um longo período. O G1 entrará em modo debug.
-2. Pressione `L2 + A` para entrar em modo de posição (position mode) e assumirá uma posição específica de diagnóstico.
-3. Pressione `L2 + B` para retornar ao estado de damping.
+3. Pressione `L2 + A` para entrar em modo de posição (position mode) e assumir uma posição específica de diagnóstico.
+4. Pressione `L2 + B` para retornar ao estado de damping.
 
 ## Conectando o Quest ao Host
 
@@ -72,16 +73,16 @@ source ~/.bashrc
 conda --version
 ```
 
-### Criando um enviroment
+### Criando um ambiente
 
 ```sh
 conda create -n g1 python=3.10 pinocchio=3.1.0 numpy=1.26.4 -c conda-forge
 conda activate g1
 ```
-Todos os próximos comandos devem ser executados dentro do enviroment g1
+Todos os próximos comandos devem ser executados dentro do ambiente `g1`.
 
-### pips install
-siga a ordem de execução de todos os pip e git clone, eles foram testados na ordem apresentado nesta documentação:
+### Instalando pacotes Python
+Siga a ordem dos comandos `pip` e `git clone`; eles foram testados nesta sequência:
 
 ```sh
 # 1. conda
@@ -189,4 +190,3 @@ Sem a configuração explícita do DDS, a descoberta pode escolher a interface e
 
 - https://support.unitree.com/home/en/G1_developer
 - https://github.com/unitreerobotics/xr_teleoperate/wiki/Camera_and_Image
-

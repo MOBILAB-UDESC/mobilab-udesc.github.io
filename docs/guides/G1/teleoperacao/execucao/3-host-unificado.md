@@ -1,5 +1,6 @@
 ---
 title: Host unificado + Mãos
+description: Configure a teleoperação do Unitree G1 em host unificado, incluindo o controle das mãos robóticas.
 ---
 
 Esta seção resume os passos e verificações necessários para rodar a teleoperação, assumindo que a instalação, configuração e [**checklist**](/guides/G1/teleoperacao/configuracao/checklist) já foram feitas.

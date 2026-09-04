@@ -2,7 +2,7 @@
 id: index
 title: Marca
 description: Logos e elementos oficiais da marca MobiLab UDESC.
-slug: /mobilab/brand/
+slug: /mobilab/brand
 sidebar_label: Marca
 ---
 

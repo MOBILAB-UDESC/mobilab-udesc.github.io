@@ -1,5 +1,6 @@
 ---
 title: Configuração do Meta Quest 3
+description: Prepare o Meta Quest 3 para teleoperar o robô humanoide Unitree G1 no MobiLab UDESC.
 ---
 
 Para prosseguir é necessário o Meta Quest 3 e um celular que possa baixar o aplicativo Meta Horizon (modelos como LG K12+ não são compatíveis).

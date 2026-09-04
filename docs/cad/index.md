@@ -2,7 +2,7 @@
 id: index
 title: CAD
 description: Modelos CAD das plataformas e projetos robóticos do MobiLab UDESC.
-slug: /cad/
+slug: /cad
 ---
 
 ## Modelos CAD

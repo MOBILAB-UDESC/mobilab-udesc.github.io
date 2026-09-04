@@ -1,12 +1,12 @@
 ---
 id: index
 title: Ferramentas úteis para pesquisa
-slug: /guides/Ferramentas/
+description: Ferramentas de apoio para configurar e operar as plataformas robóticas do MobiLab UDESC.
+slug: /guides/ferramentas
 ---
 
-Esta seção contém algumas ferramentas úteis e opcinais para melhor conforto e execução dos tutoriais nesta documentação citados.
+Esta seção contém algumas ferramentas úteis e opcionais para melhorar o conforto e a execução dos tutoriais desta documentação.
 
 ## Guias disponíveis
 
-- [SSH com Visual Studio Code](/guides/Ferramentas/extensao-ssh/): Como acessar arquivos do PC2 **Unitree** além do terminal
-
+- [SSH com Visual Studio Code](/guides/ferramentas/extensao-ssh): Como acessar arquivos do PC2 **Unitree** além do terminal

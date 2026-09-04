@@ -1,5 +1,6 @@
 ---
 title: Instalação do sistema Jetson Thor
+description: Guia para instalar o sistema e o JetPack SDK na plataforma NVIDIA Jetson AGX Thor.
 ---
 
 Este guia apresenta o fluxo para instalar o sistema na placa **NVIDIA Jetson** a partir de um pendrive.
