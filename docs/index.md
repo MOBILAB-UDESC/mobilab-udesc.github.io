@@ -15,8 +15,6 @@ O MobiLab UDESC é o Laboratório de Sistemas Autônomos e Robótica Móvel da U
 
 O MobiLab desenvolve pesquisa aplicada em robótica móvel, sistemas autônomos e interação humano-robô. O laboratório integra formação acadêmica, experimentação em plataformas reais e desenvolvimento de soluções para ambientes urbanos, industriais e de interesse público.
 
-> Movemos robôs, despertamos pesquisadores.
-
 ## Pesquisa em robótica em Joinville
 
 - [Conheça o MobiLab UDESC](/mobilab): linhas de pesquisa, infraestrutura, localização e canais públicos.
