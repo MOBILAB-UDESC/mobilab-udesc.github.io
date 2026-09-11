@@ -14,6 +14,8 @@ Demora ~1-2 minutos para ligar.
 
 Antes de executar qualquer comando remotamente, precisamos colocar o robô no estado correto. Como estamos usando um Unitree G1 EDU+ com controle R3-1, siga essa sequencia:
 
+**Atenção:** Antes de executar qualquer comando remotamente, coloque o Unitree G1 EDU+ no chão, em uma superfície plana e com espaço livre ao redor. Não execute os comandos com o robô suspenso ou fora do chão, pois ele pode realizar movimentos bruscos e se debater.
+
 - `L2 + B` para colocar o robô em damping.
 - `L2 + UP` para colocar o robô em ready.
 - `R2 + A` para entrar no estado motion.
