@@ -100,7 +100,7 @@ Pronto, agora é só remover o cabo de rede e executar:
 ssh unitree@192.168.50.113
 ```
 
-OBS: Para se conectar ao G1 pelo Wi-Fi via SSH, é importante notar se o PC Host está conectado na mesma rede Wi-Fi, caso contrário, não será possível a conexão.
+OBS: Para se conectar ao G1 pelo Wi-Fi via SSH, é importante notar se o PC Host está conectado na mesma rede, caso contrário, não será possível a conexão.
 
 ## Referência
 
