@@ -115,7 +115,7 @@ Usuário SSH: `unitree`, senha: `123`.
 
 5. E se o IP for diferente de 192.168.123.X:
    
-   Um outro problema que pode ocorrer é esse, neste caso, é provável que o seu notebook não tenha recebido/configurado a rede esperada ao se conectar ao G1, e isso é um problema, pois são redes diferentes e portanto não seria possível se conectar ao robo via SSH e manipulá-lo via protocolo DDS.
+   Um outro problema que pode ocorrer é este, neste caso, é provável que o seu notebook não tenha recebido/configurado a rede esperada ao se conectar ao G1, e isso é um problema, pois são redes diferentes e portanto não seria possível se conectar ao robo via SSH e nem manipulá-lo via protocolo DDS.
 
    Neste caso, podemos configurar manualmente a rede para se conectar ao IP **192.168.123.X**. Então execute:
    ```
