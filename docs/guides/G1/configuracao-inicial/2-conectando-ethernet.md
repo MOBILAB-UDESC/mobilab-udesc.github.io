@@ -113,8 +113,36 @@ Usuário SSH: `unitree`, senha: `123`.
 
     Só tome cuidado: se em algum momento rodar sudo netplan apply, o netplan pode reativar a netplan-enp2s0. Mas enquanto não fizer isso, funciona normalmente.
 
+5. E se o IP for diferente de 192.168.123.X:
+   
+   Um outro problema que pode ocorrer é este, neste caso, é provável que o seu notebook não tenha recebido/configurado a rede esperada ao se conectar ao G1, e isso é um problema, pois são redes diferentes e portanto não seria possível se conectar ao robo via SSH e nem manipulá-lo via protocolo DDS.
 
-5. Verifique se a configuração está correta:
+   Neste caso, podemos configurar manualmente a rede para se conectar ao IP **192.168.123.X**. Então execute:
+   ```
+   ip -4 addr
+   ```
+   E procure pelo nome de interface de rede cabeada, no nosso caso `enp194s0`.
+
+   Agora, execute:
+   ``` 
+   sudo ip addr flush dev enp194s0 
+   sudo ip addr add 192.168.123.200/24 dev enp194s0 
+   sudo ip link set enp194s0 up
+   ```
+
+   **Atenção:** É importante notar que para o IP `192.168.123.X`, X não pode ser igual à `164`, `161` e nem `0`, pois são sub-redes reservadas pela Unitree para os controles do G1.
+
+   Agora verifique:
+   ```
+   ip addr show enp194s0
+   ```
+   
+   Deverá aparecer algo como:
+   ``` 
+   inet 192.168.123.200/24
+   ```
+
+7. Verifique se a configuração está correta:
 
    ```sh
    ip -4 addr show dev enp194s0
@@ -126,7 +154,7 @@ Usuário SSH: `unitree`, senha: `123`.
    - O segundo confirma a rota para o G1.
    - O terceiro testa a conectividade.
 
-6. Se o ping funcionar, prossiga para o SSH.
+8. Se o ping funcionar, prossiga para o SSH.
 
 ### Conectar via SSH
 

@@ -93,6 +93,15 @@ ip a show wlan0
 ping 8.8.8.8
 ```
 
+Ao executar `ip a show wlan0`, repare no IP: no nosso caso `192.168.50.113`, com esse IP você pode se conectar ao G1 via SSH usando o Wi-Fi.
+
+Pronto, agora é só remover o cabo de rede e executar:
+```
+ssh unitree@192.168.50.113
+```
+
+OBS: Para se conectar ao G1 pelo Wi-Fi via SSH, é importante notar se o PC Host está conectado na mesma rede, caso contrário, não será possível a conexão.
+
 ## Referência
 
 - [LeRobot: Enable WiFi on the robot](https://huggingface.co/docs/lerobot/unitree_g1#optional-enable-wifi-on-the-robot)

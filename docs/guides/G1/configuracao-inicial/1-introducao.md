@@ -12,7 +12,11 @@ Demora ~1-2 minutos para ligar.
 
 ## Usando o controle remoto
 
-Antes de executar qualquer comando remotamente, precisamos colocar o robô no estado correto. Como estamos usando um Unitree G1 EDU+ com controle R3-1, siga essa sequencia:
+Antes de executar qualquer comando remotamente, precisamos colocar o robô no estado correto.
+
+**MAS, ATENÇÃO:** Certifique-se de que o robô esteja com os pés tocando completamente o chão, caso contrário, ao seguir os passos abaixo, o robô não reconhecerá um chão físico e terá "espamos" a partir do momento em que o comando `R2 + A` for executado.
+
+Como estamos usando um Unitree G1 EDU+ com controle R3-1, siga essa sequencia:
 
 **Atenção:** Antes de executar qualquer comando remotamente, coloque o Unitree G1 EDU+ no chão, em uma superfície plana e com espaço livre ao redor. Não execute os comandos com o robô suspenso ou fora do chão, pois ele pode realizar movimentos bruscos e se debater.
 
