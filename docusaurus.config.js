@@ -113,7 +113,6 @@ const config = {
           {to: '/mobilab/publications', position: 'left', label: 'Publications'},
           {to: '/mobilab/infrastructure', position: 'left', label: 'Infrastructure'},
           {to: '/mobilab/contact', position: 'left', label: 'Contact'},
-          {to: '/mobilab/brand', position: 'left', label: 'Brand'},
           {
             to: '/guides',
             position: 'left',

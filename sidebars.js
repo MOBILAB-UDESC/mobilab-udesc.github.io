@@ -76,6 +76,7 @@ const sidebars = {
             {type: 'doc', id: 'guides/ferramentas/extensao-ssh', label: 'SSH extension'},
           ],
         },
+        {type: 'doc', id: 'mobilab/brand/index', label: 'Brand'},
         {type: 'doc', id: 'cad/index', label: 'CAD models'},
       ],
     },
