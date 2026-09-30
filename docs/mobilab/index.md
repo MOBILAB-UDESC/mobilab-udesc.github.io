@@ -1,47 +1,47 @@
 ---
 id: index
-title: MobiLab UDESC Joinville | Robótica, Physical AI e sistemas autônomos
-description: Conheça o MobiLab UDESC Joinville, laboratório de robótica móvel, sistemas autônomos e Physical AI no CCT.
+title: MobiLab UDESC Joinville | Robotics, Physical AI and autonomous systems
+description: Explore MobiLab UDESC Joinville, the mobile robotics, autonomous systems, and Physical AI laboratory at CCT.
 slug: /mobilab
 ---
 
 # MobiLab UDESC Joinville
 
-O MobiLab (Laboratório de Sistemas Autônomos e Robótica Móvel) fica no CCT da UDESC Joinville e é vinculado ao Departamento de Engenharia Elétrica. Sua trajetória começou com o GASR em 2004, foi fortalecida pela cooperação com o Dynamic Legged Systems (DLS) do IIT, e consolidada com a criação do MobiLab em 2023.
+MobiLab (Autonomous Systems and Mobile Robotics Laboratory) is based at UDESC Joinville's Center for Technological Sciences (CCT) and is affiliated with the Department of Electrical Engineering. Its history began with GASR in 2004, grew through cooperation with [IIT's Dynamic Legged Systems (DLS)](https://dls.iit.it/), and led to the establishment of MobiLab in 2023.
 
-O laboratório está localizado na R. Paulo Malschitzki, 200, Bloco I, 2º andar, Zona Industrial Norte, Joinville - SC, 89219-710. O atendimento funciona de segunda a sexta, das 09:00 às 17:00. Visitas presenciais devem ser agendadas previamente.
+The laboratory is located at Rua Paulo Malschitzki, 200, Block I, 2nd floor, Zona Industrial Norte, Joinville, SC, Brazil, 89219-710. Office hours are Monday to Friday, 09:00 to 17:00. In-person visits must be scheduled in advance.
 
-## Pesquisa
+## Research
 
-O MobiLab investiga percepção, navegação, interação e execução de tarefas em ambientes dinâmicos, combinando controle, inteligência artificial e integração de sistemas com validação em hardware real.
+MobiLab studies perception, navigation, interaction, and task execution in dynamic environments, combining control, artificial intelligence, and systems integration with validation on real hardware.
 
-- Sistemas autônomos
-- Robótica móvel, humanoide e quadrúpede
-- Inteligência artificial aplicada à robótica
-- Interação humano-robô
-- Fusão de sensores, navegação e controle
-- Simulação robótica com ROS 2, Gazebo e MoveIt 2
-- Teleoperação e operação remota
+- Autonomous systems
+- Mobile, humanoid, and quadruped robotics
+- Artificial intelligence for robotics
+- Human-robot interaction
+- Sensor fusion, navigation, and control
+- Robotics simulation with ROS 2, Gazebo, and MoveIt 2
+- Teleoperation and remote operation
 
-## Infraestrutura
+## Infrastructure
 
-Plataformas humanoides, quadrúpedes e manipuladores (Unitree G1, H1, B2, B2W, Go1, Go2) para pesquisa em locomoção, manipulação, teleoperação, inspeção, mapeamento autônomo e resposta a emergências.
+Humanoid platforms, quadrupeds, and manipulators (Unitree G1, H1, B2, B2W, Go1, Go2) support research in locomotion, manipulation, teleoperation, inspection, autonomous mapping, and emergency response.
 
-## Impacto
+## Impact
 
-As pesquisas conectam ciência e demandas reais em busca e salvamento, inspeção urbana, automação industrial, educação em robótica, tecnologias assistivas e operação remota em ambientes hostis. Parcerias com organizações públicas e colaboração internacional aproximam estudantes de cenários reais de validação.
+Our research connects science with practical needs in search and rescue, urban inspection, industrial automation, robotics education, assistive technologies, and remote operation in hazardous environments. Partnerships with public organizations and international collaborations give students access to real-world validation scenarios.
 
-## Pesquisa aberta
+## Open research
 
-O MobiLab mantém uma organização no [GitHub](https://github.com/MOBILAB-UDESC) com repositórios de controle, simulação e integração de robôs.
+MobiLab maintains a [GitHub organization](https://github.com/MOBILAB-UDESC) with repositories for robot control, simulation, and integration.
 
-## Conheça
+## Explore
 
-- [Projetos e aplicações](/mobilab/projetos)
-- [Notícias](/mobilab/noticias)
-- [Guia técnico do Unitree G1](/guides/G1)
+- [Projects and applications](/mobilab/projetos)
+- [News](/mobilab/noticias)
+- [Unitree G1 technical guide](/guides/G1)
 
-## Canais públicos
+## Public channels
 
 - [GitHub](https://github.com/MOBILAB-UDESC)
 - [LinkedIn](https://www.linkedin.com/showcase/mobilab-udesc/)

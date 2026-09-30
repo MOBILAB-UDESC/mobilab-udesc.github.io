@@ -1,19 +1,19 @@
 ---
 id: index
-title: Documentação
-description: Guias técnicos, procedimentos de configuração e documentação operacional das plataformas robóticas do MobiLab.
+title: Guides
+description: Technical guides, setup procedures, and operational documentation for MobiLab's robotic platforms.
 slug: /guides
 ---
 
-Esta seção contém guias técnicos, procedimentos de configuração e documentação operacional das plataformas robóticas do MobiLab.
+This section contains technical guides, setup procedures, and operational documentation for MobiLab's robotic platforms. Technical articles are currently available in Portuguese.
 
-## Guias disponíveis
+## Available guides
 
-- [Unitree G1](/guides/G1): configuração, conexão, arquitetura, SDK e teleoperação.
-- [NVIDIA Jetson](/guides/nvidia/): tutoriais e referências das plataformas NVIDIA Jetson.
+- [Unitree G1](/guides/G1): setup, connection, architecture, SDK, and teleoperation.
+- [NVIDIA Jetson](/guides/nvidia/): tutorials and references for NVIDIA Jetson platforms.
 
-## Boas práticas
+## Best practices
 
-- Consulte os manuais oficiais dos fabricantes antes de operar qualquer plataforma.
-- Execute comandos de controle apenas em ambientes supervisionados com medidas de segurança.
-- Registre alterações de configuração, dependências e scripts para manter reprodutibilidade.
+- Consult the manufacturers' official manuals before operating any platform.
+- Run control commands only in supervised environments with safety measures in place.
+- Record configuration changes, dependencies, and scripts to maintain reproducibility.

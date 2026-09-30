@@ -1,7 +1,7 @@
 ---
 id: index
-title: MobiLab UDESC | Robótica e Physical AI em Joinville
-description: "MobiLab UDESC Joinville: laboratório de robótica móvel, sistemas autônomos e Physical AI com pesquisa aplicada em plataformas reais."
+title: MobiLab UDESC | Robotics and Physical AI in Joinville
+description: "MobiLab UDESC Joinville: mobile robotics, autonomous systems, and Physical AI research on real-world platforms."
 slug: /
 ---
 
@@ -11,17 +11,17 @@ import OrganizationSchema from '@site/src/components/OrganizationSchema';
 
 <OrganizationSchema />
 
-O MobiLab UDESC é o Laboratório de Sistemas Autônomos e Robótica Móvel da UDESC Joinville. Desenvolvemos pesquisa aplicada em robótica móvel, robôs humanoides e quadrúpedes, sistemas autônomos e Physical AI.
+MobiLab UDESC is the Autonomous Systems and Mobile Robotics Laboratory at UDESC Joinville. We conduct applied research in mobile robotics, humanoid and quadruped robots, autonomous systems, and Physical AI.
 
-O MobiLab desenvolve pesquisa aplicada em robótica móvel, sistemas autônomos e interação humano-robô. O laboratório integra formação acadêmica, experimentação em plataformas reais e desenvolvimento de soluções para ambientes urbanos, industriais e de interesse público.
+MobiLab conducts applied research in mobile robotics, autonomous systems, and human-robot interaction. The laboratory combines academic training, experiments on real platforms, and the development of solutions for urban, industrial, and public-service environments.
 
-## Pesquisa em robótica em Joinville
+## Robotics research in Joinville
 
-- [Conheça o MobiLab UDESC](/mobilab): linhas de pesquisa, infraestrutura, localização e canais públicos.
-- [Projetos e aplicações](/mobilab/projetos): em busca e salvamento, inspeção de infraestrutura, robótica humanoide, mapeamento autônomo, manipulação e simulação.
-- [Notícias e referências públicas](/mobilab/noticias): sobre o laboratório e a trajetória de robótica na Udesc Joinville.
-- [Guias técnicos](/guides): para configuração, operação e desenvolvimento com plataformas robóticas do laboratório.
+- [About MobiLab UDESC](/mobilab): research areas, infrastructure, location, and public channels.
+- [Projects and applications](/mobilab/projetos): search and rescue, infrastructure inspection, humanoid robotics, autonomous mapping, manipulation, and simulation.
+- [News and public references](/mobilab/noticias): the laboratory and the history of robotics at UDESC Joinville.
+- [Technical guides](/guides): setup, operation, and development with the laboratory's robotic platforms.
 
-## Pesquisa e infraestrutura
+## Research and infrastructure
 
-As atividades do MobiLab combinam fundamentos de controle, percepção, inteligência artificial, navegação, teleoperação e integração de sistemas. A infraestrutura inclui plataformas humanoides, quadrúpedes e manipuladores robóticos usadas para validação experimental em hardware real.
+MobiLab's activities combine control, perception, artificial intelligence, navigation, teleoperation, and systems integration. Our infrastructure includes humanoid platforms, quadrupeds, and robotic manipulators used for experimental validation on real hardware.

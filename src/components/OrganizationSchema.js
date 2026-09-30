@@ -8,12 +8,12 @@ const schema = {
   name: "MobiLab UDESC",
   alternateName: "Laboratório de Sistemas Autônomos e Robótica Móvel",
   description:
-    "Laboratório da UDESC Joinville dedicado à pesquisa aplicada em robótica móvel, sistemas autônomos e Physical AI.",
+    "UDESC Joinville laboratory dedicated to applied research in mobile robotics, autonomous systems, and Physical AI.",
   url: "https://mobilab.joinville.udesc.br/",
   logo: "https://mobilab.joinville.udesc.br/img/mobilab/mobilab-logo-white-high.png",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "R. Paulo Malschitzki, 200 - Bloco I, 2º andar",
+    streetAddress: "Rua Paulo Malschitzki, 200 - Block I, 2nd floor",
     addressLocality: "Joinville",
     addressRegion: "SC",
     postalCode: "89219-710",

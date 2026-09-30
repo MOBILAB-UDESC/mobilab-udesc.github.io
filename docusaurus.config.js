@@ -4,7 +4,7 @@ const siteUrl = 'https://mobilab.joinville.udesc.br';
 const siteTitle = 'MobiLab UDESC';
 const socialImage = `${siteUrl}/img/mobilab/mobilab-logo-white-high.png`;
 const siteDescription =
-  'O MobiLab UDESC Joinville pesquisa robótica móvel, sistemas autônomos e Physical AI com validação em plataformas robóticas reais.';
+  'MobiLab UDESC Joinville researches mobile robotics, autonomous systems, and Physical AI.';
 
 const config = {
   title: siteTitle,
@@ -50,7 +50,7 @@ const config = {
       tagName: 'meta',
       attributes: {
         property: 'og:image:alt',
-        content: 'Logotipo do MobiLab UDESC',
+        content: 'MobiLab UDESC logo',
       },
     },
   ],
@@ -63,24 +63,9 @@ const config = {
     },
   },
 
-  plugins: [
-    './src/plugins/english-language.js',
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'english',
-        path: 'docs-en',
-        routeBasePath: 'en',
-        sidebarPath: './sidebars-en.js',
-        breadcrumbs: true,
-        showLastUpdateTime: false,
-      },
-    ],
-  ],
-
   i18n: {
-    defaultLocale: 'pt-BR',
-    locales: ['pt-BR'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
 
   presets: [
@@ -122,16 +107,12 @@ const config = {
           {
             to: '/mobilab',
             position: 'left',
-            label: 'Sobre',
+            label: 'About',
           },
           {
             to: '/guides',
             position: 'left',
-            label: 'Documentações',
-          },
-          {
-            position: 'right',
-            type: 'custom-language-switcher',
+            label: 'Guides',
           },
           {
             href: 'https://github.com/MOBILAB-UDESC',

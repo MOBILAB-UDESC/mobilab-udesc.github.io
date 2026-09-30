@@ -19,7 +19,7 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Documentação',
+      label: 'Guides',
       link: {type: 'doc', id: 'guides/index'},
       items: [
         {
@@ -29,43 +29,43 @@ const sidebars = {
           items: [
             {
               type: 'category',
-              label: 'Configuração Inicial',
+              label: 'Initial setup',
               link: {type: 'doc', id: 'guides/G1/configuracao-inicial/index'},
               items: [
-                'guides/G1/configuracao-inicial/introducao',
-                'guides/G1/configuracao-inicial/conectando-ethernet',
-                'guides/G1/configuracao-inicial/ativando-wifi',
-                'guides/G1/configuracao-inicial/host-setup',
-                'guides/G1/configuracao-inicial/controlando-pelo-sdk',
+                {type: 'doc', id: 'guides/G1/configuracao-inicial/introducao', label: 'Introduction'},
+                {type: 'doc', id: 'guides/G1/configuracao-inicial/conectando-ethernet', label: 'Connecting via Ethernet'},
+                {type: 'doc', id: 'guides/G1/configuracao-inicial/ativando-wifi', label: 'Enabling Wi-Fi'},
+                {type: 'doc', id: 'guides/G1/configuracao-inicial/host-setup', label: 'Host setup'},
+                {type: 'doc', id: 'guides/G1/configuracao-inicial/controlando-pelo-sdk', label: 'Controlling with the SDK'},
               ],
             },
             {
               type: 'category',
-              label: 'Teleoperação',
+              label: 'Teleoperation',
               link: {type: 'doc', id: 'guides/G1/teleoperacao/index'},
               items: [
                 {
                   type: 'category',
-                  label: 'Configuração',
+                  label: 'Setup',
                   items: [
-                    'guides/G1/teleoperacao/configuracao/configuracao-quest',
-                    'guides/G1/teleoperacao/configuracao/configuracao-host',
-                    'guides/G1/teleoperacao/configuracao/configuracao-pc2',
-                    'guides/G1/teleoperacao/configuracao/checklist',
+                    {type: 'doc', id: 'guides/G1/teleoperacao/configuracao/configuracao-quest', label: 'Quest setup'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/configuracao/configuracao-host', label: 'Host setup'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/configuracao/configuracao-pc2', label: 'PC2 setup'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/configuracao/checklist', label: 'Checklist'},
                   ],
                 },
                 {
                   type: 'category',
-                  label: 'Execução',
+                  label: 'Operation',
                   items: [
-                    'guides/G1/teleoperacao/execucao/via-wifi',
-                    'guides/G1/teleoperacao/execucao/cabeada',
-                    'guides/G1/teleoperacao/execucao/host-unificado',
+                    {type: 'doc', id: 'guides/G1/teleoperacao/execucao/via-wifi', label: 'Wi-Fi operation'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/execucao/cabeada', label: 'Wired operation'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/execucao/host-unificado', label: 'Unified host'},
                   ],
                 },
               ],
             },
-            'guides/G1/referencias',
+            {type: 'doc', id: 'guides/G1/referencias', label: 'References'},
           ],
         },
         {
@@ -77,18 +77,18 @@ const sidebars = {
               type: 'category',
               label: 'Thor',
               items: [
-                'guides/nvidia/jetson-thor/hardware',
-                'guides/nvidia/jetson-thor/install',
+                {type: 'doc', id: 'guides/nvidia/jetson-thor/hardware', label: 'Hardware'},
+                {type: 'doc', id: 'guides/nvidia/jetson-thor/install', label: 'Installation'},
               ],
             },
           ],
         },
         {
           type: 'category',
-          label: 'Ferramentas',
+          label: 'Tools',
           link: {type: 'doc', id: 'guides/ferramentas/index'},
           items: [
-            'guides/ferramentas/extensao-ssh',
+            {type: 'doc', id: 'guides/ferramentas/extensao-ssh', label: 'SSH extension'},
           ],
         },
       ],

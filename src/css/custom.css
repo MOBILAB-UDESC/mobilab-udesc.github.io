@@ -9,6 +9,28 @@
   --ifm-code-font-size: 95%;
 }
 
+.brand-assets {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.brand-assets td {
+  background: #fff;
+  width: 50%;
+}
+
+.brand-assets td.brand-assets__dark {
+  background: #1c1e21;
+}
+
+.markdown .brand-assets img {
+  width: 100%;
+  height: 180px;
+  margin: 0;
+  object-fit: contain;
+}
+
 .markdown img {
   border-radius: 8px;
   display: block;

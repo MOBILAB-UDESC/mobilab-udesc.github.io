@@ -1,64 +1,65 @@
 ---
-title: Projetos e Aplicações
-description: Projetos do MobiLab UDESC em robótica móvel, Physical AI, robôs humanoides, busca e salvamento, inspeção autônoma e simulação.
+title: Projects and applications
+sidebar_label: Projects
+description: MobiLab UDESC projects in mobile robotics, Physical AI, humanoid robots, search and rescue, autonomous inspection, and simulation.
 slug: /mobilab/projetos
 ---
 
-O MobiLab combina pesquisa acadêmica, formação de estudantes e validação em cenários reais. Os projetos integram autonomia, percepção, controle, manipulação e operação remota para atuação segura em ambientes complexos.
+MobiLab combines academic research, student training, and real-world validation. Our projects integrate autonomy, perception, control, manipulation, and remote operation for safe operation in complex environments.
 
-## Busca, resgate e salvamento
+## Search and rescue
 
-Robôs quadrúpedes oferecem mobilidade e percepção onde a presença humana é limitada por risco, instabilidade estrutural, fumaça, calor ou difícil acesso.
+Quadruped robots provide mobility and perception where human access is limited by danger, structural instability, smoke, heat, or difficult terrain.
 
-Em parceria com o Corpo de Bombeiros Voluntários de Joinville, o laboratório investiga incêndios, resgates, localização de pessoas, tração de cargas e controle de esguichos, desenvolvendo capacidade técnica antes de aplicação em sinistros reais.
+In partnership with the Joinville Volunteer Fire Department, the laboratory investigates firefighting, rescue, locating people, pulling loads, and controlling fire nozzles, building technical capabilities before deployment in real emergencies.
 
-- Navegação em terrenos irregulares
-- Percepção com LiDAR 3D
-- Câmeras térmicas e de profundidade
-- Transposição de obstáculos complexos
-- Apoio remoto à tomada de decisão
+- Navigation on uneven terrain
+- Perception with 3D LiDAR
+- Thermal and depth cameras
+- Traversing complex obstacles
+- Remote decision support
 
-## Inspeção autônoma de infraestrutura
+## Autonomous infrastructure inspection
 
-Túneis, sistemas de drenagem e infraestruturas subterrâneas apresentam riscos à integridade humana. A robótica móvel coleta dados, documenta condições e apoia decisões técnicas com menor exposição.
+Tunnels, drainage systems, and underground infrastructure pose risks to human safety. Mobile robotics collects data, documents conditions, and supports technical decisions while reducing exposure.
 
-Com o Unitree B2W, em colaboração com a Secretaria de Infraestrutura de Joinville, o laboratório explora inspeção autônoma de túneis urbanos e drenagem subterrânea.
+Using the Unitree B2W, in collaboration with Joinville's Infrastructure Department, the laboratory explores autonomous inspection of urban tunnels and underground drainage systems.
 
-- Operação em ambientes confinados
-- Missões de longa duração
-- Resistência a intempéries
-- Coleta de dados visuais e espaciais
-- Mapeamento e documentação de infraestrutura
+- Operation in confined spaces
+- Long-duration missions
+- Weather resistance
+- Visual and spatial data collection
+- Infrastructure mapping and documentation
 
-## Robótica humanoide
+## Humanoid robotics
 
-Plataformas humanoides permitem investigar robôs projetados para ambientes pensados para pessoas, combinando locomoção, manipulação, percepção, interfaces naturais e aprendizado de máquina.
+Humanoid platforms enable research into robots designed for human environments, combining locomotion, manipulation, perception, natural interfaces, and machine learning.
 
-- Controle de movimento
-- Manipulação com mãos robóticas
-- Interação humano-robô
-- Aprendizado de máquina aplicado à robótica
-- Automação industrial
-- Sistemas autônomos em ambientes humanos
+- Motion control
+- Manipulation with robotic hands
+- Human-robot interaction
+- Machine learning for robotics
+- Industrial automation
+- Autonomous systems in human environments
 
-## Robótica móvel e mapeamento autônomo
+## Mobile robotics and autonomous mapping
 
-Mapeamento, localização e navegação são a base para robôs operarem fora de ambientes controlados. As pesquisas conectam percepção, fusão de sensores, controle e tomada de decisão em plataformas móveis, incluindo simulações de busca e resgate, navegação interna/externa, operação remota e validação em hardware real.
+Mapping, localization, and navigation are the foundations for robots to operate outside controlled environments. Our research connects perception, sensor fusion, control, and decision-making on mobile platforms, including search-and-rescue simulations, indoor and outdoor navigation, remote operation, and validation on real hardware.
 
-## Manipulação e simulação
+## Manipulation and simulation
 
-Simulação e manipulação aceleram experimentos, reduzem riscos e tornam resultados mais reprodutíveis. O laboratório desenvolve com ROS 2, Gazebo e MoveIt 2.
+Simulation and manipulation accelerate experiments, reduce risks, and make results more reproducible. The laboratory develops systems using ROS 2, Gazebo, and MoveIt 2.
 
-- Modelagem cinemática e dinâmica
-- Simulação antes da execução em hardware real
-- Planejamento de movimento com MoveIt 2
-- Integração de manipuladores, garras e sensores
-- Testes reprodutíveis em ROS 2
+- Kinematic and dynamic modeling
+- Simulation before execution on real hardware
+- Motion planning with MoveIt 2
+- Integration of manipulators, grippers, and sensors
+- Reproducible tests in ROS 2
 
-## Colaboração internacional
+## International collaboration
 
-Projeto com o PERRO Lab e bolsas Mitacs para estudantes na Thompson Rivers University (Canadá). A colaboração abrange robótica quadrúpede autônoma, fusão de sensores, controle, navegação, inspeção de infraestrutura e resposta a emergências.
+A project with PERRO Lab and Mitacs scholarships supports students at Thompson Rivers University in Canada. The collaboration covers autonomous quadruped robotics, sensor fusion, control, navigation, infrastructure inspection, and emergency response.
 
-## Ensino, pesquisa e extensão
+## Teaching, research, and outreach
 
-As plataformas formam estudantes em robótica e IA, apoiam projetos de graduação e pós-graduação, e aproximam a comunidade de aplicações concretas. O conhecimento gerado impacta indústria, educação, saúde, serviços públicos e segurança operacional.
+Our platforms train students in robotics and AI, support undergraduate and graduate projects, and introduce the community to practical applications. The resulting knowledge contributes to industry, education, healthcare, public services, and operational safety.
