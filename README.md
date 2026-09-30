@@ -100,6 +100,18 @@ Always create a pull request, do not push directly to `main`.
 
 ## Content Notes
 
+### Laboratory pages
+
+- Edit `src/data/people.yml` to maintain the People page. Each entry has `name`, `role`, `group`, `image`, `linkedin`, `lattes`, `github`, `website`, `google_scholar`, and `orcid`. Groups appear in file order; `PHD` is displayed as "PhD students".
+- Set unavailable profile links and portraits to `null`. Add verified portraits under `static/img/people/` and use `/img/people/file-name.jpg` as the image value. Null images display initials.
+- The `src/plugins/people.js` plugin reads YAML at build time using the `js-yaml` package already installed by Docusaurus. It watches the data file during development.
+- Douglas and Alan's profile links and roles were supplied by the lab maintainer. Lattes required a CAPTCHA and LinkedIn did not expose usable portraits during research. The current advisee roster and portraits still need confirmation before adding them.
+- Publications are maintained in `docs/mobilab/publications.md`, newest year first. The initial selection was checked against Douglas's ORCID and Crossref DOI records. Preserve published titles and author order; include a DOI and verify affiliations before attributing a paper to the lab.
+- Contact details come from the existing lab overview and the UDESC CCT website. The listed email and telephone are campus contacts.
+- Run `node --test tests/people.test.js` and `npm run build` after changing people data or rendering.
+
+### Documentation
+
 - Use Markdown files under `docs/` for documentation pages.
 - Add sidebar entries in `sidebars.js` when creating pages that should appear in navigation.
 - Put static assets in `static/img/`, organized by docs section, and reference them as `/img/section/file-name.ext`.

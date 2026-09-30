@@ -1,9 +1,10 @@
 ---
 title: News
+hide_table_of_contents: true
 description: News, reports, and public references about MobiLab, robotics, and research at UDESC Joinville.
 ---
 
-This page collects news, reports, videos, and public channels related to MobiLab, UDESC Joinville's robotics infrastructure, and research initiatives associated with the laboratory. Linked sources are in Portuguese.
+News, reports, videos, and public channels related to MobiLab, UDESC Joinville's robotics infrastructure, and research initiatives associated with the laboratory. Most of linked sources are in Portuguese.
 
 ## Official news
 

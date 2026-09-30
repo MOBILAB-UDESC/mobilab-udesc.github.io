@@ -9,6 +9,27 @@
   --ifm-code-font-size: 95%;
 }
 
+.navbar-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--ifm-navbar-link-color);
+}
+
+.navbar-social:hover {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.navbar-social-item:has(+ .navbar-social-item) {
+  padding-right: 0;
+}
+
+.navbar-social-item + .navbar-social-item {
+  padding-left: 0;
+}
+
 .brand-assets {
   display: table;
   table-layout: fixed;
@@ -100,4 +121,70 @@
 .footer-branding__logo--mobilab {
   max-height: 96px;
   max-width: 120px;
+}
+.people-group {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 260px));
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.person {
+  padding: 1rem 0;
+}
+
+.person h3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+.person p {
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 0.5rem;
+}
+
+.markdown .person__portrait {
+  width: 160px;
+  height: 160px;
+  border-radius: 0;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+}
+
+.person__initials {
+  display: grid;
+  place-items: center;
+  background: var(--ifm-color-emphasis-200);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.person__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.markdown .person__links > li {
+  display: flex;
+  margin: 0;
+}
+
+.person__links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
 }

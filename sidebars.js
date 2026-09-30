@@ -1,25 +1,10 @@
 // @ts-check
 
 const sidebars = {
-  wikiSidebar: [
-    {
-      type: 'doc',
-      id: 'index',
-      label: 'Home',
-    },
+  guidesSidebar: [
     {
       type: 'category',
-      label: 'MobiLab',
-      link: {type: 'doc', id: 'mobilab/index'},
-      items: [
-        'mobilab/projetos',
-        'mobilab/noticias',
-        'mobilab/brand/index',
-      ],
-    },
-    {
-      type: 'category',
-      label: 'Guides',
+          label: 'Guides',
       link: {type: 'doc', id: 'guides/index'},
       items: [
         {
@@ -91,13 +76,8 @@ const sidebars = {
             {type: 'doc', id: 'guides/ferramentas/extensao-ssh', label: 'SSH extension'},
           ],
         },
+        {type: 'doc', id: 'cad/index', label: 'CAD models'},
       ],
-    },
-    {
-      type: 'category',
-      label: 'CAD models',
-      link: {type: 'doc', id: 'cad/index'},
-      items: [],
     },
   ],
 };

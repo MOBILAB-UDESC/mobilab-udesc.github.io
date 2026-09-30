@@ -1,27 +1,33 @@
 ---
 id: index
-title: MobiLab UDESC | Robotics and Physical AI in Joinville
-description: "MobiLab UDESC Joinville: mobile robotics, autonomous systems, and Physical AI research on real-world platforms."
+title: MobiLab UDESC Joinville | Robotics, embodied AI and autonomous systems
+description: Explore MobiLab UDESC Joinville, the mobile robotics, autonomous systems, and embodied AI laboratory at CCT.
 slug: /
+hide_table_of_contents: true
 ---
 
-# MobiLab UDESC
+# MobiLab
 
 import OrganizationSchema from '@site/src/components/OrganizationSchema';
 
 <OrganizationSchema />
 
-MobiLab UDESC is the Autonomous Systems and Mobile Robotics Laboratory at UDESC Joinville. We conduct applied research in mobile robotics, humanoid and quadruped robots, autonomous systems, and Physical AI.
+MobiLab (Autonomous Systems and Mobile Robotics Laboratory) is based at UDESC Joinville's [Center for Technological Sciences (CCT)](https://www.udesc.br/cct) and is affiliated with the [Department of Electrical Engineering](https://www.udesc.br/cct/departamentos/eletrica). The laboratory was established in 2023, following cooperation with [IIT's Dynamic Legged Systems (DLS)](https://dls.iit.it/).
 
-MobiLab conducts applied research in mobile robotics, autonomous systems, and human-robot interaction. The laboratory combines academic training, experiments on real platforms, and the development of solutions for urban, industrial, and public-service environments.
+We conduct applied research in mobile robotics, autonomous systems, and embodied AI, combining academic training, experiments on real platforms, and solutions for urban, industrial, and public-service environments.
 
-## Robotics research in Joinville
+See our [Contact page](/mobilab/contact) for location, visiting information, and contact details.
 
-- [About MobiLab UDESC](/mobilab): research areas, infrastructure, location, and public channels.
-- [Projects and applications](/mobilab/projetos): search and rescue, infrastructure inspection, humanoid robotics, autonomous mapping, manipulation, and simulation.
-- [News and public references](/mobilab/noticias): the laboratory and the history of robotics at UDESC Joinville.
-- [Technical guides](/guides): setup, operation, and development with the laboratory's robotic platforms.
+## Research
 
-## Research and infrastructure
+MobiLab studies perception, navigation, interaction, and task execution in dynamic environments, combining control, artificial intelligence, and systems integration with validation on real hardware.
 
-MobiLab's activities combine control, perception, artificial intelligence, navigation, teleoperation, and systems integration. Our infrastructure includes humanoid platforms, quadrupeds, and robotic manipulators used for experimental validation on real hardware.
+- Autonomous systems
+- Mobile, humanoid, and quadruped robotics
+- Artificial intelligence for robotics
+- Human-robot interaction
+- Sensor fusion, navigation, and control
+- Robotics simulation with ROS 2, Gazebo, and MoveIt 2
+- Teleoperation and remote operation
+
+Learn more about our [research](/mobilab/research).

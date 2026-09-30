@@ -1,0 +1,77 @@
+# Keep unverified optional fields null. Store portraits under static/img/people/.
+- name: Douglas Wildgrube Bertol
+  role: Professor and laboratory coordinator
+  group: Professors
+  image: /img/people/professor-douglas.jpeg
+  linkedin: https://www.linkedin.com/in/dwbertol/
+  lattes: http://lattes.cnpq.br/5099032394205654
+  github: https://github.com/dwbertol
+  website: null
+  google_scholar: https://scholar.google.com/citations?hl=en&user=QlCC_IoAAAAJ
+  orcid: https://orcid.org/0000-0002-6980-7422
+
+- name: Aureo Guilherme Dobrikopf
+  role: PhD student
+  group: PHD
+  image: /img/people/phd-aureo.jpeg
+  linkedin: https://www.linkedin.com/in/aureo-dobrikopf-b1210997/
+  lattes: http://lattes.cnpq.br/7696430575725211
+  github: https://github.com/AureoGD
+  website: https://www.udesc.br/professor/aureo.dobrikopf
+  google_scholar: null
+  orcid: https://orcid.org/0000-0003-1667-8003
+
+- name: Alan R. Fachini
+  role: PhD student
+  group: PHD
+  image: /img/people/phd-alan.jpeg
+  linkedin: https://linkedin.com/in/alanfachini
+  lattes: http://lattes.cnpq.br/0098401603775435
+  github: https://github.com/alfakini
+  website: https://alanfachini.com/
+  google_scholar: null
+  orcid: null
+
+- name: Nilton Charlie Sare Vargas
+  role: PhD student
+  group: PHD
+  image: /img/people/phd-nilton.jpeg
+  linkedin: https://www.linkedin.com/in/nilton-sare/
+  lattes: http://lattes.cnpq.br/9427528298254340
+  github: https://github.com/NiltonSV
+  website: null
+  google_scholar: null
+  orcid: https://orcid.org/0009-0003-5321-2453
+
+- name: Paulo Roberto Quispe Cardenas
+  role: Master's student
+  group: Master's students
+  image: /img/people/master-paulo.jpeg
+  linkedin: https://www.linkedin.com/in/paulo-roberto-quispe-cardenas/
+  lattes: null
+  github: https://github.com/Paulorqc
+  website: null
+  google_scholar: null
+  orcid: null
+
+- name: Lucas Meneghetti
+  role: Master's student
+  group: Master's students
+  image: /img/people/master-lucas-menegete.jpeg
+  linkedin: https://www.linkedin.com/in/lucas-meneghetti/
+  lattes: null
+  github: https://github.com/NiltonSV
+  website: null
+  google_scholar: null
+  orcid: null
+
+- name: Luca Mateo
+  role: Undergraduate student
+  group: Undergraduate students
+  image: /img/people/undergraduate-luca.jpeg
+  linkedin: https://www.linkedin.com/in/luca-mateo-rangel/
+  lattes: null
+  github: https://github.com/rngllz
+  website: null
+  google_scholar: null
+  orcid: null

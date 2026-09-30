@@ -1,5 +1,6 @@
 ---
 title: Projects and applications
+hide_table_of_contents: true
 sidebar_label: Projects
 description: MobiLab UDESC projects in mobile robotics, Physical AI, humanoid robots, search and rescue, autonomous inspection, and simulation.
 slug: /mobilab/projetos
