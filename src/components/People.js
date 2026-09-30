@@ -37,7 +37,6 @@ export default function People() {
               </div>
             )}
             <h3><a href={person.website || person.lattes || person.linkedin}>{person.name}</a></h3>
-            <p>{person.role}</p>
             <ul className="person__links" aria-label={`Profiles for ${person.name}`}>
               {Object.entries(links).filter(([field]) => person[field]).map(([field, label]) => (
                 <li key={field}>
