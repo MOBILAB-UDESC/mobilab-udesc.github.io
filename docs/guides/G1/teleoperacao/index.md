@@ -24,6 +24,7 @@ slug: /guides/G1/teleoperacao
 #### Execução
 1. [Teleoperação com o Quest via wifi](/guides/G1/teleoperacao/execucao/via-wifi)
 2. [Teleoperação com o Quest cabeado](/guides/G1/teleoperacao/execucao/cabeada)
+3. [GORT quick start with DEX3](/guides/G1/teleoperacao/execucao/inicio-rapido-dex3)
 
 ## Referências
 

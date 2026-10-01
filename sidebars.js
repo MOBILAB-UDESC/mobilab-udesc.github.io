@@ -46,6 +46,7 @@ const sidebars = {
                     {type: 'doc', id: 'guides/G1/teleoperacao/execucao/via-wifi', label: 'Wi-Fi operation'},
                     {type: 'doc', id: 'guides/G1/teleoperacao/execucao/cabeada', label: 'Wired operation'},
                     {type: 'doc', id: 'guides/G1/teleoperacao/execucao/host-unificado', label: 'Unified host'},
+                    {type: 'doc', id: 'guides/G1/teleoperacao/execucao/inicio-rapido-dex3', label: 'GORT quick start with DEX3'},
                   ],
                 },
               ],
