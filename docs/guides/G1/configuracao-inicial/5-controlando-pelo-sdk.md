@@ -13,6 +13,8 @@ Consulte a página oficial para instruções detalhadas. Esta seção fornece in
 
 Você pode executar este exemplo no computador de desenvolvimento (PC2) ou em um computador externo (host).
 
+Para estes experimentos, usaremos scripts disponíveis no repositório [unitree_g1](https://github.com/MOBILAB-UDESC/unitree-g1) localizado na Organization oficial do [MobiLab](https://github.com/MOBILAB-UDESC).
+
 ### 1. Coloque o G1 no estado correto
 
 Use o controle R3-1 para colocar o robô no estado de motion:
