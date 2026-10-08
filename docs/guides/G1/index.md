@@ -30,6 +30,10 @@ slug: /guides/G1
 3. [Configurando o PC2 **Unitree**](/guides/G1/teleoperacao/configuracao/configuracao-pc2)
 4. [Checklist pré execução](/guides/G1/teleoperacao/configuracao/checklist)
 
+### Mão Dex3-1
+
+[Especificações, instalação, software e solução de problemas](/guides/G1/dex3-1)
+
 ## Referências
 
 [Documentação e repositórios externos](/guides/G1/referencias)

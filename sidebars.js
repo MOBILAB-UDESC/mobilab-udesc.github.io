@@ -51,6 +51,7 @@ const sidebars = {
                 },
               ],
             },
+            {type: 'doc', id: 'guides/G1/dex3-1', label: 'Dex3-1 hand'},
             {type: 'doc', id: 'guides/G1/referencias', label: 'References'},
           ],
         },
