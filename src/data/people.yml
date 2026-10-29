@@ -89,7 +89,7 @@
 
 - name: João Victor Portela Rocha
   role: Undergraduate student
-  group: Undergraduate student
+  group: Undergraduate students
   image: /img/people/undergraduate-portela.jpeg
   linkedin: https://www.linkedin.com/in/joaotkvictor/
   lattes: https://lattes.cnpq.br/1830121403065592
@@ -97,3 +97,14 @@
   website: null
   google_scholar: null
   orcid: https://orcid.org/0009-0005-8110-565X
+
+- name: Fabio Severino
+  role: Undergraduate student
+  group: Undergraduate students
+  image: /img/people/undergraduate-severino.jpeg
+  linkedin: null
+  lattes: http://lattes.cnpq.br/9056236585314184
+  github: https://github.com/FabioJCSeverino
+  website: null
+  google_scholar: null
+  orcid: https://orcid.org/0009-0003-0585-198X
