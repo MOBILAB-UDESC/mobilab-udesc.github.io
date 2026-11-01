@@ -63,15 +63,7 @@ const sidebars = {
           items: [
             {type: 'doc', id: 'guides/H1/ligando-desligando', label: 'Powering on and off'},
             {type: 'doc', id: 'guides/H1/conectando-ethernet', label: 'Connecting via Ethernet'},
-            {
-              type: 'category',
-              label: 'Teleoperation',
-              link: {type: 'doc', id: 'guides/H1/teleoperacao/index'},
-              items: [
-                {type: 'doc', id: 'guides/H1/teleoperacao/configuracao', label: 'Setup'},
-                {type: 'doc', id: 'guides/H1/teleoperacao/execucao', label: 'Operation'},
-              ],
-            },
+            {type: 'doc', id: 'guides/H1/dex5-1', label: 'Dex5-1 hand'},
             {type: 'doc', id: 'guides/H1/referencias', label: 'References'},
           ],
         },

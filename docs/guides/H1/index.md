@@ -71,6 +71,10 @@ A ordem das juntas é a usada pelo SDK (índice do motor em `LowCmd`/`LowState`)
 1. [Ligando e desligando](/guides/H1/ligando-desligando)
 2. [Conectando com ethernet](/guides/H1/conectando-ethernet)
 
+### Mão Dex5-1
+
+[Especificações, instalação e controle da mão Dex5-1](/guides/H1/dex5-1)
+
 Para acessar o PC4 sem senha, veja [SSH aliases](/guides/ferramentas/ssh-aliases) em Ferramentas.
 
 ## Referências
