@@ -34,6 +34,10 @@ slug: /guides/G1
 
 [Especificações, instalação, software e solução de problemas](/guides/G1/dex3-1)
 
+### LIDAR
+
+[Lendo a nuvem de pontos do Livox MID-360 com ROS2 Jazzy](/guides/G1/Lidar)
+
 ## Referências
 
 [Documentação e repositórios externos](/guides/G1/referencias)
