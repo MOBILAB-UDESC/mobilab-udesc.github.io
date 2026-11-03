@@ -84,6 +84,14 @@ const sidebars = {
         },
         {
           type: 'category',
+          label: 'Open Source manipulators',
+          link: {type: 'doc', id: 'guides/manipuladores/index'},
+          items: [
+            {type: 'doc', id: 'guides/manipuladores/pincopen', label: "Pinc'Open"},
+          ],
+        },
+        {
+          type: 'category',
           label: 'Tools',
           link: {type: 'doc', id: 'guides/ferramentas/index'},
           items: [
