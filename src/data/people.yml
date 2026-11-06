@@ -44,15 +44,15 @@
   orcid: https://orcid.org/0009-0003-5321-2453
 
 - name: Paulo Roberto Quispe Cardenas
-  role: Master's student
-  group: Master's students
+  role: PhD student
+  group: PHD
   image: /img/people/master-paulo.jpeg
   linkedin: https://www.linkedin.com/in/paulo-roberto-quispe-cardenas/
-  lattes: null
+  lattes: http://lattes.cnpq.br/1639207302328259
   github: https://github.com/Paulorqc
-  website: null
+  website: https://oshwlab.com/paulo.quispe.c/works
   google_scholar: null
-  orcid: null
+  orcid: https://orcid.org/0000-0001-9666-1169
 
 - name: Lucas Meneghetti
   role: Master's student
