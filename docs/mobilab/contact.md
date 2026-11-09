@@ -6,7 +6,7 @@ description: Contact channels, address, and visiting information for MobiLab UDE
 
 # Contact
 
-For research collaborations and visits, please contact MobiLab on [LinkedIn](https://www.linkedin.com/showcase/mobilab-udesc/) or [Instagram](https://www.instagram.com/mobi.udesc/). <br/> Office hours: Monday to Friday, 09:00 to 17:00. Please schedule in-person visits in advance.
+For research collaborations and visits, please contact MobiLab on [LinkedIn](https://www.linkedin.com/showcase/mobilab-udesc/) or [Instagram](https://www.instagram.com/mobi.udesc/). Our open models and datasets are available on [Hugging Face](https://huggingface.co/mobilab-udesc). <br/> Office hours: Monday to Friday, 09:00 to 17:00. Please schedule in-person visits in advance.
 
 [Directions to UDESC CCT](https://www.google.com/maps/search/?api=1&query=UDESC+CCT+Rua+Paulo+Malschitzki+200+Joinville) <br/> Rua Paulo Malschitzki, 200, Block I, 2nd floor<br />
 Zona Industrial Norte, Joinville, SC, Brazil, CEP: 89219-710

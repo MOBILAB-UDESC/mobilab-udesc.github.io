@@ -27,6 +27,7 @@ const schema = {
   },
   sameAs: [
     "https://github.com/MOBILAB-UDESC",
+    "https://huggingface.co/mobilab-udesc",
     "https://www.linkedin.com/showcase/mobilab-udesc/",
     "https://www.instagram.com/mobi.udesc/",
   ],
