@@ -82,6 +82,7 @@ const sidebars = {
             },
           ],
         },
+        {type: 'doc', id: 'guides/nvidia-brev/index', label: 'NVIDIA Brev'},
         {
           type: 'category',
           label: 'Open Source manipulators',
