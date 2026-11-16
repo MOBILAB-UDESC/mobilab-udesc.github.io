@@ -38,6 +38,10 @@ slug: /guides/G1
 
 [Lendo a nuvem de pontos do Livox MID-360 com ROS2 Jazzy](/guides/G1/Lidar)
 
+### Atualizando o JetPack
+
+[Do JetPack 5.1.1 para o 6.2.2 em modo Super](/guides/G1/atualizando-jetpack)
+
 ## Referências
 
 [Documentação e repositórios externos](/guides/G1/referencias)

@@ -53,6 +53,7 @@ const sidebars = {
             },
             {type: 'doc', id: 'guides/G1/dex3-1', label: 'Dex3-1 hand'},
             {type: 'doc', id: 'guides/G1/Lidar', label: 'LIDAR (Livox MID-360)'},
+            {type: 'doc', id: 'guides/G1/atualizando-jetpack', label: 'Updating JetPack'},
             {type: 'doc', id: 'guides/G1/referencias', label: 'References'},
           ],
         },
