@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summer School de Robótica e Embodied AI - MobiLab UDESC</title>
+<meta name="description" content="Uma semana intensiva, do zero ao controle de robôs com IA. 15 a 19 de fevereiro de 2027, UDESC CCT, Joinville.">
+<link rel="icon" href="/img/mobilab/mobilab-logo.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap">
+<style>
+body{margin:0}
+html{scroll-behavior:smooth}
+a{color:#1a4a24}a:hover{color:#0d2512}
+</style>
+</head>
+<body>
+<div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0a1c10; background: #f5f6f3; font-size: 17px; line-height: 1.6">
+
+<header style="background: #0a1c10; color: #f2f4f1">
+<div style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<a href="#topo" style="display: flex; align-items: center; gap: 16px; color: #f2f4f1; text-decoration: none; min-height: 44px">
+<img src="/summerschool/mobilab-logo.png" alt="MobiLab" style="height: 40px; width: auto; display: block">
+</a>
+<nav aria-label="Seções" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px">
+<a href="#sobre" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Sobre</a>
+<a href="#programa" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Programa</a>
+<a href="#formato" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Formato</a>
+<a href="#apoio" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Apoio</a>
+<a href="#inscricao" style="color: #0a1c10; background: #03b05a; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; min-height: 24px">Inscreva-se</a>
+</nav>
+</div>
+</header>
+
+<section id="topo" style="background: #0a1c10; color: #f2f4f1">
+<div id="hero-stage" style="position: relative; overflow: hidden; -webkit-user-select: none; user-select: none">
+<canvas id="hero-canvas" role="img" aria-label="Braço robótico SO-101 em 3D com um cubo vermelho. Mova o cursor para guiar a garra, clique para pegar o cubo e clique de novo para soltar." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block"></canvas>
+<div style="position: relative; max-width: 1160px; margin: 0 auto; padding: clamp(40px, 7vw, 96px) clamp(20px, 5vw, 40px) clamp(32px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: stretch; gap: 32px 64px">
+<div style="flex: 3 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #03b05a">15 A 19 DE FEVEREIRO DE 2027</p>
+<h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.04; letter-spacing: -0.02em">Summer School de Robótica e Embodied AI</h1>
+<p style="margin: 0; max-width: 600px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: #d5dad6">Uma semana intensiva, do zero ao controle de robôs com IA. Sua equipe monta um braço robótico, simula, teleopera, coleta dados e treina o modelo que vai controlá-lo no mundo real.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<a href="#inscricao" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: #03b05a; color: #0a1c10; font-weight: 600; text-decoration: none; border-radius: 4px">Quero participar</a>
+<a href="#programa" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid #4a6a54; color: #f2f4f1; font-weight: 500; text-decoration: none; border-radius: 4px">Ver o programa</a>
+</div>
+</div>
+<div id="hero-anchor" style="flex: 3 1 380px; min-width: 0; min-height: 440px; display: flex; align-items: flex-end; justify-content: flex-end">
+</div>
+</div>
+</div>
+<div style="border-top: 1px solid #1d3a26">
+<dl style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap">
+<div style="flex: 1 1 180px; padding: 24px 24px 24px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">QUANDO</dt>
+<dd style="margin: 0; font-size: 18px; font-weight: 500">15 a 19 fev 2027</dd>
+</div>
+<div style="flex: 1 1 180px; padding: 24px 24px 24px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">HORÁRIO</dt>
+<dd style="margin: 0; font-size: 18px; font-weight: 500">09h às 17h</dd>
+</div>
+<div style="flex: 1 1 180px; padding: 24px 24px 24px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">ONDE</dt>
+<dd style="margin: 0; font-size: 18px; font-weight: 500">UDESC CCT, Joinville</dd>
+</div>
+<div style="flex: 1 1 180px; padding: 24px 24px 24px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">VAGAS</dt>
+<dd style="margin: 0; font-size: 18px; font-weight: 500">30, em 6 equipes</dd>
+</div>
+<div style="flex: 1 1 180px; padding: 24px 0; display: flex; flex-direction: column; gap: 4px">
+<dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">CERTIFICADO</dt>
+<dd style="margin: 0; font-size: 18px; font-weight: 500">Sim</dd>
+</div>
+</dl>
+</div>
+</section>
+
+<section id="sobre" style="padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 40px)">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 80px">
+<div style="flex: 3 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; letter-spacing: -0.015em">As tecnologias que usamos no laboratório, ensinadas por quem pesquisa com elas</h2>
+<p style="margin: 0; color: #3b423d">A Summer School apresenta as ferramentas e os métodos do dia a dia do MobiLab para formar estudantes em robótica e IA. O percurso cobre o ciclo completo de um projeto: construir o hardware, simular, integrar com ROS 2, teleoperar, coletar dados e treinar um modelo de IA.</p>
+<p style="margin: 0; color: #3b423d">O formato é mão na massa. Cada bloco teórico é seguido de práticas em equipe, finalizando a semana com um desafio em que os times colocam seus modelos para rodar nos robôs.</p>
+</div>
+<aside style="flex: 2 1 320px; min-width: 0; display: flex; flex-direction: column">
+<h3 style="margin: 0 0 16px; font-family: 'IBM Plex Mono', monospace; font-weight: 500; font-size: 13px; letter-spacing: 0.1em; color: #555d57">O MOBILAB</h3>
+<p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">Laboratório de Sistemas Autônomos e Robótica Móvel do Centro de Ciências Tecnológicas da UDESC.</p>
+<p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">Fundado em 2023 pelo professor Douglas Bertol, em cooperação com o Dynamic Legged Systems (DLS) do Istituto Italiano di Tecnologia.</p>
+<p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">Plataformas Unitree G1, H1, B2, B2W, Go1 e Go2 para pesquisa com humanoides e quadrúpedes.</p>
+<p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #d9ddd6"><a href="https://mobilab.joinville.udesc.br/" style="font-weight: 500">Conheça o laboratório</a></p>
+</aside>
+</div>
+</section>
+
+<section id="programa" style="background: #ffffff; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #d9ddd6; padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 40px)">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 720px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; letter-spacing: -0.015em">Programa</h2>
+<p style="margin: 0; color: #3b423d">Todos os dias das 09h às 17h.</p>
+</div>
+
+<div style="display: flex; flex-direction: column">
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #0a1c10">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DIA 1</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">seg · 15/02</span>
+</div>
+<h3 style="flex: 1 1 220px; margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Hardware</h3>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>Introdução à impressão 3D</li>
+<li>Montagem e teste do braço robótico</li>
+</ul>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DIA 2</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">ter · 16/02</span>
+</div>
+<h3 style="flex: 1 1 220px; margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Ambiente e simulação</h3>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>Docker para ambientes reprodutíveis</li>
+<li>Simulação física com MuJoCo</li>
+</ul>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DIA 3</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">qua · 17/02</span>
+</div>
+<h3 style="flex: 1 1 220px; margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Integração</h3>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>ROS 2 na prática</li>
+</ul>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DIA 4</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">qui · 18/02</span>
+</div>
+<h3 style="flex: 1 1 220px; margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Dados</h3>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>Teleoperação do braço</li>
+<li>Coleta de demonstrações para treino</li>
+</ul>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DIA 5</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">sex · 19/02</span>
+</div>
+<h3 style="flex: 1 1 220px; margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Aprendizado</h3>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>Treino de modelos de IA para robôs (ACT, VLA, WLA)</li>
+<li>Desafio entre as equipes</li>
+</ul>
+</article>
+
+<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px dashed #9aa39c; border-bottom: 1px solid #0a1c10">
+<div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #555d57">DIA EXTRA</span>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">sáb · 20/02</span>
+</div>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px; align-items: flex-start">
+<h3 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: 26px; line-height: 1.2">Robôs com pernas</h3>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.06em; color: #555d57; border: 1px solid #9aa39c; border-radius: 3px; padding: 2px 8px">A CONFIRMAR</span>
+</div>
+<ul style="flex: 2 1 380px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; color: #3b423d">
+<li>Humanoides</li>
+<li>Quadrúpedes</li>
+</ul>
+</article>
+
+</div>
+</div>
+</section>
+
+<section id="formato" style="padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 40px)">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 720px">
+<p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">FORMATO</p>
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; letter-spacing: -0.015em">Turma pequena, trabalho em equipe</h2>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 20px">
+<div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Equipes</h3>
+<p style="margin: 0; color: #3b423d">30 participantes divididos em 6 equipes de 5. Cada equipe trabalha com seu próprio robô durante toda a semana.</p>
+</div>
+<div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Para quem</h3>
+<p style="margin: 0; color: #3b423d">Estudantes da UDESC e participantes de outras instituições da região.</p>
+</div>
+<div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Seleção</h3>
+<p style="margin: 0; color: #3b423d">A inscrição não garante a vaga. As candidaturas passam por análise de currículo.</p>
+</div>
+<div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 600">Certificado</h3>
+<p style="margin: 0; color: #3b423d">Quem participar da semana completa recebe certificado.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="inscricao" style="background: #0a1c10; color: #f2f4f1; padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 40px)">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 48px 80px">
+<div style="flex: 3 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.08; letter-spacing: -0.015em">Inscrição</h2>
+<p style="margin: 0; max-width: 520px; color: #d5dad6">Inscrições de [DATA DE ABERTURA] a [DATA DE ENCERRAMENTO]. Taxa de inscrição: [A DEFINIR].</p>
+<a href="#inscricao" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: #03b05a; color: #0a1c10; font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px">Preencher o formulário</a>
+</div>
+<ol style="flex: 2 1 320px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
+<li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #03b05a; padding-top: 3px">01</span>
+<span style="color: #d5dad6">Preencha o formulário e envie seu currículo.</span>
+</li>
+<li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #03b05a; padding-top: 3px">02</span>
+<span style="color: #d5dad6">A organização analisa as candidaturas e monta as equipes.</span>
+</li>
+<li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26; border-bottom: 1px solid #1d3a26">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #03b05a; padding-top: 3px">03</span>
+<span style="color: #d5dad6">O resultado sai por e-mail em [DATA DO RESULTADO].</span>
+</li>
+</ol>
+</div>
+</section>
+
+<section id="apoio" style="background: #ffffff; border-bottom: 1px solid #d9ddd6; padding: clamp(48px, 6vw, 80px) clamp(20px, 5vw, 40px)">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-direction: column; gap: clamp(40px, 5vw, 56px)">
+<div id="apoiadores" style="display: flex; flex-direction: column; gap: 20px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15">Apoiadores</h2>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px">
+<a href="https://zionrobotics.tech/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; min-height: 44px; text-decoration: none">
+<img src="/summerschool/zion-robotics-logo.png" alt="Zion Robotics" style="height: 22px; width: auto; max-width: 100%; display: block">
+</a>
+</div>
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 64px; padding-top: clamp(40px, 5vw, 56px); border-top: 1px solid #d9ddd6">
+<div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(26px, 2.8vw, 34px); line-height: 1.15">Sua empresa pode apoiar a formação de novos roboticistas</h2>
+<p style="margin: 0; color: #3b423d">Buscamos parceiros para componentes, recursos computacionais e alimentação dos participantes.</p>
+</div>
+<a href="mailto:[EMAIL DE CONTATO]" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid #0a1c10; color: #0a1c10; font-weight: 500; text-decoration: none; border-radius: 4px">Falar com a organização</a>
+</div>
+</div>
+</section>
+
+<footer style="background: #0a1c10; padding: 48px clamp(20px, 5vw, 40px) 56px">
+<div style="max-width: 1160px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px 64px; font-size: 15px; color: #d5dad6">
+<div style="flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; gap: 20px; padding-bottom: 10px"><img src="/summerschool/mobilab-logo.png" alt="MobiLab" style="height: 48px; width: auto; display: block"><img src="/summerschool/udesc-logo.png" alt="UDESC" style="height: 34px; width: auto; display: block"></div>
+<span>Laboratório de Sistemas Autônomos e Robótica Móvel</span>
+<span>Departamento de Engenharia Elétrica · CCT · UDESC</span>
+</div>
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">LOCAL</span>
+<span>UDESC, Centro de Ciências Tecnológicas</span>
+<span>Rua Paulo Malschitzki, 200, Zona Industrial Norte</span>
+<span>Joinville, SC · sala a confirmar</span>
+</div>
+<div style="flex: 0 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad; padding-bottom: 4px">MOBILAB NA REDE</span>
+<a href="https://mobilab.joinville.udesc.br/" style="padding: 4px 0; color: #03b05a">Site</a>
+<a href="https://github.com/MOBILAB-UDESC" style="padding: 4px 0; color: #03b05a">GitHub</a>
+<a href="https://huggingface.co/mobilab-udesc" style="padding: 4px 0; color: #03b05a">Hugging Face</a>
+<a href="https://www.linkedin.com/showcase/mobilab-udesc/" style="padding: 4px 0; color: #03b05a">LinkedIn</a>
+<a href="https://www.instagram.com/mobi.udesc/" style="padding: 4px 0; color: #03b05a">Instagram</a>
+</div>
+</div>
+</footer>
+
+</div>
+<script src="/summerschool/three.min.js"></script>
+<script>
+
+class SummerSchoolHero {
+resetSim() {
+this.goal = { x: 0.2, z: -0.04 };
+this.cur = { x: 0.2, z: -0.04, y: 0.05, g: 0.9 };
+this.cubeAt = { x: 0.2, z: 0.12 };
+this.phase = 'free'; this.att = false; this.cubeYaw = 0;
+}
+
+componentDidMount() {
+this.resetSim();
+if (window.ResizeObserver && this.canvas) {
+this.ro = new ResizeObserver(() => this.draw());
+this.ro.observe(this.canvas);
+}
+if (!window.THREE) { this.mode = '2d'; this.draw(); return; }
+fetch('/summerschool/so101.json')
+.then((r) => r.json())
+.then((data) => {
+const T = window.THREE;
+this.renderer = new T.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true });
+this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+this.initScene(T, data);
+this.mode = '3d';
+this.start();
+})
+.catch(() => { this.mode = '2d'; this.draw(); });
+}
+componentWillUnmount() {
+if (this.ro) this.ro.disconnect();
+if (this.raf) cancelAnimationFrame(this.raf);
+if (this.renderer) this.renderer.dispose();
+}
+
+buildRobot(T, data) {
+const dec = (s) => { const b = atob(s), u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u.buffer; };
+const mats = {
+'3d_printed': new T.MeshStandardMaterial({ color: 0xeef2ee, roughness: 0.75, metalness: 0, flatShading: true }),
+'sts3215': new T.MeshStandardMaterial({ color: 0x262d29, roughness: 0.6, metalness: 0.1, flatShading: true })
+};
+const links = {}, hasParent = {}, jm = {};
+Object.keys(data.links).forEach((name) => {
+const grp = new T.Group();
+data.links[name].forEach((m) => {
+const q = new Uint16Array(dec(m.p)), pos = new Float32Array(q.length);
+for (let i = 0; i < q.length; i++) pos[i] = m.lo[i % 3] + (q[i] / 65535) * m.span[i % 3];
+const geo = new T.BufferGeometry();
+geo.setAttribute('position', new T.BufferAttribute(pos, 3));
+geo.setIndex(new T.BufferAttribute(m.i32 ? new Uint32Array(dec(m.i)) : new Uint16Array(dec(m.i)), 1));
+grp.add(new T.Mesh(geo, mats[m.mat] || mats['3d_printed']));
+});
+links[name] = grp;
+});
+data.joints.forEach((j) => {
+if (!links[j.parent] || !links[j.child]) return;
+const o = new T.Group(), mv = new T.Group();
+o.position.set(j.xyz[0], j.xyz[1], j.xyz[2]);
+o.rotation.set(j.rpy[0], j.rpy[1], j.rpy[2], 'ZYX');
+o.add(mv); mv.add(links[j.child]); links[j.parent].add(o);
+hasParent[j.child] = true;
+jm[j.name] = { g: mv, axis: new T.Vector3(j.axis[0], j.axis[1], j.axis[2]).normalize(), fixed: j.type === 'fixed' };
+});
+const root = new T.Group();
+root.rotation.x = -Math.PI / 2;
+Object.keys(links).forEach((n) => { if (!hasParent[n]) root.add(links[n]); });
+return { root: root, jm: jm, links: links };
+}
+
+solveIK(tx, ty, tz) {
+const px = 0.03884, sr = 0.03039, sy = 0.1166, L1 = 0.116, L2 = 0.135, L3 = 0.15943;
+const t10 = 1.32698, t20 = 0.03853, t30 = -0.04957;
+let pan = Math.atan2(tz, tx - px);
+pan = Math.max(-1.9, Math.min(1.9, pan));
+let r = Math.hypot(tx - px, tz);
+r = Math.max(0.12, Math.min(0.24, r));
+let dx = r - sr, dy = ty + L3 - sy, d = Math.hypot(dx, dy);
+const dmax = L1 + L2 - 0.003;
+if (d > dmax) { dx = Math.sqrt(Math.max(dmax * dmax - dy * dy, 0.0001)); d = Math.hypot(dx, dy); r = dx + sr; }
+const a = Math.atan2(dy, dx), b = Math.acos(Math.max(-1, Math.min(1, (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d))));
+const t1 = a + b, t2 = Math.atan2(dy - L1 * Math.sin(t1), dx - L1 * Math.cos(t1));
+const q1 = t10 - t1, q2 = t20 - t2 - q1, q3 = Math.max(-1.65, Math.min(1.65, t30 + Math.PI / 2 - q1 - q2));
+return { q: [pan, q1, q2, q3], x: px + r * Math.cos(pan), z: r * Math.sin(pan) };
+}
+
+initScene(T, data) {
+const scene = new T.Scene();
+scene.add(new T.HemisphereLight(0xffffff, 0x1a4a24, 2.2));
+const sun = new T.DirectionalLight(0xffffff, 2.6);
+sun.position.set(0.6, 1.2, -0.8);
+scene.add(sun);
+const grid = new T.GridHelper(0.75, 10, 0x2f5a3c, 0x1d3a26);
+grid.position.set(0.15, -0.004, 0);
+scene.add(grid);
+const robot = this.buildRobot(T, data);
+scene.add(robot.root);
+this.jm = robot.jm;
+this.cube = new T.Mesh(new T.BoxGeometry(0.024, 0.024, 0.024), new T.MeshStandardMaterial({ color: 0xe10b1f, roughness: 0.6, metalness: 0 }));
+scene.add(this.cube);
+this.ring = new T.Mesh(new T.RingGeometry(0.02, 0.023, 40), new T.MeshBasicMaterial({ color: 0x03b05a, side: T.DoubleSide }));
+this.ring.rotation.x = -Math.PI / 2;
+scene.add(this.ring);
+this.scene = scene;
+this.camera = new T.PerspectiveCamera(35, 4 / 3, 0.01, 10);
+this.ray = new T.Raycaster();
+this.plane = new T.Plane(new T.Vector3(0, 1, 0), -0.012);
+this.hit = new T.Vector3();
+this.ndc = new T.Vector2();
+this.update(0);
+}
+
+update(dt) {
+const LOW = 0.008, HOVER = 0.05, OPEN = 0.9, CLOSED = 0.08, PX = 0.03884, JAW = 0.0115;
+const c = this.cur, k = 1 - Math.exp(-dt * 8);
+c.x += (this.goal.x - c.x) * k;
+c.z += (this.goal.z - c.z) * k;
+const tipFor = (x, z, y) => {
+const m = Math.hypot(x - PX, z) || 1;
+const ik = this.solveIK(x - (JAW * (x - PX)) / m, y, z - (JAW * z) / m);
+ik.px = ik.x + JAW * Math.cos(ik.q[0]);
+ik.pz = ik.z + JAW * Math.sin(ik.q[0]);
+return ik;
+};
+let ik = tipFor(c.x, c.z, c.y);
+let yT = HOVER, gT = OPEN;
+const there = Math.hypot(this.goal.x - c.x, this.goal.z - c.z) < 0.004;
+const down = Math.abs(c.y - LOW) < 0.003;
+const ph = this.phase || 'free';
+if (ph === 'grab') {
+if (there) yT = LOW;
+if (there && down) gT = CLOSED;
+if (there && down && c.g < CLOSED + 0.04) {
+this.att = Math.hypot(ik.px - this.cubeAt.x, ik.pz - this.cubeAt.z) < 0.02;
+this.phase = this.att ? 'carry' : 'free';
+}
+} else if (ph === 'carry') {
+gT = CLOSED;
+} else if (ph === 'drop') {
+gT = CLOSED;
+if (there) yT = LOW;
+if (there && down) { this.att = false; this.cubeAt = { x: ik.px, z: ik.pz }; this.cubeYaw = -ik.q[0]; this.phase = 'open'; }
+} else if (ph === 'open') {
+yT = LOW;
+if (c.g > OPEN - 0.2) this.phase = 'free';
+}
+c.y += (yT - c.y) * k;
+c.g += (gT - c.g) * Math.min(1, k * 1.6);
+ik = tipFor(c.x, c.z, c.y);
+const q = [ik.q[0], ik.q[1], ik.q[2], ik.q[3], 0, c.g];
+['shoulder_pan', 'shoulder_lift', 'elbow_flex', 'wrist_flex', 'wrist_roll', 'gripper'].forEach((n, i) => {
+const j = this.jm[n];
+if (j) j.g.quaternion.setFromAxisAngle(j.axis, q[i]);
+});
+if (this.att) { this.cube.position.set(ik.px, c.y + 0.004, ik.pz); this.cube.rotation.y = -ik.q[0]; }
+else { this.cube.position.set(this.cubeAt.x, 0.012, this.cubeAt.z); this.cube.rotation.y = this.cubeYaw || 0; }
+const far = tipFor(this.goal.x, this.goal.z, LOW);
+this.ring.position.set(far.px, 0.001, far.pz);
+return (this.phase !== 'free' && this.phase !== 'carry') || Math.abs(this.goal.x - c.x) + Math.abs(this.goal.z - c.z) + Math.abs(yT - c.y) + Math.abs(gT - c.g) > 0.0015;
+}
+
+press() {
+const ph = this.phase || 'free';
+if (ph === 'carry') { this.phase = 'drop'; return; }
+if (ph !== 'free') return;
+if (Math.hypot(this.goal.x - this.cubeAt.x, this.goal.z - this.cubeAt.z) < 0.05) {
+this.goal.x = this.cubeAt.x; this.goal.z = this.cubeAt.z;
+}
+this.phase = 'grab';
+}
+
+start() {
+if (this.raf || this.mode !== '3d') return;
+this.last = performance.now();
+const step = (t) => {
+const dt = Math.min(Math.max((t - this.last) / 1000, 0), 0.05);
+this.last = t;
+const moving = this.update(dt);
+this.draw3D();
+this.raf = moving ? requestAnimationFrame(step) : 0;
+};
+this.raf = requestAnimationFrame(step);
+}
+
+box() {
+const c = this.canvas, cr = c.getBoundingClientRect();
+const w = c.clientWidth, h = c.clientHeight;
+let ax = w * 0.7, ay = h * 0.5, s = Math.min(w, h) * 0.8;
+if (this.anchor) {
+const ar = this.anchor.getBoundingClientRect();
+if (ar.width && ar.height) { ax = ar.left - cr.left + ar.width / 2; ay = ar.top - cr.top + ar.height / 2; s = Math.min(ar.width, ar.height); }
+}
+return { w: w, h: h, ax: ax, ay: ay, s: s };
+}
+
+draw() {
+if (this.mode === '3d') this.draw3D();
+else if (this.mode === '2d') this.draw2D();
+}
+
+draw3D() {
+if (!this.canvas || !this.renderer || !this.scene) return;
+const b = this.box();
+if (!b.w || !b.h) return;
+if (this.sizeW !== b.w || this.sizeH !== b.h) { this.renderer.setSize(b.w, b.h, false); this.sizeW = b.w; this.sizeH = b.h; }
+const cam = this.camera, yaw = 2.44, el = 0.36;
+const d = (b.h * 0.56) / (0.6306 * b.s);
+cam.aspect = b.w / b.h;
+cam.setViewOffset(b.w, b.h, b.w / 2 - b.ax, b.h / 2 - b.ay, b.w, b.h);
+cam.position.set(0.15 + Math.sin(yaw) * Math.cos(el) * d, 0.1 + Math.sin(el) * d, Math.cos(yaw) * Math.cos(el) * d);
+cam.lookAt(0.15, 0.1, 0);
+cam.updateMatrixWorld();
+this.renderer.render(this.scene, cam);
+}
+
+aim(e) {
+if (this.mode !== '3d' || !this.canvas) return;
+if (this.phase && this.phase !== 'free' && this.phase !== 'carry') { this.start(); return; }
+const r = this.canvas.getBoundingClientRect();
+if (!r.width || !r.height) return;
+this.ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
+this.ray.setFromCamera(this.ndc, this.camera);
+if (this.ray.ray.intersectPlane(this.plane, this.hit)) {
+const m = Math.hypot(this.hit.x, this.hit.z);
+if (m < 2) { this.goal.x = this.hit.x; this.goal.z = this.hit.z; }
+}
+this.start();
+}
+
+draw2D() {
+const c = this.canvas;
+if (!c) return;
+const B = this.box(), w = B.w, h = B.h;
+if (!w || !h) return;
+const dpr = Math.min(window.devicePixelRatio || 1, 2);
+if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) {
+c.width = Math.round(w * dpr);
+c.height = Math.round(h * dpr);
+}
+const g = c.getContext('2d');
+if (!g) return;
+g.setTransform(dpr, 0, 0, dpr, 0, 0);
+g.clearRect(0, 0, w, h);
+const rad = Math.PI / 180;
+const s0 = [-35, 30, -15, 35, 0, 60];
+const yaw = s0[0] * rad, a1 = s0[1] * rad, a2 = a1 + (90 + s0[2]) * rad, a3 = a2 + s0[3] * rad;
+const roll = s0[4] * rad, grip = 0.008 + ((s0[5] + 10) / 110) * 0.026;
+const cam = 0.7;
+const ce = 0.42, D = 1.0, f = 1.6 * B.s, zt = 0.16;
+const cc = Math.cos(cam), sc = Math.sin(cam), ee = Math.cos(ce), se = Math.sin(ce);
+const P = (p) => {
+const x1 = p[0] * cc + p[1] * sc, y1 = -p[0] * sc + p[1] * cc, z = p[2] - zt;
+const up = z * ee + y1 * se, dp = y1 * ee - z * se, k = f / (D + dp);
+return [B.ax + x1 * k, B.ay - up * k, dp, k];
+};
+const add = (a, b, k) => [a[0] + b[0] * k, a[1] + b[1] * k, a[2] + b[2] * k];
+const u = [Math.cos(yaw), Math.sin(yaw), 0], side = [-Math.sin(yaw), Math.cos(yaw), 0];
+const dir = (a) => [u[0] * Math.sin(a), u[1] * Math.sin(a), Math.cos(a)];
+const p1 = [0, 0, 0.1];
+const p2 = add(p1, dir(a1), 0.12);
+const p3 = add(p2, dir(a2), 0.135);
+const p4 = add(p3, dir(a3), 0.07);
+const hd = dir(a3);
+const n1 = [u[0] * Math.cos(a3), u[1] * Math.cos(a3), -Math.sin(a3)];
+const wv = [side[0] * Math.cos(roll) + n1[0] * Math.sin(roll), side[1] * Math.cos(roll) + n1[1] * Math.sin(roll), n1[2] * Math.sin(roll)];
+const fa = add(p4, wv, grip), fb = add(p4, wv, -grip);
+const segs = [
+[[0, 0, 0], [0, 0, 0.08], 0.03, '#c9d3cc'],
+[p1, p2, 0.017, '#f2f4f1'],
+[p2, p3, 0.015, '#e3e9e4'],
+[p3, p4, 0.012, '#f2f4f1'],
+[fa, fb, 0.007, '#c9d3cc'],
+[fa, add(fa, hd, 0.06), 0.006, '#03b05a'],
+[fb, add(fb, hd, 0.06), 0.006, '#03b05a']
+];
+const joints = [[p1, 0.024], [p2, 0.022], [p3, 0.019]];
+
+g.lineCap = 'round';
+g.strokeStyle = '#1d3a26';
+g.lineWidth = 1;
+for (let i = -4; i <= 4; i++) {
+const t = i * 0.075;
+let a = P([t, -0.3, 0]), b = P([t, 0.3, 0]);
+g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
+a = P([-0.3, t, 0]); b = P([0.3, t, 0]);
+g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
+}
+g.strokeStyle = 'rgba(0, 0, 0, 0.4)';
+segs.forEach((sg) => {
+const a = P([sg[0][0], sg[0][1], 0]), b = P([sg[1][0], sg[1][1], 0]);
+g.lineWidth = sg[2] * (a[3] + b[3]);
+g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
+});
+g.fillStyle = '#12301c';
+g.strokeStyle = '#4a6a54';
+g.lineWidth = 1;
+g.beginPath();
+for (let i = 0; i <= 32; i++) {
+const t = (i / 32) * Math.PI * 2, a = P([Math.cos(t) * 0.06, Math.sin(t) * 0.06, 0]);
+if (i) g.lineTo(a[0], a[1]); else g.moveTo(a[0], a[1]);
+}
+g.fill(); g.stroke();
+
+const items = [];
+segs.forEach((sg) => {
+const a = P(sg[0]), b = P(sg[1]);
+items.push({ d: (a[2] + b[2]) / 2, a: a, b: b, lw: sg[2] * (a[3] + b[3]), col: sg[3] });
+});
+joints.forEach((j) => {
+const a = P(j[0]);
+items.push({ d: a[2] - 0.03, a: a, r: j[1] * a[3] });
+});
+items.sort((x, y) => y.d - x.d);
+items.forEach((it) => {
+if (it.b) {
+g.beginPath(); g.moveTo(it.a[0], it.a[1]); g.lineTo(it.b[0], it.b[1]);
+g.strokeStyle = '#0a1c10'; g.lineWidth = it.lw + 4; g.stroke();
+g.strokeStyle = it.col; g.lineWidth = it.lw; g.stroke();
+} else {
+g.beginPath(); g.arc(it.a[0], it.a[1], it.r, 0, Math.PI * 2);
+g.fillStyle = '#0a1c10'; g.fill();
+g.strokeStyle = '#03b05a'; g.lineWidth = 2.5; g.stroke();
+g.beginPath(); g.arc(it.a[0], it.a[1], it.r * 0.32, 0, Math.PI * 2);
+g.fillStyle = '#e10b1f'; g.fill();
+}
+});
+}
+
+}
+
+const hero = new SummerSchoolHero();
+hero.canvas = document.getElementById('hero-canvas');
+hero.anchor = document.getElementById('hero-anchor');
+const stage = document.getElementById('hero-stage');
+stage.addEventListener('pointermove', (e) => { if (e.pointerType !== 'touch') hero.aim(e); });
+stage.addEventListener('pointerdown', (e) => {
+  if (e.target && e.target.closest && e.target.closest('a, button')) return;
+  hero.aim(e);
+  hero.press();
+  hero.start();
+});
+hero.componentDidMount();
+</script>
+</body>
+</html>
