@@ -11,6 +11,25 @@
 body{margin:0}
 html{scroll-behavior:smooth}
 a{color:#1a4a24}a:hover{color:#0d2512}
+.ss-form{flex:1 1 100%;min-width:0;background:#f5f6f3;color:#0a1c10;border-radius:6px;padding:clamp(24px,4vw,48px);display:flex;flex-direction:column;gap:24px}
+.ss-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px}
+.ss-full{grid-column:1/-1}
+.ss-form label,.ss-form legend{display:flex;flex-direction:column;gap:6px;font-weight:500;font-size:15px;padding:0}
+.ss-form fieldset{border:0;margin:0;padding:0;min-width:0}
+.ss-hint{font-weight:400;font-size:14px;color:#555d57}
+.ss-form input[type=text],.ss-form input[type=email],.ss-form select,.ss-form textarea{font:inherit;font-size:16px;font-weight:400;min-height:44px;width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #8f9891;border-radius:4px;background:#fff;color:#0a1c10}
+.ss-form textarea{min-height:130px;resize:vertical}
+.ss-form :focus-visible{outline:3px solid #03b05a;outline-offset:2px}
+.ss-check{flex-direction:row!important;align-items:flex-start;gap:12px!important;font-weight:400!important}
+.ss-check input{flex:0 0 auto;width:22px;height:22px;margin:2px 0 0;accent-color:#1a4a24}
+.ss-count{align-self:flex-end;font-size:13px;color:#555d57;font-family:'IBM Plex Mono',monospace}
+.ss-submit{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;background:#03b05a;color:#0a1c10;font:inherit;font-size:18px;font-weight:600;border:0;border-radius:4px;cursor:pointer}
+.ss-submit:hover{background:#04c265}
+.ss-submit[disabled]{opacity:.6;cursor:progress}
+.ss-status{margin:0;font-weight:500}
+.ss-status[data-state=error]{color:#9b1c1c}
+.ss-status[data-state=ok]{color:#1a4a24}
+.ss-hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 </style>
 </head>
 <body>
@@ -195,7 +214,7 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 </div>
 <div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Selection</h3>
-<p style="margin: 0; color: #3b423d">Registering does not guarantee a spot. Applications are screened based on résumé.</p>
+<p style="margin: 0; color: #3b423d">Registering does not guarantee a spot. Applications are screened based on the answers and links you provide in the form.</p>
 </div>
 <div style="flex: 1 1 250px; min-width: 0; background: #ffffff; border: 1px solid #d9ddd6; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 10px">
 <h3 style="margin: 0; font-size: 19px; font-weight: 600">Certificate</h3>
@@ -210,12 +229,12 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 <div style="flex: 3 1 440px; min-width: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
 <h2 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4.2vw, 52px); line-height: 1.08; letter-spacing: -0.015em">Registration</h2>
 <p style="margin: 0; max-width: 520px; color: #d5dad6">Registration from [OPENING DATE] to [CLOSING DATE]. Registration fee: [TO BE DEFINED].</p>
-<a href="#register" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: #03b05a; color: #0a1c10; font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px">Fill out the form</a>
+<a href="#apply" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: #03b05a; color: #0a1c10; font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px">Fill out the form</a>
 </div>
 <ol style="flex: 2 1 320px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
 <li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #03b05a; padding-top: 3px">01</span>
-<span style="color: #d5dad6">Fill out the form and submit your résumé.</span>
+<span style="color: #d5dad6">Fill out the form and tell us about yourself and your work.</span>
 </li>
 <li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #03b05a; padding-top: 3px">02</span>
@@ -226,6 +245,94 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 <span style="color: #d5dad6">Results are sent by email on [RESULT DATE].</span>
 </li>
 </ol>
+
+<form id="apply" class="ss-form" action="#" method="post" aria-labelledby="apply-title">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<h3 id="apply-title" style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 500; font-size: clamp(26px, 3vw, 34px); line-height: 1.15">Application form</h3>
+<p style="margin: 0; color: #3b423d">It takes about 5 minutes. Fields marked * are required.</p>
+</div>
+
+<div class="ss-grid">
+<label>Full name *
+<input type="text" name="name" autocomplete="name" maxlength="120" required>
+</label>
+<label>Email *
+<input type="email" name="email" autocomplete="email" maxlength="200" required>
+</label>
+<label>University or institution *
+<input type="text" name="university" maxlength="200" placeholder="e.g. UDESC" required>
+</label>
+<label>Course *
+<input type="text" name="course" maxlength="200" placeholder="e.g. Electrical Engineering" required>
+</label>
+<label>Current semester *
+<select name="semester" required>
+<option value="">Select...</option>
+<option>1st semester</option>
+<option>2nd semester</option>
+<option>3rd semester</option>
+<option>4th semester</option>
+<option>5th semester</option>
+<option>6th semester</option>
+<option>7th semester</option>
+<option>8th semester</option>
+<option>9th semester</option>
+<option>10th semester or later</option>
+<option>Already graduated</option>
+<option>Other</option>
+</select>
+</label>
+<label>Experience with robotics or programming *
+<select name="experience" required>
+<option value="">Select...</option>
+<option>Beginner</option>
+<option>Some experience</option>
+<option>Advanced</option>
+</select>
+</label>
+<label class="ss-full">Links that show your work
+<span class="ss-hint">Optional. LinkedIn, GitHub, blog, portfolio, or anything meaningful. One per line.</span>
+<textarea name="links" maxlength="1000" rows="3"></textarea>
+</label>
+<label class="ss-full">Why do you want to participate? *
+<textarea name="why" maxlength="1500" rows="5" data-count required></textarea>
+<span class="ss-count" aria-hidden="true">0 / 1500</span>
+</label>
+<label class="ss-full">What cool things have you already done? *
+<span class="ss-hint">A project, hack, experiment or anything you are proud of. Small things count.</span>
+<textarea name="projects" maxlength="2000" rows="5" data-count required></textarea>
+<span class="ss-count" aria-hidden="true">0 / 2000</span>
+</label>
+<label class="ss-full">How did you hear about the Summer School?
+<input type="text" name="source" maxlength="200">
+</label>
+</div>
+
+<fieldset style="display: flex; flex-direction: column; gap: 16px">
+<legend class="ss-hint" style="padding-bottom: 12px">Confirmations *</legend>
+<label class="ss-check">
+<input type="checkbox" name="availability" value="all days" required>
+<span>I can attend all five days, February 15-19, 2027, from 9 AM to 5 PM, in person in Joinville.</span>
+</label>
+<label class="ss-check">
+<input type="checkbox" name="consent" value="yes" required>
+<span>I agree that MobiLab UDESC stores the information I provided in a Google spreadsheet and uses it only to evaluate my application and contact me about the Summer School (LGPD).</span>
+</label>
+</fieldset>
+
+<div class="ss-hp" aria-hidden="true">
+<label>Leave this field empty
+<input type="text" name="website" tabindex="-1" autocomplete="off">
+</label>
+</div>
+<input type="hidden" name="t" value="">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+<button type="submit" class="ss-submit">Submit application</button>
+<p class="ss-status" role="status" aria-live="polite"></p>
+</div>
+</form>
+
 </div>
 </section>
 
@@ -284,6 +391,62 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 </footer>
 
 </div>
+<script>
+(function () {
+  // Google Apps Script web app that appends applications to the Sheet.
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbxB2jcBP2jo_pU3-lo6H4JizjvIhxVA2Rn8qk4HvJkPOyC5fekwuwU9qmzB5BW5evNjbg/exec';
+  var CONTACT = '[CONTACT EMAIL]';
+
+  var form = document.getElementById('apply');
+  if (!form) return;
+  var status = form.querySelector('.ss-status');
+  var button = form.querySelector('.ss-submit');
+  form.elements.t.value = String(Date.now());
+
+  form.querySelectorAll('textarea[data-count]').forEach(function (area) {
+    var counter = area.parentNode.querySelector('.ss-count');
+    var update = function () { counter.textContent = area.value.length + ' / ' + area.maxLength; };
+    area.addEventListener('input', update);
+    update();
+  });
+
+  function show(state, text) {
+    status.dataset.state = state;
+    status.textContent = text;
+  }
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    if (ENDPOINT.indexOf('http') !== 0) {
+      show('error', 'The form is not connected yet. Please email us at ' + CONTACT + '.');
+      return;
+    }
+
+    button.disabled = true;
+    show('', 'Sending...');
+
+    fetch(ENDPOINT, { method: 'POST', body: new URLSearchParams(new FormData(form)) })
+      .then(function (response) { return response.text(); })
+      .then(function (text) {
+        if (text === 'ok') {
+          form.reset();
+          form.elements.t.value = String(Date.now());
+          form.querySelectorAll('textarea[data-count]').forEach(function (a) { a.dispatchEvent(new Event('input')); });
+          show('ok', 'Thank you! Your application was received. Check your email for a confirmation.');
+        } else if (text === 'invalid') {
+          show('error', 'Some answers are missing or invalid. Please check the form and try again.');
+        } else {
+          throw new Error('server');
+        }
+      })
+      .catch(function () {
+        show('error', 'We could not send your application. Please try again, or email us at ' + CONTACT + '.');
+      })
+      .then(function () { button.disabled = false; });
+  });
+})();
+</script>
 <script src="/summerschool/three.min.js"></script>
 <script>
 
