@@ -143,6 +143,10 @@ function confirmationText(first) {
     'We received your application to the Robotics and Embodied AI Summer School.\n\n' +
     'WHEN   February 15-19, 2027, 9 AM to 5 PM\n' +
     'WHERE  UDESC CCT, Joinville, Brazil\n\n' +
+    'KEY DATES\n' +
+    'December 30, 2026     Last day to apply\n' +
+    'January 20, 2027      Selection results by email\n' +
+    'February 15-19, 2027  Summer school week, after Carnival\n\n' +
     'WHAT HAPPENS NEXT\n' +
     '01  We review every application, based on your answers and the links you shared.\n' +
     '02  We form the teams: 30 participants, 6 teams of 5, each with its own robot.\n' +
@@ -166,6 +170,13 @@ function confirmationHtml(first) {
     '<tr><td style="padding:16px 0;' + (last ? '' : 'border-bottom:1px solid #d9ddd6;') + '">' +
       '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr>' +
       '<td width="44" valign="top" style="font-family:' + MONO + ';font-size:13px;color:#1a4a24;padding-top:3px">' + n + '</td>' +
+      '<td valign="top" style="font-family:' + SANS + ';font-size:16px;line-height:1.55;color:#3b423d">' + text + '</td>' +
+      '</tr></table></td></tr>';
+
+  const keyDate = (date, text, last) =>
+    '<tr><td style="padding:14px 0;' + (last ? '' : 'border-bottom:1px solid #d9ddd6;') + '">' +
+      '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%"><tr>' +
+      '<td width="150" valign="top" style="font-family:' + MONO + ';font-size:13px;color:#1a4a24;padding-top:3px">' + date + '</td>' +
       '<td valign="top" style="font-family:' + SANS + ';font-size:16px;line-height:1.55;color:#3b423d">' + text + '</td>' +
       '</tr></table></td></tr>';
 
@@ -219,6 +230,14 @@ function confirmationHtml(first) {
 '<tr><td class="pad" style="background:#ffffff;padding:40px 40px 8px">' +
   '<p style="margin:0 0 16px;font-family:' + SERIF + ';font-size:24px;line-height:1.3;color:#0a1c10">Hi ' + escapeHtml(first) + ',</p>' +
   '<p style="margin:0;font-family:' + SANS + ';font-size:16px;line-height:1.6;color:#3b423d">Thank you for applying. We received your application and the organizers will review it soon.</p>' +
+'</td></tr>' +
+'<tr><td class="pad" style="background:#ffffff;padding:28px 40px 8px">' +
+  '<div style="font-family:' + MONO + ';font-size:13px;letter-spacing:0.1em;color:#555d57;padding-bottom:12px">KEY DATES</div>' +
+  '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-top:1px solid #0a1c10">' +
+    keyDate('Dec 30, 2026', 'Last day to apply') +
+    keyDate('Jan 20, 2027', 'Selection results by email') +
+    keyDate('Feb 15-19, 2027', 'Summer school week, after Carnival', true) +
+  '</table>' +
 '</td></tr>' +
 '<tr><td class="pad" style="background:#ffffff;padding:28px 40px 8px">' +
   '<div style="font-family:' + MONO + ';font-size:13px;letter-spacing:0.1em;color:#555d57;padding-bottom:12px">WHAT HAPPENS NEXT</div>' +
