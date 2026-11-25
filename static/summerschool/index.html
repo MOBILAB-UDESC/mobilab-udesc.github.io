@@ -30,46 +30,65 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 .ss-status{margin:0;font-weight:500}
 .ss-status[data-state=error]{color:#9b1c1c}
 .ss-status[data-state=ok]{color:#1a4a24}
+#hero-canvas{opacity:0;transition:opacity .7s ease}
+#hero-canvas.is-ready{opacity:1}
+@media (prefers-reduced-motion:reduce){#hero-canvas{transition:none}}
 .ss-hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+@media (max-width:640px){
+.ss-navlink{display:none!important}
+.ss-header{flex-wrap:nowrap!important}
+.ss-hero-cta{flex-wrap:nowrap!important;gap:12px!important}
+.ss-hero-cta a{flex:1 1 0;justify-content:center;padding:0 12px!important;font-size:15px;white-space:nowrap}
+.ss-hero-inner{row-gap:0!important;padding-bottom:0!important}
+.ss-hero-anchor{min-height:300px!important;margin-top:-56px}
+.ss-facts{display:grid!important;grid-template-columns:1fr 1fr}
+.ss-facts>div{flex:none!important;padding:20px 12px 20px 0!important}
+.ss-last{border-bottom:0!important}
+.ss-cta{align-self:center}
+.ss-submit-row{flex-direction:column;justify-content:center;gap:12px}
+.ss-submit-row .ss-status{text-align:center}
+.ss-submit-row .ss-status:empty{display:none}
+}
 </style>
 </head>
 <body>
 <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: #0a1c10; background: #f5f6f3; font-size: 17px; line-height: 1.6">
 
 <header style="background: #0a1c10; color: #f2f4f1">
-<div style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<div class="ss-header" style="max-width: 1160px; margin: 0 auto; padding: 20px clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
 <a href="#top" style="display: flex; align-items: center; gap: 16px; color: #f2f4f1; text-decoration: none; min-height: 44px">
 <img src="/summerschool/mobilab-logo.png" alt="MobiLab" style="height: 40px; width: auto; display: block">
 </a>
 <nav aria-label="Sections" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 28px; font-size: 15px">
-<a href="#about" style="color: #d5dad6; text-decoration: none; padding: 10px 0">About</a>
-<a href="#program" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Program</a>
-<a href="#format" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Format</a>
-<a href="#support" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Support</a>
+<a class="ss-navlink" href="#about" style="color: #d5dad6; text-decoration: none; padding: 10px 0">About</a>
+<a class="ss-navlink" href="#program" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Program</a>
+<a class="ss-navlink" href="#format" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Format</a>
+<a class="ss-navlink" href="#support" style="color: #d5dad6; text-decoration: none; padding: 10px 0">Support</a>
 <a href="#register" style="color: #0a1c10; background: #03b05a; text-decoration: none; padding: 10px 18px; border-radius: 4px; font-weight: 600; min-height: 24px">Register</a>
 </nav>
 </div>
 </header>
 
 <section id="top" style="background: #0a1c10; color: #f2f4f1">
-<div id="hero-stage" style="position: relative; overflow: hidden; -webkit-user-select: none; user-select: none">
-<canvas id="hero-canvas" role="img" aria-label="3D SO-101 robotic arm with a red cube. Move the cursor to guide the gripper, click to pick up the cube and click again to release it." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block"></canvas>
-<div style="position: relative; max-width: 1160px; margin: 0 auto; padding: clamp(40px, 7vw, 96px) clamp(20px, 5vw, 40px) clamp(32px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: stretch; gap: 32px 64px">
+<div id="hero-stage" style="position: relative; overflow: hidden; touch-action: pan-y">
+<canvas id="hero-canvas" role="img" aria-label="Interactive 3D SO-101 robotic arm with three coloured cubes. Move the cursor to guide the gripper, click to pick up a cube and click again to put it down. Controls below the scene record and replay an episode, run a sorting challenge, or use your hand through the camera." style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; -webkit-user-select: none; user-select: none"></canvas>
+<div class="ss-hero-inner" style="position: relative; max-width: 1160px; margin: 0 auto; padding: clamp(40px, 7vw, 96px) clamp(20px, 5vw, 40px) clamp(32px, 4vw, 56px); display: flex; flex-wrap: wrap; align-items: stretch; gap: 32px 64px">
 <div style="flex: 3 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
 <p style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #03b05a">FEBRUARY 15-19, 2027</p>
 <h1 style="margin: 0; font-family: 'Newsreader', Georgia, serif; font-weight: 400; font-size: clamp(40px, 5.4vw, 68px); line-height: 1.04; letter-spacing: -0.02em">Robotics and Embodied AI Summer School</h1>
 <p style="margin: 0; max-width: 600px; font-size: clamp(17px, 1.5vw, 20px); line-height: 1.55; color: #d5dad6">An intensive week, from zero to controlling robots with AI. You will build a robotic arm, simulate it, teleoperate it, collect data and train the model that will control it in the real world.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 14px">
+<div class="ss-hero-cta" style="display: flex; flex-wrap: wrap; gap: 14px">
 <a href="#register" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; background: #03b05a; color: #0a1c10; font-weight: 600; text-decoration: none; border-radius: 4px">I want to join</a>
 <a href="#program" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 26px; border: 1px solid #4a6a54; color: #f2f4f1; font-weight: 500; text-decoration: none; border-radius: 4px">See the program</a>
 </div>
 </div>
-<div id="hero-anchor" style="flex: 3 1 380px; min-width: 0; min-height: 440px; display: flex; align-items: flex-end; justify-content: flex-end">
+<div id="hero-anchor" class="ss-hero-anchor" style="flex: 3 1 380px; min-width: 0; min-height: 440px; display: flex; align-items: flex-end; justify-content: flex-end">
+<img id="hero-poster" data-src="/summerschool/hero-poster.webp" alt="SO-101 robotic arm with three coloured cubes on a table" hidden style="width: 100%; height: 100%; max-height: 440px; object-fit: contain; object-position: center bottom; -webkit-mask-image: radial-gradient(ellipse 72% 72% at 50% 58%, #000 55%, transparent 100%); mask-image: radial-gradient(ellipse 72% 72% at 50% 58%, #000 55%, transparent 100%)">
 </div>
 </div>
 </div>
 <div style="border-top: 1px solid #1d3a26">
-<dl style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap">
+<dl class="ss-facts" style="max-width: 1160px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 40px); display: flex; flex-wrap: wrap">
 <div style="flex: 1 1 180px; padding: 24px 24px 24px 0; display: flex; flex-direction: column; gap: 4px">
 <dt style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; color: #a8b8ad">WHEN</dt>
 <dd style="margin: 0; font-size: 18px; font-weight: 500">Feb 15-19, 2027</dd>
@@ -106,7 +125,7 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 <p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">The Autonomous Systems and Mobile Robotics Laboratory of the Center of Technological Sciences (CCT) at UDESC.</p>
 <p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">Founded in 2023 by Professor Douglas Bertol, in cooperation with the Dynamic Legged Systems (DLS) lab at the Istituto Italiano di Tecnologia.</p>
 <p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; color: #3b423d">A fully equipped lab with humanoid and quadruped robots, including the Unitree G1, H1, B2, B2W, Go1 and Go2 research platforms.</p>
-<p style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #d9ddd6"><a href="https://mobilab.joinville.udesc.br/" style="font-weight: 500">Visit the lab website</a></p>
+<p class="ss-last" style="margin: 0; padding: 18px 0; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #d9ddd6"><a href="https://mobilab.joinville.udesc.br/" style="font-weight: 500">Visit the lab website</a></p>
 </aside>
 </div>
 </section>
@@ -167,7 +186,7 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 </ul>
 </article>
 
-<article style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #0a1c10">
+<article class="ss-last" style="display: flex; flex-wrap: wrap; gap: 12px 40px; padding: 28px 0; border-top: 1px solid #d9ddd6; border-bottom: 1px solid #0a1c10">
 <div style="flex: 0 0 150px; display: flex; flex-direction: column; gap: 2px">
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #1a4a24">DAY 5</span>
 <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: #555d57">Fri · Feb 19</span>
@@ -225,7 +244,7 @@ a{color:#1a4a24}a:hover{color:#0d2512}
 Free for students of all levels.<br>
 R$&nbsp;2,500 for industry professionals.</p>
 <p style="margin: 0; max-width: 520px; color: #d5dad6"><strong style="color: #f2f4f1; font-weight: 600">Prerequisites:</strong> knowledge of Linux, Git and programming (Python recommended).</p>
-<a href="#apply" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: #03b05a; color: #0a1c10; font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px">Fill out the form</a>
+<a class="ss-cta" href="#apply" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 30px; background: #03b05a; color: #0a1c10; font-weight: 600; font-size: 18px; text-decoration: none; border-radius: 4px">Fill out the form</a>
 </div>
 <ol style="flex: 2 1 320px; min-width: 0; margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column">
 <li style="display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid #1d3a26">
@@ -324,7 +343,7 @@ R$&nbsp;2,500 for industry professionals.</p>
 </div>
 <input type="hidden" name="t" value="">
 
-<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
+<div class="ss-submit-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px">
 <button type="submit" class="ss-submit">Submit application</button>
 <p class="ss-status" role="status" aria-live="polite"></p>
 </div>
@@ -384,6 +403,7 @@ R$&nbsp;2,500 for industry professionals.</p>
 <a href="https://www.linkedin.com/showcase/mobilab-udesc/" style="padding: 4px 0; color: #03b05a">LinkedIn</a>
 <a href="https://www.instagram.com/mobi.udesc/" style="padding: 4px 0; color: #03b05a">Instagram</a>
 </div>
+<p style="flex: 1 1 100%; margin: 0; padding-top: 24px; border-top: 1px solid #1d3a26; font-size: 13px; line-height: 1.6; color: #a8b8ad">Interactive 3D model: <a href="https://github.com/TheRobotStudio/SO-ARM100" style="color: #03b05a">SO-101 open-source robot arm</a> by The Robot Studio, Apache-2.0 licence. Simplified for the web and rendered with <a href="https://threejs.org" style="color: #03b05a">three.js</a>.</p>
 </div>
 </footer>
 
@@ -445,348 +465,6 @@ R$&nbsp;2,500 for industry professionals.</p>
   });
 })();
 </script>
-<script src="/summerschool/three.min.js"></script>
-<script>
-
-class SummerSchoolHero {
-resetSim() {
-this.goal = { x: 0.2, z: -0.04 };
-this.cur = { x: 0.2, z: -0.04, y: 0.05, g: 0.9 };
-this.cubeAt = { x: 0.2, z: 0.12 };
-this.phase = 'free'; this.att = false; this.cubeYaw = 0;
-}
-
-componentDidMount() {
-this.resetSim();
-if (window.ResizeObserver && this.canvas) {
-this.ro = new ResizeObserver(() => this.draw());
-this.ro.observe(this.canvas);
-}
-if (!window.THREE) { this.mode = '2d'; this.draw(); return; }
-fetch('/summerschool/so101.json')
-.then((r) => r.json())
-.then((data) => {
-const T = window.THREE;
-this.renderer = new T.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true });
-this.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-this.initScene(T, data);
-this.mode = '3d';
-this.start();
-})
-.catch(() => { this.mode = '2d'; this.draw(); });
-}
-componentWillUnmount() {
-if (this.ro) this.ro.disconnect();
-if (this.raf) cancelAnimationFrame(this.raf);
-if (this.renderer) this.renderer.dispose();
-}
-
-buildRobot(T, data) {
-const dec = (s) => { const b = atob(s), u = new Uint8Array(b.length); for (let i = 0; i < b.length; i++) u[i] = b.charCodeAt(i); return u.buffer; };
-const mats = {
-'3d_printed': new T.MeshStandardMaterial({ color: 0xeef2ee, roughness: 0.75, metalness: 0, flatShading: true }),
-'sts3215': new T.MeshStandardMaterial({ color: 0x262d29, roughness: 0.6, metalness: 0.1, flatShading: true })
-};
-const links = {}, hasParent = {}, jm = {};
-Object.keys(data.links).forEach((name) => {
-const grp = new T.Group();
-data.links[name].forEach((m) => {
-const q = new Uint16Array(dec(m.p)), pos = new Float32Array(q.length);
-for (let i = 0; i < q.length; i++) pos[i] = m.lo[i % 3] + (q[i] / 65535) * m.span[i % 3];
-const geo = new T.BufferGeometry();
-geo.setAttribute('position', new T.BufferAttribute(pos, 3));
-geo.setIndex(new T.BufferAttribute(m.i32 ? new Uint32Array(dec(m.i)) : new Uint16Array(dec(m.i)), 1));
-grp.add(new T.Mesh(geo, mats[m.mat] || mats['3d_printed']));
-});
-links[name] = grp;
-});
-data.joints.forEach((j) => {
-if (!links[j.parent] || !links[j.child]) return;
-const o = new T.Group(), mv = new T.Group();
-o.position.set(j.xyz[0], j.xyz[1], j.xyz[2]);
-o.rotation.set(j.rpy[0], j.rpy[1], j.rpy[2], 'ZYX');
-o.add(mv); mv.add(links[j.child]); links[j.parent].add(o);
-hasParent[j.child] = true;
-jm[j.name] = { g: mv, axis: new T.Vector3(j.axis[0], j.axis[1], j.axis[2]).normalize(), fixed: j.type === 'fixed' };
-});
-const root = new T.Group();
-root.rotation.x = -Math.PI / 2;
-Object.keys(links).forEach((n) => { if (!hasParent[n]) root.add(links[n]); });
-return { root: root, jm: jm, links: links };
-}
-
-solveIK(tx, ty, tz) {
-const px = 0.03884, sr = 0.03039, sy = 0.1166, L1 = 0.116, L2 = 0.135, L3 = 0.15943;
-const t10 = 1.32698, t20 = 0.03853, t30 = -0.04957;
-let pan = Math.atan2(tz, tx - px);
-pan = Math.max(-1.9, Math.min(1.9, pan));
-let r = Math.hypot(tx - px, tz);
-r = Math.max(0.12, Math.min(0.24, r));
-let dx = r - sr, dy = ty + L3 - sy, d = Math.hypot(dx, dy);
-const dmax = L1 + L2 - 0.003;
-if (d > dmax) { dx = Math.sqrt(Math.max(dmax * dmax - dy * dy, 0.0001)); d = Math.hypot(dx, dy); r = dx + sr; }
-const a = Math.atan2(dy, dx), b = Math.acos(Math.max(-1, Math.min(1, (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d))));
-const t1 = a + b, t2 = Math.atan2(dy - L1 * Math.sin(t1), dx - L1 * Math.cos(t1));
-const q1 = t10 - t1, q2 = t20 - t2 - q1, q3 = Math.max(-1.65, Math.min(1.65, t30 + Math.PI / 2 - q1 - q2));
-return { q: [pan, q1, q2, q3], x: px + r * Math.cos(pan), z: r * Math.sin(pan) };
-}
-
-initScene(T, data) {
-const scene = new T.Scene();
-scene.add(new T.HemisphereLight(0xffffff, 0x1a4a24, 2.2));
-const sun = new T.DirectionalLight(0xffffff, 2.6);
-sun.position.set(0.6, 1.2, -0.8);
-scene.add(sun);
-const grid = new T.GridHelper(0.75, 10, 0x2f5a3c, 0x1d3a26);
-grid.position.set(0.15, -0.004, 0);
-scene.add(grid);
-const robot = this.buildRobot(T, data);
-scene.add(robot.root);
-this.jm = robot.jm;
-this.cube = new T.Mesh(new T.BoxGeometry(0.024, 0.024, 0.024), new T.MeshStandardMaterial({ color: 0xe10b1f, roughness: 0.6, metalness: 0 }));
-scene.add(this.cube);
-this.ring = new T.Mesh(new T.RingGeometry(0.02, 0.023, 40), new T.MeshBasicMaterial({ color: 0x03b05a, side: T.DoubleSide }));
-this.ring.rotation.x = -Math.PI / 2;
-scene.add(this.ring);
-this.scene = scene;
-this.camera = new T.PerspectiveCamera(35, 4 / 3, 0.01, 10);
-this.ray = new T.Raycaster();
-this.plane = new T.Plane(new T.Vector3(0, 1, 0), -0.012);
-this.hit = new T.Vector3();
-this.ndc = new T.Vector2();
-this.update(0);
-}
-
-update(dt) {
-const LOW = 0.008, HOVER = 0.05, OPEN = 0.9, CLOSED = 0.08, PX = 0.03884, JAW = 0.0115;
-const c = this.cur, k = 1 - Math.exp(-dt * 8);
-c.x += (this.goal.x - c.x) * k;
-c.z += (this.goal.z - c.z) * k;
-const tipFor = (x, z, y) => {
-const m = Math.hypot(x - PX, z) || 1;
-const ik = this.solveIK(x - (JAW * (x - PX)) / m, y, z - (JAW * z) / m);
-ik.px = ik.x + JAW * Math.cos(ik.q[0]);
-ik.pz = ik.z + JAW * Math.sin(ik.q[0]);
-return ik;
-};
-let ik = tipFor(c.x, c.z, c.y);
-let yT = HOVER, gT = OPEN;
-const there = Math.hypot(this.goal.x - c.x, this.goal.z - c.z) < 0.004;
-const down = Math.abs(c.y - LOW) < 0.003;
-const ph = this.phase || 'free';
-if (ph === 'grab') {
-if (there) yT = LOW;
-if (there && down) gT = CLOSED;
-if (there && down && c.g < CLOSED + 0.04) {
-this.att = Math.hypot(ik.px - this.cubeAt.x, ik.pz - this.cubeAt.z) < 0.02;
-this.phase = this.att ? 'carry' : 'free';
-}
-} else if (ph === 'carry') {
-gT = CLOSED;
-} else if (ph === 'drop') {
-gT = CLOSED;
-if (there) yT = LOW;
-if (there && down) { this.att = false; this.cubeAt = { x: ik.px, z: ik.pz }; this.cubeYaw = -ik.q[0]; this.phase = 'open'; }
-} else if (ph === 'open') {
-yT = LOW;
-if (c.g > OPEN - 0.2) this.phase = 'free';
-}
-c.y += (yT - c.y) * k;
-c.g += (gT - c.g) * Math.min(1, k * 1.6);
-ik = tipFor(c.x, c.z, c.y);
-const q = [ik.q[0], ik.q[1], ik.q[2], ik.q[3], 0, c.g];
-['shoulder_pan', 'shoulder_lift', 'elbow_flex', 'wrist_flex', 'wrist_roll', 'gripper'].forEach((n, i) => {
-const j = this.jm[n];
-if (j) j.g.quaternion.setFromAxisAngle(j.axis, q[i]);
-});
-if (this.att) { this.cube.position.set(ik.px, c.y + 0.004, ik.pz); this.cube.rotation.y = -ik.q[0]; }
-else { this.cube.position.set(this.cubeAt.x, 0.012, this.cubeAt.z); this.cube.rotation.y = this.cubeYaw || 0; }
-const far = tipFor(this.goal.x, this.goal.z, LOW);
-this.ring.position.set(far.px, 0.001, far.pz);
-return (this.phase !== 'free' && this.phase !== 'carry') || Math.abs(this.goal.x - c.x) + Math.abs(this.goal.z - c.z) + Math.abs(yT - c.y) + Math.abs(gT - c.g) > 0.0015;
-}
-
-press() {
-const ph = this.phase || 'free';
-if (ph === 'carry') { this.phase = 'drop'; return; }
-if (ph !== 'free') return;
-if (Math.hypot(this.goal.x - this.cubeAt.x, this.goal.z - this.cubeAt.z) < 0.05) {
-this.goal.x = this.cubeAt.x; this.goal.z = this.cubeAt.z;
-}
-this.phase = 'grab';
-}
-
-start() {
-if (this.raf || this.mode !== '3d') return;
-this.last = performance.now();
-const step = (t) => {
-const dt = Math.min(Math.max((t - this.last) / 1000, 0), 0.05);
-this.last = t;
-const moving = this.update(dt);
-this.draw3D();
-this.raf = moving ? requestAnimationFrame(step) : 0;
-};
-this.raf = requestAnimationFrame(step);
-}
-
-box() {
-const c = this.canvas, cr = c.getBoundingClientRect();
-const w = c.clientWidth, h = c.clientHeight;
-let ax = w * 0.7, ay = h * 0.5, s = Math.min(w, h) * 0.8;
-if (this.anchor) {
-const ar = this.anchor.getBoundingClientRect();
-if (ar.width && ar.height) { ax = ar.left - cr.left + ar.width / 2; ay = ar.top - cr.top + ar.height / 2; s = Math.min(ar.width, ar.height); }
-}
-return { w: w, h: h, ax: ax, ay: ay, s: s };
-}
-
-draw() {
-if (this.mode === '3d') this.draw3D();
-else if (this.mode === '2d') this.draw2D();
-}
-
-draw3D() {
-if (!this.canvas || !this.renderer || !this.scene) return;
-const b = this.box();
-if (!b.w || !b.h) return;
-if (this.sizeW !== b.w || this.sizeH !== b.h) { this.renderer.setSize(b.w, b.h, false); this.sizeW = b.w; this.sizeH = b.h; }
-const cam = this.camera, yaw = 2.44, el = 0.36;
-const d = (b.h * 0.56) / (0.6306 * b.s);
-cam.aspect = b.w / b.h;
-cam.setViewOffset(b.w, b.h, b.w / 2 - b.ax, b.h / 2 - b.ay, b.w, b.h);
-cam.position.set(0.15 + Math.sin(yaw) * Math.cos(el) * d, 0.1 + Math.sin(el) * d, Math.cos(yaw) * Math.cos(el) * d);
-cam.lookAt(0.15, 0.1, 0);
-cam.updateMatrixWorld();
-this.renderer.render(this.scene, cam);
-}
-
-aim(e) {
-if (this.mode !== '3d' || !this.canvas) return;
-if (this.phase && this.phase !== 'free' && this.phase !== 'carry') { this.start(); return; }
-const r = this.canvas.getBoundingClientRect();
-if (!r.width || !r.height) return;
-this.ndc.set(((e.clientX - r.left) / r.width) * 2 - 1, -((e.clientY - r.top) / r.height) * 2 + 1);
-this.ray.setFromCamera(this.ndc, this.camera);
-if (this.ray.ray.intersectPlane(this.plane, this.hit)) {
-const m = Math.hypot(this.hit.x, this.hit.z);
-if (m < 2) { this.goal.x = this.hit.x; this.goal.z = this.hit.z; }
-}
-this.start();
-}
-
-draw2D() {
-const c = this.canvas;
-if (!c) return;
-const B = this.box(), w = B.w, h = B.h;
-if (!w || !h) return;
-const dpr = Math.min(window.devicePixelRatio || 1, 2);
-if (c.width !== Math.round(w * dpr) || c.height !== Math.round(h * dpr)) {
-c.width = Math.round(w * dpr);
-c.height = Math.round(h * dpr);
-}
-const g = c.getContext('2d');
-if (!g) return;
-g.setTransform(dpr, 0, 0, dpr, 0, 0);
-g.clearRect(0, 0, w, h);
-const rad = Math.PI / 180;
-const s0 = [-35, 30, -15, 35, 0, 60];
-const yaw = s0[0] * rad, a1 = s0[1] * rad, a2 = a1 + (90 + s0[2]) * rad, a3 = a2 + s0[3] * rad;
-const roll = s0[4] * rad, grip = 0.008 + ((s0[5] + 10) / 110) * 0.026;
-const cam = 0.7;
-const ce = 0.42, D = 1.0, f = 1.6 * B.s, zt = 0.16;
-const cc = Math.cos(cam), sc = Math.sin(cam), ee = Math.cos(ce), se = Math.sin(ce);
-const P = (p) => {
-const x1 = p[0] * cc + p[1] * sc, y1 = -p[0] * sc + p[1] * cc, z = p[2] - zt;
-const up = z * ee + y1 * se, dp = y1 * ee - z * se, k = f / (D + dp);
-return [B.ax + x1 * k, B.ay - up * k, dp, k];
-};
-const add = (a, b, k) => [a[0] + b[0] * k, a[1] + b[1] * k, a[2] + b[2] * k];
-const u = [Math.cos(yaw), Math.sin(yaw), 0], side = [-Math.sin(yaw), Math.cos(yaw), 0];
-const dir = (a) => [u[0] * Math.sin(a), u[1] * Math.sin(a), Math.cos(a)];
-const p1 = [0, 0, 0.1];
-const p2 = add(p1, dir(a1), 0.12);
-const p3 = add(p2, dir(a2), 0.135);
-const p4 = add(p3, dir(a3), 0.07);
-const hd = dir(a3);
-const n1 = [u[0] * Math.cos(a3), u[1] * Math.cos(a3), -Math.sin(a3)];
-const wv = [side[0] * Math.cos(roll) + n1[0] * Math.sin(roll), side[1] * Math.cos(roll) + n1[1] * Math.sin(roll), n1[2] * Math.sin(roll)];
-const fa = add(p4, wv, grip), fb = add(p4, wv, -grip);
-const segs = [
-[[0, 0, 0], [0, 0, 0.08], 0.03, '#c9d3cc'],
-[p1, p2, 0.017, '#f2f4f1'],
-[p2, p3, 0.015, '#e3e9e4'],
-[p3, p4, 0.012, '#f2f4f1'],
-[fa, fb, 0.007, '#c9d3cc'],
-[fa, add(fa, hd, 0.06), 0.006, '#03b05a'],
-[fb, add(fb, hd, 0.06), 0.006, '#03b05a']
-];
-const joints = [[p1, 0.024], [p2, 0.022], [p3, 0.019]];
-
-g.lineCap = 'round';
-g.strokeStyle = '#1d3a26';
-g.lineWidth = 1;
-for (let i = -4; i <= 4; i++) {
-const t = i * 0.075;
-let a = P([t, -0.3, 0]), b = P([t, 0.3, 0]);
-g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
-a = P([-0.3, t, 0]); b = P([0.3, t, 0]);
-g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
-}
-g.strokeStyle = 'rgba(0, 0, 0, 0.4)';
-segs.forEach((sg) => {
-const a = P([sg[0][0], sg[0][1], 0]), b = P([sg[1][0], sg[1][1], 0]);
-g.lineWidth = sg[2] * (a[3] + b[3]);
-g.beginPath(); g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); g.stroke();
-});
-g.fillStyle = '#12301c';
-g.strokeStyle = '#4a6a54';
-g.lineWidth = 1;
-g.beginPath();
-for (let i = 0; i <= 32; i++) {
-const t = (i / 32) * Math.PI * 2, a = P([Math.cos(t) * 0.06, Math.sin(t) * 0.06, 0]);
-if (i) g.lineTo(a[0], a[1]); else g.moveTo(a[0], a[1]);
-}
-g.fill(); g.stroke();
-
-const items = [];
-segs.forEach((sg) => {
-const a = P(sg[0]), b = P(sg[1]);
-items.push({ d: (a[2] + b[2]) / 2, a: a, b: b, lw: sg[2] * (a[3] + b[3]), col: sg[3] });
-});
-joints.forEach((j) => {
-const a = P(j[0]);
-items.push({ d: a[2] - 0.03, a: a, r: j[1] * a[3] });
-});
-items.sort((x, y) => y.d - x.d);
-items.forEach((it) => {
-if (it.b) {
-g.beginPath(); g.moveTo(it.a[0], it.a[1]); g.lineTo(it.b[0], it.b[1]);
-g.strokeStyle = '#0a1c10'; g.lineWidth = it.lw + 4; g.stroke();
-g.strokeStyle = it.col; g.lineWidth = it.lw; g.stroke();
-} else {
-g.beginPath(); g.arc(it.a[0], it.a[1], it.r, 0, Math.PI * 2);
-g.fillStyle = '#0a1c10'; g.fill();
-g.strokeStyle = '#03b05a'; g.lineWidth = 2.5; g.stroke();
-g.beginPath(); g.arc(it.a[0], it.a[1], it.r * 0.32, 0, Math.PI * 2);
-g.fillStyle = '#e10b1f'; g.fill();
-}
-});
-}
-
-}
-
-const hero = new SummerSchoolHero();
-hero.canvas = document.getElementById('hero-canvas');
-hero.anchor = document.getElementById('hero-anchor');
-const stage = document.getElementById('hero-stage');
-stage.addEventListener('pointermove', (e) => { if (e.pointerType !== 'touch') hero.aim(e); });
-stage.addEventListener('pointerdown', (e) => {
-  if (e.target && e.target.closest && e.target.closest('a, button')) return;
-  hero.aim(e);
-  hero.press();
-  hero.start();
-});
-hero.componentDidMount();
-</script>
+<script src="/summerschool/hero.js" defer></script>
 </body>
 </html>

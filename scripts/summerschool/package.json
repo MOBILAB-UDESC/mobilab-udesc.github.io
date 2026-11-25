@@ -1,0 +1,17 @@
+{
+  "name": "summerschool-hero-build",
+  "private": true,
+  "type": "module",
+  "description": "Build tooling for the summer school hero demo (not part of the Docusaurus build).",
+  "scripts": {
+    "model": "node simplify-so101.mjs",
+    "bundle": "node build.mjs",
+    "build": "npm run model && npm run bundle",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "meshoptimizer": "1.3.0",
+    "three": "0.160.0"
+  }
+}
