@@ -87,6 +87,17 @@
   google_scholar: null
   orcid: https://orcid.org/0009-0008-9692-4887
 
+- name: João Pedro Girardi
+  role: Master's student
+  group: Master's students
+  image: /img/people/master-joao-pedro.jpeg
+  linkedin: https://www.linkedin.com/in/jpgirardi/
+  lattes: https://lattes.cnpq.br/5604349112319521
+  github: https://github.com/girardijp3
+  website: null
+  google_scholar: null
+  orcid: null
+
 - name: João Victor Portela Rocha
   role: Undergraduate student
   group: Undergraduate students
@@ -130,6 +141,17 @@
   google_scholar: null
   orcid: null
   
+- name: Eduardo Suzuki
+  role: Undergraduate student
+  group: Undergraduate students
+  image: /img/people/undergraduate-eduardo.jpeg
+  linkedin: https://www.linkedin.com/in/eduardo-suzuki-0b8667419/
+  lattes: https://lattes.cnpq.br/9771481857271227
+  github: https://github.com/EduardoSuzukiW
+  website: null
+  google_scholar: null
+  orcid: null
+
 - name: Emanuel Scharmitzel Johanson
   role: Undergraduate student
   group: Undergraduate students 

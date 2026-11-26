@@ -268,6 +268,7 @@ function confirmationHtml(first) {
   '<div style="font-family:' + SANS + ';font-size:13px;line-height:2;padding-top:12px">' +
   link(SITE, 'Website') + ' &nbsp;·&nbsp; ' +
   link('https://github.com/MOBILAB-UDESC', 'GitHub') + ' &nbsp;·&nbsp; ' +
+  link('https://huggingface.co/mobilab-udesc', 'Hugging Face') + ' &nbsp;·&nbsp; ' +
   link('https://www.linkedin.com/showcase/mobilab-udesc/', 'LinkedIn') + ' &nbsp;·&nbsp; ' +
   link('https://www.instagram.com/mobi.udesc/', 'Instagram') +
   '</div>' +

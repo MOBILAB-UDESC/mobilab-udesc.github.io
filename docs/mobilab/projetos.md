@@ -11,6 +11,12 @@ slug: /mobilab/projetos
 
 ## Sagan robot
 
+Sagan is a four-wheeled mobile robot developed at MobiLab. Each wheel has its own drive motor and its own steering joint, so the robot can steer all four wheels independently. It is built for autonomous navigation and mapping, and its software runs on ROS 2 with a Gazebo simulation that shares the same description and launch files as the real robot.
+
+- **Control:** a ros2_control hardware interface talks over I2C to two microcontroller boards, one per side, that drive the wheels and read motor current. A drive controller handles the four wheel and steering commands.
+- **Sensing and state estimation:** a 2D lidar and an MPU9250 IMU (with magnetometer calibration), fused with wheel odometry in an extended Kalman filter.
+- **Navigation:** Nav2 and SLAM Toolbox for mapping and planning, frontier-based autonomous exploration, and a Kanayama path-tracking controller exposed as a ROS 2 action that follows a path of waypoints.
+
 <p className="academic-meta">
   <a href="https://github.com/MOBILAB-UDESC/sagan_workspace">Code on GitHub</a>
 </p>
