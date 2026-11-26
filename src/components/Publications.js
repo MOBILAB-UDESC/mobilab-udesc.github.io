@@ -8,6 +8,39 @@ export function selectPublications(publications, type, year) {
     .sort((a, b) => b.year - a.year);
 }
 
+function CopyBibtex({text}) {
+  const [state, setState] = useState("idle");
+
+  async function copy() {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        const ok = document.execCommand("copy");
+        document.body.removeChild(area);
+        if (!ok) throw new Error("copy failed");
+      }
+      setState("copied");
+    } catch (error) {
+      setState("error");
+    }
+    setTimeout(() => setState("idle"), 2000);
+  }
+
+  return (
+    <button type="button" className="publications__copy" onClick={copy}>
+      {state === "copied" ? "Copied!" : state === "error" ? "Copy failed" : "Copy BibTeX"}
+    </button>
+  );
+}
+
 export default function Publications({publications}) {
   const [type, setType] = useState("");
   const [year, setYear] = useState("");
@@ -50,7 +83,10 @@ export default function Publications({publications}) {
             <div className="publications__links">
               <details className="publications__citation">
                 <summary aria-label={`Cite ${publication.title}`}>Cite</summary>
-                <pre><code>{publication.bibtex}</code></pre>
+                <div className="publications__bibtex">
+                  <CopyBibtex text={publication.bibtex} />
+                  <pre><code>{publication.bibtex}</code></pre>
+                </div>
               </details>
               <a href={`https://doi.org/${publication.doi}`}>DOI</a>
               {publication.code && <a href={publication.code}>Code</a>}
